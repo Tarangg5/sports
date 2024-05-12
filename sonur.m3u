@@ -1,0 +1,137 @@
+#EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
+
+
+#EXTINF:-1 tvg-id="IPL" tvg-name="IPL" group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",1st IPL HINDI MATCH
+https://prod-ent-live-gm.jiocinema.com/out/v1/0032a90f57224764b183281b210ff4df/master.m3u8
+
+
+#EXTINF:-1 tvg-id="IPL" tvg-name="IPL" group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",1st IPL BHOJPURI MATCH
+https://prod-sports-north-gm.jiocinema.com/hls/live/2109762/hd_akamai_androidmob_avc_bhoj_ipl_s1_m1120524/master.m3u8
+
+
+
+#EXTINF:-1 tvg-id="IPL" tvg-name="IPL" group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",2nd IPL HINDI MATCH
+https://prod-sports-hin-gm.jiocinema.com/hls/live/2100329/hd_akamai_androidmob_avc_hin_ipl_s2_m2120524/master.m3u8
+
+
+#EXTINF:-1 tvg-id="IPL" tvg-name="IPL " group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",2nd IPL BHOJPURI MATCH
+https://prod-sports-north-gm.jiocinema.com/hls/live/2109732/hd_akamai_androidmob_avc_bhoj_ipl_s2_m2120524/master.m3u8
+
+
+
+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",Astro Cricket
+https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd
+
+
+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+##KODIPROP:inputstream.adaptive.license_key=6653c05e42fc4fac8f49d7cbf99498fe:3b88f2cff3affef20b265c840bafc0cc
+##EXTINF:-1 tvg-id="AstroyCricket" tvg-name="Astrto 2 CricGHket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjz40K4UhhYDxKSjvLGHdqzwHk6KuQQY36w&usqp=CAU", WILLOW CRICKET HD
+#https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd
+
+
+
+
+
+
+
+
+
+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=https://rftv.wtf/tp/tplay.php?contentID=24&key
+#EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", Star 1 Hindi HD
+https://rftv.wtf/tp/tplay.mpd?contentID=24
+
+
+
+
+
+##EXTINF:-1 tvg-id=ts24 tvg-###logo="https://encrypted-###tbn0.gstatic.com/images?###q=tbn:ANd9GcRWgbPCPMXUImv7nXg1ix39IZ9uAmI##WRWE-UQ&usqp=CAU" group-###title="Sports",Star Sports Telugu
+###http://176.119.29.52/live.ts?channelId=288&deviceMac=00:1A:79:A8:D3:68
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###EXTINF:-1 tvg-id="10000S09276" tvg-####logo="#EXTINF:-1 tvg-id="1000009276" tvg-logo="https://ia600809.us.archive.org/18/items/SkySportsCricket_201708/sky%20sports%20cricket.png" group-title="Sports", SKY CRICKET HD
+#####http://pxy.proxytx.cloud:80/play/live.php?mac=00:1A:79:74:6A:13&stream=1104668&extension=m3u8&play_token=Mz699DyTcj
+
+
+
+
+
+
+##EXTINF:-1 tvg-id="AstroyCricket" tvg-name="AsTtro 2 Cricket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFrSF4f4VvZBQHRGu0rikCCQkry-P_3ufkA&usqp=CAU",ASPORTS HD
+##http://tv.cloudcdn.me:80/live.ts?channelId=12217&uid=4179&deviceMac=00:1A:79:A8:D3:68
+
+
+
+
+
+
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/D_mqUdLcFbKZczdnW_Jl_yZ37bCSVYHBfNMwLiSMs7b0xVuXdD_77Rcq1ULNIVXk7IY" group-title="Sports",Spider Cam
+https://prod-ent-live-gm.jiocinema.com/out/v1/a1469c70c34f4712982e6c895f05c913/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/D_mqUdLcFbKZczdnW_Jl_yZ37bCSVYHBfNMwLiSMs7b0xVuXdD_77Rcq1ULNIVXk7IY" group-title="Sports",Batting Cam
+https://prod-ent-live-gm.jiocinema.com/out/v1/933538ce86d04486b8fc3f949200d951/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/D_mqUdLcFbKZczdnW_Jl_yZ37bCSVYHBfNMwLiSMs7b0xVuXdD_77Rcq1ULNIVXk7IY" group-title="Sports",Multi Cam
+https://prod-ent-live-gm.jiocinema.com/out/v1/31657ca6ac464025ba5ceffa7ec48939/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/D_mqUdLcFbKZczdnW_Jl_yZ37bCSVYHBfNMwLiSMs7b0xVuXdD_77Rcq1ULNIVXk7IY" group-title="Sports",Stump Cam
+https://prod-ent-live-gm.jiocinema.com/out/v1/6b8480f7115444298d80daa3bc442c28/master.m3u8
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/D_mqUdLcFbKZczdnW_Jl_yZ37bCSVYHBfNMwLiSMs7b0xVuXdD_77Rcq1ULNIVXk7IY" group-title="Sports",HERO CAM
+https://prod-ent-live-gm.jiocinema.com/out/v1/4eb7fa6d5c8342d298be3b6649e9cbe9/master.m3u8
