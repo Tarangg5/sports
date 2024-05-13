@@ -32,9 +32,9 @@ https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-##KODIPROP:inputstream.adaptive.license_key=6653c05e42fc4fac8f49d7cbf99498fe:3b88f2cff3affef20b265c840bafc0cc
-##EXTINF:-1 tvg-id="AstroyCricket" tvg-name="Astrto 2 CricGHket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjz40K4UhhYDxKSjvLGHdqzwHk6KuQQY36w&usqp=CAU", WILLOW CRICKET HD
-#https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd
+#KODIPROP:inputstream.adaptive.license_key=6653c05e42fc4fac8f49d7cbf99498fe:3b88f2cff3affef20b265c840bafc0cc
+#EXTINF:-1 tvg-id="AstroyCricket" tvg-name="Astrto 2 CricGHket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjz40K4UhhYDxKSjvLGHdqzwHk6KuQQY36w&usqp=CAU", WILLOW CRICKET HD
+https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd
 
 
 
