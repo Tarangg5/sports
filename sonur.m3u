@@ -1,10 +1,7 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
 
-#EXTINF:-1 tvg-id="" tvg-logo="https://dl.dropboxusercontent.com/scl/fi/9m9fjbg2sfz4ighzc6rtg/IMG_20240412_212758_711.jpg?rlkey=lcrtkehknzvg98savoxpnkspu&dl=0" group-title="Jio Sports",HINDI
-https://prod-ent-live-gm.jiocinema.com/hls/live/2100323/hd_akamai_androidmob_avc_hin_ipl_s1_m1180524/master.m3u8
 
-#EXTINF:-1 tvg-id="" tvg-logo="https://dl.dropboxusercontent.com/scl/fi/9m9fjbg2sfz4ighzc6rtg/IMG_20240412_212758_711.jpg?rlkey=lcrtkehknzvg98savoxpnkspu&dl=0" group-title="Jio Sports",HINDI 4K
-https://prod-ent-live-gm.jiocinema.com/hls/live/2100322/uhd_akamai_atv_avc_hin_ipl_s1_m1180524/master.m3u8
+
 
 
 
@@ -13,16 +10,17 @@ https://prod-ent-live-gm.jiocinema.com/out/v1/0032a90f57224764b183281b210ff4df/m
 
 
 #EXTINF:-1 tvg-id="IPL" tvg-name="IPL" group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",1st IPL BHOJPURI MATCH
-https://prod-sports-north-gm.jiocinema.com/hls/live/2109762/hd_akamai_androidmob_avc_bhoj_ipl_s1_m1180524/master.m3u8
+https://prod-sports-north-gm.jiocinema.com/hls/live/2109762/hd_akamai_androidmob_avc_bhoj_ipl_s1_m1190524/master.m3u8
 
 
 
 #EXTINF:-1 tvg-id="IPL" tvg-name="IPL" group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",2nd IPL HINDI MATCH
-https://prod-sports-hin-gm.jiocinema.com/hls/live/2100329/hd_akamai_androidmob_avc_hin_ipl_s2_m2180524/master.m3u8
+https://prod-sports-hin-gm.jiocinema.com/hls/live/2100329/hd_akamai_androidmob_avc_hin_ipl_s2_m2190524/master.m3u8
 
 
 #EXTINF:-1 tvg-id="IPL" tvg-name="IPL " group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",2nd IPL BHOJPURI MATCH
-https://prod-sports-north-gm.jiocinema.com/hls/live/2109732/hd_akamai_androidmob_avc_bhoj_ipl_s2_m2180524/master.m3u8
+https://prod-sports-north-gm.jiocinema.com/hls/live/2109732/hd_akamai_androidmob_avc_bhoj_ipl_s2_m218
+90524/master.m3u8
 
 
 
