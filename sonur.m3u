@@ -18,9 +18,8 @@ https://prod-sports-north-gm.jiocinema.com/hls/live/2109762/hd_akamai_androidmob
 https://prod-sports-hin-gm.jiocinema.com/hls/live/2100329/hd_akamai_androidmob_avc_hin_ipl_s2_m2190524/master.m3u8
 
 
-#EXTINF:-1 tvg-id="IPL" tvg-name="IPL " group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg",2nd IPL BHOJPURI MATCH
-https://prod-sports-north-gm.jiocinema.com/hls/live/2109732/hd_akamai_androidmob_avc_bhoj_ipl_s2_m219
-90524/master.m3u8
+#EXTINF:-1 tvg-id="IPL" tvg-name="IPL " group-title="Sports" tvg-logo="https://img.cricketworld.com/images/e-122898/fkqtiglxkaaw0xn.jpg", Willow hindi
+http://xtv.ooo:8080/live/641368995/43146885/167583.ts
 
 
 
@@ -39,7 +38,7 @@ https://linearjitp-playback.astro.com.my/dash-wv/linear/2504/default.mpd
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=6653c05e42fc4fac8f49d7cbf99498fe:3b88f2cff3affef20b265c840bafc0cc
 #EXTINF:-1 tvg-id="AstroyCricket" tvg-name="Astrto 2 CricGHket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKjz40K4UhhYDxKSjvLGHdqzwHk6KuQQY36w&usqp=CAU", WILLOW CRICKET HD
-https://linear-novi.stvacdn.spectrum.com/LIVE/1131/dash/cenc/WLLOHD_10364/manifest.mpd
+http://xtv.ooo:8080/live/NVM65980/LMNV9812/347333.m3u8
 
 
 
