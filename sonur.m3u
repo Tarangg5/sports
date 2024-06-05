@@ -32,7 +32,8 @@ L
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://rftv.wtf/tp/tplay.php?contentID=24&key
 #EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", Star 1 Hindi HD
-http://176.119.29.52/live.ts?channelId=295&uid=4179&deviceMac=00:1A:79:A8:D3:68
+https://vkvsd67.mycdn.me/hls/6582228814441.m3u8/sig/bboJCW1QUyI/srcIp/103.61.224.59/urls/185.226.52.95/expires/1717845404715/clientType/14/srcAg/CHROME_ANDROID/fromCache/1/mid/7136451046249/id/6582228814441/video.m3u8?p
+#http://176.119.29.52/live.ts?channelId=295&uid=4179&deviceMac=00:1A:79:A8:D3:68
 
 
 
@@ -91,8 +92,8 @@ http://176.119.29.52/live.ts?channelId=295&uid=4179&deviceMac=00:1A:79:A8:D3:68
 
 
 
-#EXTINF:-1 tvg-id="AstroyCricket" tvg-name="AsTtro 2 Cricket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFrSF4f4VvZBQHRGu0rikCCQkry-P_3ufkA&usqp=CAU",ASPORTS HD
-http://tv.cloudcdn.me:80/live.ts?channelId=12217&uid=4179&deviceMac=00:1A:79:A8:D3:68
+##EXTINF:-1 tvg-id="AstroyCricket" tvg-name="AsTtro 2 Cricket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFrSF4f4VvZBQHRGu0rikCCQkry-P_3ufkA&usqp=CAU",ASPORTS HD
+##http://tv.cloudcdn.me:80/live.ts?channelId=12217&uid=4179&deviceMac=00:1A:79:A8:D3:68
 
 
 
