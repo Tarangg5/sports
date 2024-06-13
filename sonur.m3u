@@ -112,8 +112,9 @@ http://176.119.29.52/live.ts?channelId=128699&uid=8764&deviceMac=00:1A:79:A4:24:
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
-
+#KODIPROP:inputstream.adaptive.license_key=475d7932b5f352bb92016b75b60c58fa:ea37faa137ae8f644105c4fcc189a35f
+#EXTINF:-1 group-title="Sports" tvg-chno="" tvg-id="ts24" tvg-logo="https://i.postimg.cc/8cpX4T7W/IMG-20231007-170502-315.jpg", Willow HD
+https://linear-novi.stvacdn.spectrum.com/LIVE/5248/bpk-tv/10364/drm/manifest.mpd
 
 #EXTINF:-1 group-title="Sports" tvg-chno="" tvg-id="ts24" tvg-logo="https://i.postimg.cc/8cpX4T7W/IMG-20231007-170502-315.jpg", HOTSTAR HINDI
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/24.04.23.6.9999 (Android/13)
