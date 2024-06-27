@@ -122,7 +122,7 @@ https://linear-novi.stvacdn.spectrum.com/LIVE/5248/bpk-tv/10364/drm/manifest.mpd
 #EXTVLCOPT:http-referrer=
 
 #EXTHTTP:{"cookie":"hdntl=exp=1718282201~acl=%2fhls%2flive%2f2003704%2finallow-icct20wc-2024%2fhin%2f1540029848%2f15mindvrm01f979b5f2331948258d62a7ec1c6f686b12june2024%2fmaster_apmf*~id=f7ed91d0e687c833932d69f668fa0740~data=ip%3dU8lpdroWUaUHUTN6sYuK4G-userid%3dY7V3Y6YAs5yWeurvSOUu8GL0O7tzqTZkHSoFksYbvxRx-did%3dScjg9BYVcC9c3ayZzOCUjxJfP8X6Pghudvw0M9zmE2KBSeZ15yzhUAz-cc%3din-~hmac=a8b56b81d112a6c7f260076314460e00539fd50f0012c1a8618823c514e0b86c"}
-http://tv.cloudcdn.me:80/live.ts?channelId=49569&uid=8764&deviceMac=00:1A:79:A4:24:C4
+#http://tv.cloudcdn.me:80/live.ts?channelId=49569&uid=8764&deviceMac=00:1A:79:A4:24:C4
 #http://live12p-ssai-akt-mum.cdn.hotstar.com/hls/live/2003704/inallow-icct20wc-2024/hin/1540029848/15mindvrm01f979b5f2331948258d62a7ec1c6f686b12june2024/master_apmf_480_4.m3u8
 #http://live12p-ssai-akt-mum.cdn.hotstar.com/hls/live/2024730/inallow-icct20wc-2024/hin/1540029836/15mindvrm01602fc50ae0d74b0295a31e8ad2ddc5ed09june2024/master_apmf_480_2.m3u8
 
