@@ -86,8 +86,8 @@ https://ablayc7aaaaaaaamcey5j7rgggelg.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=https://play.pstvlive.xyz/tplay/api_keys.php?id=24
 #EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", MATCH TIME HINDI HD
-https://tp.denver1769.workers.dev/tplay/24.mpd
-http://176.119.29.52/live.ts?channelId=128699&uid=8764&deviceMac=00:1A:79:A4:24:C4
+#https://tp.denver1769.workers.dev/tplay/24.mpd
+#http://176.119.29.52/live.ts?channelId=128699&uid=8764&deviceMac=00:1A:79:A4:24:C4
 
 
 
