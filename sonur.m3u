@@ -2,10 +2,10 @@
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",PRIME Hindi 50fps
+#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",SONY Hindi 50fps
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
-https://aba5sdmaaaaaaaamcs7bgwx2cgzhi.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/bopqv4fykb/out/v1/01d1290c69584c7cbf58b8ab404ea1b8/cenc.mpd
+https://pubads.g.doubleclick.net/ssai/event/g1cPcUIdSQC_3FXsrgV5iA/master.m3u8
 
 
 
@@ -21,118 +21,22 @@ https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",Prime English 5.1+50fps
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=647eb8fbf1657140ea163dc9b3256893:5c28e72874cd4f73b9ed379957e8ba42
-https://aba5sdmaaaaaaaamcs7bgwx2cgzhi.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/iwzi8fxh4z/out/v1/0e29b056e9c04ae180ef297263d2967d/cenc.mpd
+##KODIPROP:inputstreamaddon=inputstream.adaptive
+##KODIPROP:inputstream.adaptive.manifest_type=dash
+##EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",Prime English 5.1+50fps
+##KODIPROP:inputstream.adaptive.license_type=clearkey
+##KODIPROP:inputstream.adaptive.license_key=647eb8fbf1657140ea163dc9b3256893:5c28e72874cd4f73b9ed379957e8ba42
+#https://aba5sdmaaaaaaaamcs7bgwx2cgzhi.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/iwzi8fxh4z/out/v1/0e29b056e9c04ae180ef297263d2967d/cenc.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1105b85e6db6214e686e462206ed86ec:59d851187354b65fa2d14829046893ef
-#EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", PRIME HINDI HD
-https://aba5sdmaaaaaaaamibyasmmfoav3v.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/dmmqe7ssji/out/v1/3775f3d149f34a7a81d8cd7d58118e40/cenc.mpd
+#EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", SONY ENG HD
+https://pubads.g.doubleclick.net/ssai/event/QNEZiPzpTXucyrbpCjdZTw/master.m3u8
 
 
-
-
-
-##KODIPROP:inputstreamaddon=inputstream.adaptive
-##KODIPROP:inputstream.adaptive.manifest_type=dash
-##KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-##KODIPROP:inputstream.adaptive.license_key=c467960712b92d436df3293a1cd9b9c5:04794df98011b6577af406594d831ef7
-##EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", AMAZON PRIME HD
-#https://ablayc7aaaaaaaamcey5j7rgggelg.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/umbtod1may/out/v1/7e545f05ff0c448dbebc68ff11e19a7a/cenc.mpd
-#https://aba5sdmaaaaaaaamkycwliah6buj4.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tgcrfjcgia/out/v1/7296f026409c4e9ba8844a238628f9ad/cenc.mpd
-#http://176.119.29.61/live.ts?channelId=128699&uid=8764&deviceMac=00:1A:79:A4:24:C4
-##http://176.119.29.52/live.ts?channelId=295&uid=4179&deviceMac=00:1A:79:A8:D3:68
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-###KODIPROP:inputstreamaddon=inputstream.adaptive
-###KODIPROP:inputstream.adaptive.manifest_type=dash
-###KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-###KODIPROP:inputstream.adaptive.license_key=https://play.pstvlive.xyz/tplay/api_keys.php?id=24
-###EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", MATCH TIME HINDI HD
-#https://tp.denver1769.workers.dev/tplay/24.mpd
-#http://176.119.29.52/live.ts?channelId=128699&uid=8764&deviceMac=00:1A:79:A4:24:C4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-##EXTINF:-1 tvg-id="AstroyCricket" tvg-name="AsTtro 2 Cricket HD " group-title="Sports" tvg-logo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFrSF4f4VvZBQHRGu0rikCCQkry-P_3ufkA&usqp=CAU",ASPORTS HD
-#http://tv.cloudcdn.me:80/live.ts?channelId=12217&uid=4179&deviceMac=00:1A:79:A8:D3:68
-
-
-
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=475d7932b5f352bb92016b75b60c58fa:ea37faa137ae8f644105c4fcc189a35f
-#EXTINF:-1 group-title="Sports" tvg-chno="" tvg-id="ts24" tvg-logo="https://i.postimg.cc/8cpX4T7W/IMG-20231007-170502-315.jpg", Willow HD
-https://linear-novi.stvacdn.spectrum.com/LIVE/5248/bpk-tv/10364/drm/manifest.mpd
-
-##EXTINF:-1 group-title="Sports" tvg-chno="" tvg-id="ts24" tvg-logo="https://i.postimg.cc/8cpX4T7W/IMG-20231007-170502-315.jpg", HOTSTAR HINDI
-##EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/24.04.23.6.9999 (Android/13)
-#EXTVLCOPT:http-referrer=
-
-##EXTHTTP:{"cookie":"hdntl=exp=1718282201~acl=%2fhls%2flive%2f2003704%2finallow-icct20wc-2024%2fhin%2f1540029848%2f15mindvrm01f979b5f2331948258d62a7ec1c6f686b12june2024%2fmaster_apmf*~id=f7ed91d0e687c833932d69f668fa0740~data=ip%3dU8lpdroWUaUHUTN6sYuK4G-userid%3dY7V3Y6YAs5yWeurvSOUu8GL0O7tzqTZkHSoFksYbvxRx-did%3dScjg9BYVcC9c3ayZzOCUjxJfP8X6Pghudvw0M9zmE2KBSeZ15yzhUAz-cc%3din-~hmac=a8b56b81d112a6c7f260076314460e00539fd50f0012c1a8618823c514e0b86c"}
-#http://tv.cloudcdn.me:80/live.ts?channelId=49569&uid=8764&deviceMac=00:1A:79:A4:24:C4
-#http://live12p-ssai-akt-mum.cdn.hotstar.com/hls/live/2003704/inallow-icct20wc-2024/hin/1540029848/15mindvrm01f979b5f2331948258d62a7ec1c6f686b12june2024/master_apmf_480_4.m3u8
-#http://live12p-ssai-akt-mum.cdn.hotstar.com/hls/live/2024730/inallow-icct20wc-2024/hin/1540029836/15mindvrm01602fc50ae0d74b0295a31e8ad2ddc5ed09june2024/master_apmf_480_2.m3u8
 
 
 
