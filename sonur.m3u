@@ -79,7 +79,12 @@ KODIPROP:inputstreamaddon=inputstream.adaptive
 http://14.102.123.50:9080/play/a0od
 
 
-
+KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",TRAVELXP 4K HDR
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
+https://deltatesttatasky.akamaized.net/out/i/968284.m3u8
 
 
 
