@@ -127,7 +127,7 @@ https://linearjitp02-playback.astro.com.my/dash-wv/linear/2504/default.mpd
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1105b85e6db6214e686e462206ed86ec:59d851187354b65fa2d14829046893ef
 #EXTINF:-1 tvg-id="ts24" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-60-j5fdr6a0-v1/imageContent-60-j5fdr6a0-m1.png" group-title="Sports", SONY ENG HD
-https://pubads.g.doubleclick.net/ssai/event/QNEZiPzpTXucyrbpCjdZTw/master.m3u8
+https://prod-sports-north-gm.jiocinema.com/hls/live/2109761/hd_akamai_iosmob_avc_bhoj_indvsban_121024/master.m3u8
 
 
 
