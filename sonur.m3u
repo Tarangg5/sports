@@ -20,7 +20,7 @@ https://aajtaklive-amd.akamaized.net/hls/live/2014416/aajtak/aajtaklive/live_720
 https://prod-sports-hin-cf.jiocinema.com/hls/live/2100320/uhd_akamai_ctv_avc_hin_indvsban_121024/index.m3u8
 
 ##EXTINF:-1 tvg-id="22" group-title="Sports" tvg-language="Hindi" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports18_khel_tray-1693931658589.jpg",SPORTS 18 Khel
-https://prod-sports-hin-fa.jiocinema.com/bpk-tv/Sports18_Khel_voot_MOB/Fallback/index.m3u8
+##https://prod-sports-hin-fa.jiocinema.com/bpk-tv/Sports18_Khel_voot_MOB/Fallback/index.m3u8
 
 
 KODIPROP:inputstreamaddon=inputstream.adaptive
