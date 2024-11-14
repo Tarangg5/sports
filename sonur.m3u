@@ -24,11 +24,15 @@ https://live2.shoq.com.pk/live/eds/Criclife2/DASH/Criclife2.mpd
 https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd
 
 
-
-
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",TNT SPORTS 2
+#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",PTV SPORTS
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9ecad6c4413f8bdc54712ce6c072a2cf:442df559c369bdada8ba3abe97811575
+https://live4.shoq.com.pk/live/eds/PTV_Sports/DASH/PTV_Sports.mpd
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",TNT SPORTS 2
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6d1708b185c6c4d7b37600520c7cc93c:1aace05f58d8edef9697fd52cb09f441
 https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/f0qvkrra8j/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd
