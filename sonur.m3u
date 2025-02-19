@@ -2,6 +2,16 @@
 
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
 
+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=ae7076b647133606b704d33e4cef5134:810251515584cf71216d9a2d1ebf04bb
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ICC TV LIVE
+https://dj-tm-srvr2.vercel.app/icctv/ICC_CT25@DJ-TM.mpd?id=ch-hd-02|User-Agent=@DJ-TM
+
+
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
