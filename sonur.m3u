@@ -21,6 +21,11 @@ https://dj-tm-srvr2.vercel.app/icctv/ICC_CT25@DJ-TM.mpd?id=ch-hd-02|User-Agent=@
 https://aba5sdmaaaaaaaamjyr2xiy4rbicb.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/zqhtvqjquq/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
 
 
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
+#EXTINF:-1 tvg-idp="21" group-title="Sports" tvg-language="English" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",SPORTS 18 HINDI
+https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740208827~acl=%2f*~id=d10094d21727b83d854f53350b926451~data=hdntl~hmac=d5115f9d40b9e7e81b21b7067548b2506b79fc269fc80f08937584c0ec76590b/JC_Sports18_1HD/JC_Sports18_1HD-audio_108038_eng=108000-video=3728000.m3u8
+
+
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
