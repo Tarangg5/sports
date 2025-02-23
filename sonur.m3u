@@ -44,6 +44,17 @@ https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740319493
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", PRIME HINDI
 https://aba5sdmaaaaaaaammj2q5nkaoee4b.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/l2xzhgmjur/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
 
+
+#KODIPROP:inputstreamaddon=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=dash
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=4gwHvy0_ThiFjMVVJDgyKA:pQwJLPnvAd0d5MkAyqnJvA
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",WILLOW HD SLING
+https://p-cdn1-a-cg14-linear-cbd46b77.movetv.com/clipslist/22/20250223T000000Z/20250224T000000Z.mpd
+
+
+
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
@@ -55,12 +66,14 @@ https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/lsdasbvglv/o
 
 
 
+
+
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=ae26845bd33038a9c0774a0981007294:63ac662dde310cfb4cc6f9b43b34196d
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",Astro Cricket
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TNT SPORTS 1
 https://abfdm2saaaaaaaamljqrv7ybrrx7h.47348d5020154bfaac6dd4418cd23c5d.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/rdznpzcmct/out/v1/355324ed98a94cbebbaff4bad0cd28ce/cenc.mpd
 
 
