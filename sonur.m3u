@@ -33,7 +33,7 @@ https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/wr8i0xhnut/
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTINF:-1 tvg-idp="21" group-title="Sports" tvg-language="English" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",SPORTS 18 HINDI
-https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740385757~acl=%2f*~id=aaf549ec51984c86b32dd7de3e1334c7~data=hdntl~hmac=ce1800e612063aa0116b268385d9b1105dee639bb7d0a1e9585e88e9e7747889/index.m3u8
+https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740470379~acl=%2f*~id=0aa6691b27e8b9b85d48501b96cd32ec~data=hdntl~hmac=213efdbad0e0b8fd17a39e6e4c2c9316c6a225fb4472f7bc7baca7c0b2816237/JC_Sports18_1HD-audio_108038_eng=108000-video=3728000.m3u8
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -45,13 +45,7 @@ https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740385757
 https://aba5sdmaaaaaaaammj2q5nkaoee4b.otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/l2xzhgmjur/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=4gwHvy0_ThiFjMVVJDgyKA:pQwJLPnvAd0d5MkAyqnJvA
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",WILLOW HD SLING
-https://p-cdn1-a-cg14-linear-cbd46b77.movetv.com/clipslist/22/20250223T000000Z/20250224T000000Z.mpd
+
 
 
 
