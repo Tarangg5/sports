@@ -3,13 +3,7 @@
 #EXTM3U x-tvg-url="https://avkb.short.gy/tsepg.xml.gz"
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASTRO REAL
-https://dj-tm-srvr5.vercel.app/astrocric/Astro_Cricket@DJ-TM.mpd?|Telegram=@links_macha_official&Creator=@DJ-TM
+
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
@@ -33,7 +27,7 @@ https://live3.shoq.com.pk/live/eds/Geo_Super/DASH/Geo_Super.mpd
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTINF:-1 tvg-idp="21" group-title="Sports" tvg-language="English" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",SPORTS 18 HINDI
-https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740579059~acl=%2f*~id=adea3525983546dbfd59891084ab1801~data=hdntl~hmac=a59d22aada8330118dc30e53d7b78d7c6cfbb2497c6452b44fadb248f5e58366/index.m3u8
+https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740662144~acl=%2f*~id=3f74cbd9e396350d08288a1ec2051858~data=hdntl~hmac=b6154d74cde6c785c4de1ae224bd80992a6011926af43196ebbda4a3a6255c26/index.m3u8
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
