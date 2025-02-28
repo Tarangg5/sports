@@ -11,7 +11,7 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=7aa124253d518f18740c5bd932d581a3:1819c82fc27225f5e79ae189ddece0ea
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",PRIME TV ICC
-https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/xko28jj0cp/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/cw64xbclda/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
 
 
 
@@ -27,7 +27,7 @@ https://live3.shoq.com.pk/live/eds/Geo_Super/DASH/Geo_Super.mpd
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #EXTINF:-1 tvg-idp="21" group-title="Sports" tvg-language="English" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",SPORTS 18 HINDI
-https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740662144~acl=%2f*~id=3f74cbd9e396350d08288a1ec2051858~data=hdntl~hmac=b6154d74cde6c785c4de1ae224bd80992a6011926af43196ebbda4a3a6255c26/index.m3u8
+https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740815716~acl=%2f*~id=65763e52500eecca760c9c2627121e1f~data=hdntl~hmac=ba67130fa454a23ff35ef4df43eee8c3cfb9c11c509b1d661971e76d90f9b8db/JC_Sports18_1HD-audio_108038_eng=108000-video=3728000.m3u8
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
