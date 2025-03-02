@@ -4,7 +4,7 @@
 
 
 
-#EXT-X-STREAM-INF:BANDWIDTH=4000000,RESOLUTION=3840x2160
+
 #EXTVLCOPT:http-cookie=hdntl=exp=1740968824~acl=%2fhls%2flive%2f2034626%2finallow-ftb-2025%2fhin%2f1540039859%2f15mindvrm01900a767afd49423c8d72a9ee507582cf02march2025%2fmaster_ap*~data=ip%3dCaTvgY4HrAkfLkR03mQv69sOwzY3OMxUHkgmRq8HDxOE5FBcMeFiXuC-userid%3dQKnY4EM7kKdAFfBefgnTpqSJSYRzgv8vb1wKXLFUvRea-did%3d4S7MRFguYdsOdxy3Ut6mkjrEFVVV1hhpCjbvWGZpGyAE-cc%3din-de%3d5-pl%3dandroidtv-ap%3d25.01.27.5-ut%3dpaid-ttl%3d86400-type%3dfree-~hmac=8f25151a18a17326ce1571b860621185474c0104bc9cfe5d9c9d2c032549a603
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.01.27.4.11136 (Android/13)
 #EXTVLCOPT:http-referer=https://www.hotstar.com/
