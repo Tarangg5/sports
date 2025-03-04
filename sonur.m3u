@@ -38,9 +38,9 @@ https://jcevents.jiocinema.com/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1740901726
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=4a5191838da17a2ab771f4258fad347f:54b7a084437459368eed07d182ad644c
+#KODIPROP:inputstream.adaptive.license_key=494c5ddd4a2b9c38da05e053c0fd6d3f:ad1ff8c72fc6fefbce716609da9347cf
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", PRIME HINDI
-https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/clients/dash/enc/9zdhmclf6e/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
+https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/rkyxparx1t/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
 
 
 
