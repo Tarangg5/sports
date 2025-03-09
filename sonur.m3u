@@ -13,9 +13,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=8e73c8415d7648e10b06000b1ace5953:f5d649bf1495cd0864a7422624ac5a86
+#KODIPROP:inputstream.adaptive.license_key=9cb6b6283487afe392adcffebf3cd6be:05f4eb67381e0c173954603518ce84c3
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",PRIME TV ICC
-https://a170aivottlinear-a.akamaihd.net/OTTB/sin-nitro/live/clients/dash/enc/2ldruyhiok/out/v1/e6aaa1b986d0434b95156e22db44eb71/cenc.mpd
+https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tsrm0zirxz/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
 
 
 
@@ -38,9 +38,9 @@ https://jcevents.akamaized.net:443/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=174124
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=494c5ddd4a2b9c38da05e053c0fd6d3f:ad1ff8c72fc6fefbce716609da9347cf
+#KODIPROP:inputstream.adaptive.license_key=9cb6b6283487afe392adcffebf3cd6be:05f4eb67381e0c173954603518ce84c3
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", PRIME HINDI
-https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/rkyxparx1t/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
+https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tsrm0zirxz/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
 
 
 
