@@ -9,13 +9,6 @@
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=9cb6b6283487afe392adcffebf3cd6be:05f4eb67381e0c173954603518ce84c3
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",PRIME TV ICC
-https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tsrm0zirxz/out/v1/190f1d69a3d5467f8fb7d9df4339bc49/cenc.mpd
 
 
 
@@ -29,18 +22,9 @@ https://otte.live.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tsrm0zirxz/o
 https://live3.shoq.com.pk/live/eds/Geo_Super/DASH/Geo_Super.mpd
 
 
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#EXTINF:-1 tvg-idp="21" group-title="Sports" tvg-language="English" tvg-logo="https://v3img.voot.com/resizeMedium,w_450,h_253/v3Storage/assets/sports18_tray-1693930594270.jpg",SPORTS 18 HINDI
-https://jcevents.akamaized.net/bpk-tv/JC_Sports18_1HD/JCHLS/hdntl=exp=1741585633~acl=%2f*~id=97ff5c734c6f4a3ea96b01cfd44846cc~data=hdntl~hmac=db0dbae6b8d53b386b4bc9848af7139235c4f2c36e1bc9ee44971a36249f2c20/JC_Sports18_1HD-audio_108038_eng=108000-video=3728000.m3u8
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=553a8e7efc48840b17d03797c023d9b6:05fa313fa73df33f19e0f2d3d047bbaf
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", PRIME HINDI
-https://a170aivottlinear-a.akamaihd.net/OTTB/sin-nitro/live/clients/dash/enc/1jii7mxinw/out/v1/fe9782633a364a6a84c9410f26d9b2c4/cenc.mpd
+
 
 
 
@@ -98,9 +82,7 @@ https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/f0qvkrra8j/o
 
 
 
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#EXTINF:-1 tvg-id="22" group-title="Sports" tvg-language="Hindi" tvg-logo="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/sports18_khel_tray-1693931658589.jpg",MASTER LEAGUE 
-https://jcevents.jiocinema.com/bpk-tv/JC_ColorsCineplexHD/JCHLS/hdntl=exp=1740321390~acl=%2f*~id=aaf549ec51984c86b32dd7de3e1334c7~data=hdntl~hmac=e6f415cf124a3552ecb54f84eed749235897225eaccbf088d4ce9392b7e184d7/JC_ColorsCineplexHD-audio_98835_hin=98800-video=2293600.m3u8
+
 
 
 #EXTINF:-1 tvg-id="22" group-title="Sports" tvg-language="Hindi" tvg-logo="https://yt3.googleusercontent.com/MqNixkUgqY_rJiz34wzNf4yhWdrQWQ-F2pu9tJ7TXsSRjseqbUVASuAhuIN-L74cm6lZljkssA=s900-c-k-c0x00ffffff-no-rj",AAJ TAK HD
