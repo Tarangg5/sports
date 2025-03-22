@@ -19,7 +19,7 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=7641daa5bacfbb61936c40a221c9e78e:5732dd242f28338e909dc06cb1a1e5a2
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IPL HINDI
-http://fcluster.mytvxweb.com:8880/361988/index.m3u8?token=CP3Q3MDSVQVIP
+https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/hdntl=exp=1742737928~acl=%2f*~data=hdntl~hmac=997439ed3aa23998094bf472b25ff9f25932e5a336ab2b96eb0ca41de41292a7/Sports18_1_HD_voot_MOB-audio_108038_eng=108000-video=2297600.m3u8
 
 
 
