@@ -8,13 +8,6 @@
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",AIRTEL IPL ASTRO
-http://spr1.packetcdn.me:2800/8be1228d2852985cb8bbbc3e20c27a025b65b8619f3e06532f6b1bf618a7b5a466/tracks-v1a1/mono.m3u8?token=0f3da00cd868d68b98c7617498a11112c1e7a8fed05a956212c98ab1b0297d5ddbef2c4fbeeadc0f225309681c1d247e3c84e7cc30abb3853d1bef2f29b19c73bfd7a82b51-270cc4d2d23975b0fa1ce02d61fc1647
 
 
 
