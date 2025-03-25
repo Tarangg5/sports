@@ -25,8 +25,7 @@ https://a170aivottlinear-a.akamaihd.net/OTTB/fra-nitro/live/clients/dash/enc/f60
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=7641daa5bacfbb61936c40a221c9e78e:5732dd242f28338e909dc06cb1a1e5a2
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IPL HINDI
-https://vkvsd254.okcdn.ru/hls/8166031362602.m3u8/sig/5lIHb7hPi1Y/expires/1742844491196/srcIp/176.227.240.49/urls/185.226.53.95/clientType/14/srcAg/CHROME_ANDROID/mid/9670939388714/8166031362602/video.m3u8
-
+http://spr1.packetcdn.me:2800/8be1228d2852985cb8bbbc3e20c27a025b65b8619f3e06532f6b1bf618a7b5a466/tracks-v1a1/mono.m3u8?token=9925251524b9075fbce84814dbd3353936f692f377f324bffc5c5d405c4ff0c78ca610514c0b1b441a4acfa42fd4ad4ba4dbc800241484d2b60b9271814b43cdc12a8bdea20b-ca2b7c1ccd34dd1cee996888d5d54697
 
 
 
