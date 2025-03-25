@@ -30,7 +30,8 @@ https://vkvsd261.okcdn.ru:443/hls/8172674746922.m3u8/sig/Q7tCqrcRC0M/expires/174
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IPL ENGLISH
-https://a170aivottlinear-a.akamaihd.net/OTTB/fra-nitro/live/clients/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd
+https://1a-1791.com/live/v0xi25uh/slot-111/rgci-lz9s_1080p/chunklist_DVR.m3u8
+##https://a170aivottlinear-a.akamaihd.net/OTTB/fra-nitro/live/clients/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
