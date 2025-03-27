@@ -22,8 +22,9 @@ https://tinyurl.com/mutz35sn
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",1IPL HINDI
-https://myctxa.temycssme.wiki/720p.m3u8
 https://katsports.live/STARSPORTS1/tracks-v1a1/mono.ts.m3u8?DVR=&autoplay=true&token=cf543eed76522dea71f05fdb36fb6f21f44e4447-435adc273934efed8c704990be704262-1743086996-1743086096
+https://myctxa.temycssme.wiki/720p.m3u8
+
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
