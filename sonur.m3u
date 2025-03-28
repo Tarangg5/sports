@@ -6,8 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=7ec6d225c1d219152933378e75e1c466:304eec31418fb552a0b57fdac515d101
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TSPORTS HD
+#KODIPROP:inputstream.adaptive.license_key=55c7316a7e8cfff31f421cda939aab76:74d97fd894ee4de60c8a4aeb005deced
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",Willow HD
+https://a179aivottepl-a.akamaihd.net/lhr-nitro/live/clients/dash/enc/nbjeiqzxcd/out/v1/4f87be97f6c14dbd91163d2396a15a1c/cenc.mpd
 https://smart.bengaldigital.live/T-Sports_HD/tracks-v1a1/mono.m3u8
 
 
