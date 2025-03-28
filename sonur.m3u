@@ -7,8 +7,8 @@
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=7ec6d225c1d219152933378e75e1c466:304eec31418fb552a0b57fdac515d101
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASTRO 2
-https://abmyxykaaaaaaaamkyvb65fuqebyg.7a77200bf98444ac997a89ed83775793.emt.cf.ww.aiv-cdn.net/gru-nitro/live/clients/dash-sd/enc/vodez4h7i9/out/v1/e929aee089864ce98e4c335d19f41e16/cenc-sd.mpd
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TSPORTS HD
+https://smart.bengaldigital.live/T-Sports_HD/tracks-v1a1/mono.m3u8
 
 
 
