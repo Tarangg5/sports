@@ -12,13 +12,6 @@ https://a179aivottepl-a.akamaihd.net/lhr-nitro/live/clients/dash/enc/9tecvls8vb/
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TSPORTS HD
-https://smart.bengaldigital.live/T-Sports_HD/tracks-v1a1/mono.m3u8
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -36,9 +29,7 @@ https://tinyurl.com/mutz35sn
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IPL HINDIi
-https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_SD_voot_MOB/output03/hdntl=exp=1743409670~acl=%2f*~data=hdntl~hmac=5e5239626a1d05b80fc2cc6bee8b5cb04df578e4ecfb681d32f889bc3bd9d123/STAR_SPORTS_2_HINDI-SD@DJ-TM.m3u8
-
-
+https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_SD_voot_MOB/output03/hdntl=exp=1743409670~acl=%2f*~data=hdntl~hmac=5e5239626a1d05b80fc2cc6bee8b5cb04df578e4ecfb681d32f889bc3bd9d123/STAR_SPORTS_2_HINDI-SD@DJ-TM.m3u8?|User-Agent=Telegram@links_macha_official
 
 
 
