@@ -7,7 +7,7 @@
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=6016f23a660b6428d767758b52e54a72:df006c09745771c9d820f79c667f5a8b
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",Willow HD
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",1Willow HD
 https://a179aivottepl-a.akamaihd.net/lhr-nitro/live/clients/dash/enc/ll8ogw2giu/out/v1/0a60e89eae5a4d92ab556fa559f4c5cd/cenc.mpd
 
 
@@ -16,7 +16,7 @@ https://a179aivottepl-a.akamaihd.net/lhr-nitro/live/clients/dash/enc/ll8ogw2giu/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",Star hindi
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",1Star hindi
 https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/output03/index.m3u8?hdnea=exp=1743335134~acl=/*~hmac=080402fe4f075ebd3d8f5b4c97f99393e5fbfdc4a06dd7cddfbc717c6736fb84
 
 
@@ -28,7 +28,7 @@ https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_HD_voot_MOB/outpu
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASTRO 2
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",1ASTRO 2
 https://tinyurl.com/mutz35sn
 
 
@@ -37,7 +37,7 @@ https://tinyurl.com/mutz35sn
 #EXTVLCOPT:http-user-agent=Telegram@links_macha_official
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IPL HINDIi
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",1IPL HINDIi
 https://v18tataplaysyndication.akamaized.net/bpk-tv/Sports18_1_SD_voot_MOB/output03/hdntl=exp=1743409670~acl=%2f*~data=hdntl~hmac=5e5239626a1d05b80fc2cc6bee8b5cb04df578e4ecfb681d32f889bc3bd9d123/STAR_SPORTS_2_HINDI-SD@DJ-TM.m3u8?|User-Agent=Telegram@links_macha_official
 
 
