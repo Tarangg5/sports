@@ -4,12 +4,12 @@
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
+#EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=e1e1fa75dadfdd82184aa2f1dd97af42:37f1b4f7507a6e89ebf2b8f4486d497e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11Willow HD
-https://ABA72YKAAAAAAAAMOARFWZDRNAXVX.e38c6d1657b5470eaefdb6b8fed251fb.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/v7gir7cito/out/v1/e4891cd1ef77489bb79a8fb157cc650a/cenc.mpd
-
+https://domain-springer-santa-absolute.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040216&lang=eng&qlt=FHD
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
@@ -33,11 +33,12 @@ https://tinyurl.com/mutz35sn
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Telegram@links_macha_official
+#EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11IPL HINDIi
-https://iplislive.pages.dev/w.m3u8
+https://domain-springer-santa-absolute.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040216&lang=hin&qlt=FHD
 
 
 
