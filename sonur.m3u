@@ -6,9 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=8aea79b6ae0fbe0a96914038ca45be71:5f3d1dfbedf492c2746f53163ea6b64f
+#KODIPROP:inputstream.adaptive.license_key=cb5ea7b04ea41d4fa73fddd783878558:a71e6989896660cda4c0d7ce27efa350
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11eWillow HD
-https://abgqjfuaaaaaaaamdwiin23jqiesp.4ac7f56d67b940469e4e074bc5812df7.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ytq3egdcvp/out/v1/7bca7bb1ddba47a9a739bd17cfe7d0bd/cenc.mpd
+https://ABGQJFUAAAAAAAAMO5QR4UQ52BT7T.0378b59d42e24feaadb1b9d03df19509.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/sx7obpmqpr/out/v1/22324a8b1b164b40ba9f88c1e6c1f19e/cenc.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
