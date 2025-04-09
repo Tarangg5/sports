@@ -6,9 +6,10 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=cb5ea7b04ea41d4fa73fddd783878558:a71e6989896660cda4c0d7ce27efa350
+#KODIPROP:inputstream.adaptive.license_key=034c022098ee74890e2ef53278cbfe86:d4ea46efcbfc3d7c497ff06db9df4e35
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11eWillow HD
-https://ABGQJFUAAAAAAAAMO5QR4UQ52BT7T.0378b59d42e24feaadb1b9d03df19509.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/sx7obpmqpr/out/v1/22324a8b1b164b40ba9f88c1e6c1f19e/cenc.mpd
+https://ABGQJFUAAAAAAAAMK7CBLAUAQG4FJ.7f3311cb082d4ca39882ecb0d61f267f.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/axy4ra1mez/out/v1/4a3ae78b76be4d0786b7bb468576a310/cenc.mpd
+https://prod-sports-eng-fa.jiocinema.com/hls/live/2117030/inallow-ipl-2025/eng/1540040243/15mindvrm01f15d6223ccd742da93085a408526bb9c09april2025/master.m3u8
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
@@ -33,7 +34,7 @@ https://savage-experts-bios-contamination.trycloudflare.com/JStar/IPL/hls/live/m
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11IPL HINdi
-https://savage-experts-bios-contamination.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040240&lang=hin&qlt=4K
+https://prod-sports-hin-fa.jiocinema.com/hls/live/2117033/inallow-ipl-2025/hin/1540040243/15mindvrm01f15d6223ccd742da93085a408526bb9c09april2025/master.m3u8
 
 
 
