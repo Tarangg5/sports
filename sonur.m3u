@@ -8,8 +8,8 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=074773428a5137507cd1469312820f66:0e77a625beeda25bec47c5dc991056a6
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11eWillow HD
-https://ABGQJFUAAAAAAAAMIUYZFX7IJXPMK.e996f73eea5542d9ac9737fdd991a15e.emt.cf.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/bb4vitjfln/out/v1/b2bdc667763242e5b0413769d13448b0/cenc.mpd
-https://prod-sports-eng-fa.jiocinema.com/hls/live/2117030/inallow-ipl-2025/eng/1540040246/15mindvrm0153748b1625e24a9ebc935a7faca3fe7810april2025/master_apm.m3u8
+https://prod-sports-eng-fa.jiocinema.com/hls/live/2117030/inallow-ipl-2025/eng/1540040249/15mindvrm0196aee80e6b0944cfb66338cda8d9b49011april2025/master.m3u8
+https://prod-sports-hin-fa.jiocinema.com/hls/live/2117033/inallow-ipl-2025/hin/1540040249/15mindvrm0196aee80e6b0944cfb66338cda8d9b49011april2025/master_ap_1080_6.m3u8
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
