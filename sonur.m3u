@@ -8,7 +8,7 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=138227d67afc65c84d924f7c2661e74b:51e9b4f1e53d01b905f24b8a9dc32e9b
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11eWillow HD
-https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/uamo04ylyn/out/v1/da0a4a76a9074e039abdcf80400e5ad0/cenc.mpd
+https://a135aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/ighvgrrsbf/out/v1/c93f885f59ac49f9979051748c9bebd7/cenc.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
