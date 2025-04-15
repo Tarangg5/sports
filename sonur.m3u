@@ -6,16 +6,16 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=f912fa528f10ba46e035c5fb6f988744:8080b1f738fd62d6d692c7db101c4fbf
+#KODIPROP:inputstream.adaptive.license_key=b141d846a4f4d51663031be887e0988c:bb105cb4d42d76a9ba10e3c01109fa58
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11ewWillow HD
-https://game.denver1769.fun/Js25/play.m3u8?id=HIN&m=M1
+https://a87aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/opfihqcszd/out/v1/9b1874a0c26f41d3b2cadd0c08438aea/cenc.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
+#EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8763/1739203338763-a" group-title="Sports",111Bhojpuuri
-https://enlargement-definitely-continent-tired.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040264&lang=bih&qlt=FHD
+https://game.denver1769.fun/Js25/play.m3u8?id=Bhoj&m=M1
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
@@ -42,12 +42,12 @@ https://pubads.g.doubleclick.net:443/ssai/event/nmQFuHURTYGQBNdUG-2Qdw/master.m3
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
+#EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11IPL HINdi
-https://enlargement-definitely-continent-tired.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040264&lang=hin&qlt=FHD
+https://game.denver1769.fun/Js25/play.m3u8?id=HIN&m=M1
 
 
 
