@@ -4,11 +4,11 @@
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
+#EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=f912fa528f10ba46e035c5fb6f988744:8080b1f738fd62d6d692c7db101c4fbf
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11eWillow HD
-https://a125aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/fg5nk2nauv/out/v1/37fe96ef48a74ac78bc598fa12caa8bd/cenc.mpd
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11ewWillow HD
+https://game.denver1769.fun/Js25/play.m3u8?id=HIN&m=M1
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
