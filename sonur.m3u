@@ -16,16 +16,8 @@ https://a124aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/tftudkctiy/
 ##EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8763/1739203338763-a" group-title="Sports",111Bhojpuuri
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
-https://caribbean-investigated-kodak-anxiety.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040270&lang=bih&qlt=FHD
+https://bowl-published-floyd-deviation.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040273&lang=bih&qlt=FHD
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=user-agent=Mozilla/5.0 (Linux; Android 10; MI 9 Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.58 Mobile Safari/537.36
-#EXTHTTP:{"User-agent":"user-agent=Mozilla/5.0 (Linux; Android 10; MI 9 Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/111.0.5563.58 Mobile Safari/537.36"}
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11malyasia astro
-https://linearjitp-playback.astro.com.my/dash-wv/linear/2504/default_primary.mpd
 
 
 
@@ -49,7 +41,7 @@ https://pubads.g.doubleclick.net:443/ssai/event/nmQFuHURTYGQBNdUG-2Qdw/master.m3
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11IPL HINdi
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
-https://caribbean-investigated-kodak-anxiety.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040270&lang=hin&qlt=4K
+https://bowl-published-floyd-deviation.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040273&lang=hin&qlt=4K
 
 
 
