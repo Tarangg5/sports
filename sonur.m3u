@@ -6,9 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=72f134157231779e1f665ddd7d627207:69a8229e1e5be12bc4615da9964cd9fb
+#KODIPROP:inputstream.adaptive.license_key=3737d4ac5ecfbd5c61ff76c0a7ff9e1c:96cdbb20b695a7ea5bb6ef397a5115cb
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11ewWillow HD
-https://a62aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/z8uirsdn1e/out/v1/913713a16b7747cca44d1b1568dd6a62/cenc.mpd
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/tbloioh8ln/out/v1/d9f189bb24ab49979e200fc8741ae36e/cenc.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -16,7 +16,7 @@ https://a62aivottepl-a.akamaihd.net/pdx-nitro/live/clients/dash/enc/z8uirsdn1e/o
 ##EXTHTTP:{"User-agent":"VLC/3.0.18"}
 #EXTINF:-1 tvg-logo="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8763/1739203338763-a" group-title="Sports",111Bhojpuuri
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
-https://ide-returned-approach-thinks.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040276&lang=bih&qlt=FHD
+https://panic-clinic-virtue-must.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040282&lang=bih&qlt=FHD
 
 
 
@@ -41,7 +41,7 @@ https://pubads.g.doubleclick.net:443/ssai/event/nmQFuHURTYGQBNdUG-2Qdw/master.m3
 #KODIPROP:inputstream.adaptive.license_key=03c2e0af2f8159f9f0ce9b5dbc865f10:cd84ed136b0cc71f8ab8cd4d4f6a2e4c
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11IPL HINdi
 #EXTHTTP:{"User-agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Telegram":"@links_macha_official","Creator":"@DJ-TM"}
-https://ide-returned-approach-thinks.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040276&lang=hin&qlt=4K
+https://panic-clinic-virtue-must.trycloudflare.com/JStar/IPL/hls/live/master.m3u8?cid=1540040282&lang=hin&qlt=FHD
 
 
 
