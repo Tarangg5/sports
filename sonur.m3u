@@ -6,9 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=ab63332b7792614c3e47b94788841aee:5a36190acc898361519b52da9de23992
+#KODIPROP:inputstream.adaptive.license_key=f7526d76b4ec77e77d64c1c9eddcf992:6ebf591ee0856af0c9b96a662ad98fe2
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",11ewWillow HD
-https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/ocfntalryk/out/v1/c0f3190b157c457abef3bc3b1ebac551/cenc.mpd
+https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/qxeax9v1j6/out/v1/0469ba87c8e845518dd87f6176dd459c/cenc.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
