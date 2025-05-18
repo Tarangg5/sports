@@ -114,7 +114,7 @@ https://dztlhgid9me95.cloudfront.net/live-tv/Vidgyor/navbharat/live_1080p/chunks
 #EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",R BHARAT ENGLISH
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
-https://vg-republictvlive.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-366023/22b77626-bbdb-4986-b007-2ac282a2d0da/0.m3u8?ads.partner=republicweb&sessionId=f62f4872-3a82-4715-a7f0-ba4685916f85.
+https://vg-republictvlive.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-275673/ca747f1a-76eb-4028-a499-1ec009e1c74b/3.m3u8?ads.partner=republicweb&sessionId=c1ab947b-4f05-47d5-9c23-9f86d2954d86
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
@@ -122,8 +122,7 @@ https://vg-republictvlive.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1
 #EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",R BHARAT
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
-https://vg-republictvlive.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-275673/bbc23742-bbc1-426d-8d45-e6b6f5983341/3.m3u8?ads.partner=republicweb&sessionId=5f801e93-7632-4dfe-8ba6-a67185c55c23.
-
+https://vg-republictvlive.akamaized.net/v1/manifest/611d79b11b77e2f571934fd80ca1413453772ac7/vglive-sk-275673/30b2cc8c-2d29-4216-95a5-949205411d17/3.m3u8?ads.partner=republicweb&sessionId=f5850120-45cf-4bd9-81b4-0aa84dc03707
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
