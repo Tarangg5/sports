@@ -6,9 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=a6ec15283f93919e9f31db0c54e1fb73:8b1d7afdb86281f1469586d6ba2642e9
+#KODIPROP:inputstream.adaptive.license_key=bd74ff294257904a0d344d19cb3cfcb6:15889071f933f375b4c2734579b7eb31
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",WILLOW ENG
-https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/5maijv49yl/out/v1/95f4fbbc116b4febbb3e84dc3307e8c1/cenc.mpd
+https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/smgpde3rgj/out/v1/c157f6abdf7144e8b27b7e9606bb12e5/cenc.mpd
 
 
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", 1BHOJPURI HD
