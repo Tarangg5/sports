@@ -141,7 +141,7 @@ https://d7x8z4yuq42qn.cloudfront.net/index_7.m3u8
 #EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="Sports",ABP NEWS
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
-https://abplivetv.pc.cdn.bitgravity.com/httppush/abp_livetv/abp_abpnews/master_720.m3u8
+https://d2l4ar6y3mrs4k.cloudfront.net/live-streaming/abpnews-livetv/master.m3u8
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
