@@ -1,0 +1,61 @@
+                    <center><big><b><font color="#FF0000" face="times-new-roman" size="10">
+
+Please be Patient ... Players are Loading !
+Powered BY SONU</font>
+
+</b></big></center>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Set background color */
+    body {
+      background-color: lightblue;
+    }
+
+    /* Set background image */
+    /* You can specify the image path/url within the url() function */
+    /* Replace 'image.jpg' with your image file */
+    body {
+      background-image: url('https://images.hdqwalls.com/wallpapers/house-in-nature-wallpaper.jpg');
+      /* This property specifies how the background image should be repeated */
+      background-repeat: no-repeat;
+      /* This property specifies how the background image should be positioned */
+      background-position: center;
+      /* This property specifies the size of the background image */
+      background-size: cover; /* or 'contain' based on your preference */
+    }
+  </style>
+</head>
+<body>
+  <!-- Your content goes here -->
+
+</center>
+<br><br>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<body>
+<video id="video" width="940" height="460" controls></video>
+
+    <script>
+        var video = document.getElementById('video');
+        var videoSrc = "https://dai.google.com/ssai/event/RP1mckhwQQChze2hZfnZlA/master.m3u8"; // Replace with your M3U8 link
+
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+            video.addEventListener('loadedmetadata', function() {
+                video.play();
+            });
+        } else {
+            alert("Your browser does not support HLS playback.");
+        }
+    </script>
+</body>
+</html>
