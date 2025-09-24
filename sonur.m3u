@@ -8,8 +8,9 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASIA CUP
+https://livecf.fancode.com/136746_hindi_hls_3037f7dcc570228adfreeta-di_h264/index.m3u8?|Referer=https://fancode.com/
 https://dai.google.com/ssai/event/yk9L2U37Sgilimx_SKGHhw/master.m3u8
-https://jiotvbpkmob.cdn.jio.com/bpk-tv/Asia_Cup_Hindi_MOB/WDVLive/index.mpd|cookie=__hdnea__=st=1758718854~exp=1758805254~acl=/*~hmac=229c9dc021948cf4b97e1a15be8afb555b8eb003479afaaf0fe9c1f81e152920
+
 
 
 
@@ -19,7 +20,7 @@ https://jiotvbpkmob.cdn.jio.com/bpk-tv/Asia_Cup_Hindi_MOB/WDVLive/index.mpd|cook
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASIA CUP ENGLISH
-https://dai.google.com/ssai/event/WuMNGfdPRoW2_F3QZUXNRw/master.m3u8
+https://livecf.fancode.com/136746_english_hls_7ba769f0b935850adfreeta-di_h264/index.m3u8?|Referer=https://fancode.com/
 
 
 
