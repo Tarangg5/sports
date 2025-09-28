@@ -8,9 +8,7 @@
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASIA CUP
-https://livecf.fancode.com/136748_hindi_hls_174a58005443870adfreeta-di_h264/index.m3u8?|Referer=https://fancode.com/&Origin=https://fancode.com/
 https://dai.google.com/ssai/event/yk9L2U37Sgilimx_SKGHhw/master.m3u8
-https://dai.google.com/ssai/event/QONEGTHmTZm-7xb7l4by3Q/master.m3u8
 
 
 
@@ -21,8 +19,8 @@ https://dai.google.com/ssai/event/QONEGTHmTZm-7xb7l4by3Q/master.m3u8
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=1779c27b9d077a3ba0c9cc1bb9a94b9f:cc5cf3b7928fb9e0a1ee6a8b566f0a8e
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASIA CUP ENGLISH
-https://livecf.fancode.com/136748_english_hls_fc072b8ba818615adfreeta-di_h264/index.m3u8?|Referer=https://fancode.com/&Origin=https://fancode.com/
-https://dai.google.com/ssai/event/WuMNGfdPRoW2_F3QZUXNRw/master.m3u86~hmac=6138dbf9bc7738bd592d5180e24ca50a303e703c3b0ec547cf5a6b5aea7efd9f
+
+https://dai.google.com/ssai/event/dfBTAk-3Tf-kX5cuI0VqCA/master.m3u8b5aea7efd9f
 
 
 
