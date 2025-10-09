@@ -6,9 +6,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=2ce2e7d0af813fd26c6fe0b59201ced5:1416f69da90f62735a6521aae461dd74
+#KODIPROP:inputstream.adaptive.license_key=2ce2e7d0af813fd26c6fe0b59201ced5%3A1416f69da90f62735a6521aae461dd74
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",WORLDCUP WOMEN'S ODI HINDI
-https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/jr0zvtazlv/out/v1/6bae9634f7594a738530656284177423/cenc.mpd|drmScheme=clearkey&drmLicense=2ce2e7d0af813fd26c6fe0b59201ced5:1416f69da90f62735a6521aae461dd74
+https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/jr0zvtazlv/out/v1/6bae9634f7594a738530656284177423/cenc.mpd|drmScheme=clearkey&drmLicense=2ce2e7d0af813fd26c6fe0b59201ced5%3A1416f69da90f62735a6521aae461dd74
 
 
 
@@ -18,9 +18,9 @@ https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/jr0zvtazlv/out/v1/6b
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=e51d0a028b213b7df472b5f39dc15a8f:bc00a08336fa155814a2e7f47cd42a03
+#KODIPROP:inputstream.adaptive.license_key=9a1b6c795aa107e48d6be695705e112f%3A24f64f1bdfe33c496e293032e70775b3
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", WORLD CUP WOMEN'S ENGLISH
-https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/ebgsyorlcl/out/v1/ce95d81f287040d5a3fa6d4b145be849/cenc.mpd|drmScheme=clearkey&drmLicense=e51d0a028b213b7df472b5f39dc15a8f:bc00a08336fa155814a2e7f47cd42a03
+https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/ebgsyorlcl/out/v1/ce95d81f287040d5a3fa6d4b145be849/cenc.mpd|drmScheme=clearkey&drmLicense=9a1b6c795aa107e48d6be695705e112f%3A24f64f1bdfe33c496e293032e70775b3
 
 
 
