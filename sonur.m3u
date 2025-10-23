@@ -26,11 +26,11 @@ https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/ebgsyorlcl/out/v1/ce
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=widevine
-#KODIPROP:inputstream.adaptive.license_key=https://mc-zlcfs7ps9x.bunny.run/license?id=tntsports1
+#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
+#KODIPROP:inputstream.adaptive.license_key=5e89c212335a088ed79316caf8346bc3:2b8843f8200c4439be96c75c1c360c07
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IND VS AUS
 #EXTHTTP:{"Telegram":"@links_macha_official","Creator":"@DJ-TM"}
-https://dj-tm-srvr1.vercel.app/title/TNT_SPORTS_1-HD(50FPS)@DJ-TM.mpd?data=s7XN8jd2t0wydjTxTc3KNnCJdDIvLquoyg6ziKgsqSgzswwwqnKyMLFMKwiJys32zMq2MC_yD7b0ygzwyisLdjN2cfbNTswK9nP3C8jySwr0Dy7wBwA
+https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/clients/dash/enc/gzwhhnipjg/out/v1/7a85d79f61564ca987006297fa4fc880/cenc-sd.mpd
 
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
