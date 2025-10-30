@@ -13,14 +13,6 @@ https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/jr0zvtazlv/out/v1/6b
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d
-#EXTINF:-1, Hotstar Live
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTVLCOPT:http-cookie=hdntl=exp=1761740348~acl=*sshindi*~id=7dd9cec55d02d293e624e6b1a0290623~data=hdntl~hmac=e7baf01c754c8613070c5c8129915c96e84960f89eb5b459248c0b1844f25ba7
-https://livetv-push.hotstar.com/dash/live/2002466/sshindiwv/master.mpd
 
 
 
