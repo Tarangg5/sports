@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player with Playlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .player-container {
+            max-width: 500px;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .playlist {
+            list-style: none;
+            padding: 0;
+        }
+        .playlist li {
+            padding: 10px;
+            cursor: pointer;
+            background: #f4f4f4;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+        .playlist li:hover {
+            background: #e0e0e0;
+        }
+        .playlist li.active {
+            background: #d0eaff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <h2>Audio Playlist</h2>
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+        <ul class="playlist" id="playlist">
+            <!-- Audio items will be dynamically added here -->
+        </ul>
+    </div>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playlist = document.getElementById('playlist');
+
+        // Define your audio files with names and sources
+        const audioFiles = [
+            { name: 'Md Rafi', src: 'https://stream.zeno.fm/2xx62x8ztm0uv' },
+            { name: 'BOLLYWOOD 90', src: 'https://stream.zeno.fm/143d7gty24zuv' },
+            { name: 'KISHOR KR', src: 'https://server.mixify.in:8010/radio.mp3' },
+{ name: 'RADIO MIRCHI 98.3', src: 'https://eu8.fastcast4u.com/proxy/clyedupq?mp=%2F1?aw_0_req_lsid=2c0fae177108c9a42a7cf24878625444' },
+{ name: 'VIVID BHARATI', src: 'https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/chunklist.m3u8' },
+{ name: 'BIG FM 92.7', src: 'https://stream.zeno.fm/dbstwo3dvhhtv' },
+{ name: 'FM GOLD', src: 'https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8' },
+{ name: 'FM RAINBOW', src: 'https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio004/hlspbaudio00464kbps.m3u8' },
+{ name: 'AIR INDIA NEWS', src: 'https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio00264kbps.m3u8' },
+{ name: 'RED FM 93.5', src: 'https://stream.zeno.fm/9phrkb1e3v8uv' },
+{ name: 'ISHQ FM', src: 'https://drive.uber.radio/uber/bollywoodlove/icecast.audio' },
+{ name: 'HITS OF BOLLYWOOD', src: 'https://stream.zeno.fm/a2gyqzwpwfeuv' },
+{ name: 'Radio Retro Bollywood', src: 'https://stream.zeno.fm/g372rxef798uv' },
+{ name: 'Bollywood Radio and Beyond', src: 'https://s6.yesstreaming.net/proxy/john1237?mp=/live' },
+{ name: 'Radio City Hindi', src: 'https://stream.zeno.fm/pxc55r5uyc9uv' },
+{ name: 'RADIO CITY BANG', src: 'https://a2.asurahosting.com:8160/radio.mp3' },
+{ name: '104 fm', src: 'https://drive.uber.radio/uber/bollywoodlove/icecast.audio' },
+{ name: 'Radio Baingan online', src: 'https://stream.zeno.fm/eyxg23ky4x8uv' },
+{ name: 'DJ REMIX ', src: 'https://stream.zeno.fm/84h97t3ewg0uv' }
+
+            // Add more audio files as needed
+        ];
+
+        // Function to load and play audio
+        function loadAudio(audioSrc, listItem) {
+            audioPlayer.src = audioSrc;
+            audioPlayer.play();
+            // Update active state
+            document.querySelectorAll('.playlist li').forEach(item => item.classList.remove('active'));
+            listItem.classList.add('active');
+        }
+
+        // Populate playlist
+        audioFiles.forEach((audio, index) => {
+            const li = document.createElement('li');
+            li.textContent = audio.name;
+            li.addEventListener('click', () => loadAudio(audio.src, li));
+            playlist.appendChild(li);
+            // Auto-load the first audio
+            if (index === 0) {
+                loadAudio(audio.src, li);
+            }
+        });
+
+        // Optional: Update displayed name when audio changes
+        audioPlayer.addEventListener('loadeddata', () => {
+            const currentSrc = audioPlayer.src.split('/').pop();
+            const currentAudio = audioFiles.find(audio => audio.src === currentSrc);
+            if (currentAudio) {
+                document.querySelectorAll('.playlist li').forEach((li, index) => {
+                    if (audioFiles[index].src === currentSrc) {
+                        li.classList.add('active');
+                    } else {
+                        li.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
