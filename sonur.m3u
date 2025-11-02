@@ -17,9 +17,9 @@ https://otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/jr0zvtazlv/out/v1/6b
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=581698bd7d049a4877227553e2902410:e39e223d3679e533b8144a6241f794ba
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",ASTRO CRICKET
-https://astro-cyan-sigma.vercel.app/5117/default_primary.mpd?|drmScheme=clearkey&drmLicense=581698bd7d049a4877227553e2902410:e39e223d3679e533b8144a6241f794ba
+#KODIPROP:inputstream.adaptive.license_key=36886095408cdd525700b4c16e1411ef:863f280891fb08d772d1d2ed2c5e6fbd
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",willow cricket
+https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/kf3qol54v5/out/v1/847a3501c4fe4a33b802b344582580ac/cenc.mpd
 
 
 
@@ -40,7 +40,7 @@ https:///otte.live.cf.ww.aiv-cdn.net/sin-nitro/live/dash/enc/ebgsyorlcl/out/v1/c
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key=9f51f3dc6313ac8bc668e2d9d1c04dfa:74bc63e5a193454a91ca494975db33f9
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IND VS AUS
+#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TNT 1 SPORTS
 #EXTHTTP:{"Telegram":"@links_macha_official","Creator":"@DJ-TM"}
 https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/f0qvkrra8j/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd
 
