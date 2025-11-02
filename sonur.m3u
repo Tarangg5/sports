@@ -342,7 +342,15 @@ https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Discoverykids2/default/manifest.mpd
 https://d1g8wgjurz8via.cloudfront.net/bpk-tv/Discoverychannel2/default/manifest.mpd
 
 
-
+[{
+ "logo": "https://img10.hotstar.com/image/upload/sources/r1/cms/prod/4057/1761648244057-h",
+ "name": "Hindi",
+ "link": "https://livetv-push.hotstar.com/dash/live/2002466-b/sshindiwv/master.mpd?|Cookie=hdntl=exp=1762155788~acl=*sshindi*~id=87c96279e15f92c941098e13f01c17e4~data=hdntl~hmac=00c3e5d0cabd4ab8f5de5be56e8cb164641b59d48b84a746e0b01107bd069af0&User-agent=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124.0.0.0%20Safari/537.36&Referer=https://www.hotstar.com/&Origin=https://www.hotstar.com&drmScheme=clearkey&drmLicense=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d"
+}, {
+ "logo": "https://img10.hotstar.com/image/upload/sources/r1/cms/prod/4057/1761648244057-h",
+ "name": "English",
+ "link": "https://livetv-push.hotstar.com/dash/live/2002464-b/sshd1livetvwv/master.mpd?|Cookie=hdntl=exp=1762155746~acl=*sshd1livetv*~id=89c3fe5175054fe4d14d928b3e6ea9c0~data=hdntl~hmac=a56c42a6862d288d731a662e582e899ea49514583777f34d331760c3cdaf8bd8&User-agent=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124.0.0.0%20Safari/537.36&Referer=https://www.hotstar.com/&Origin=https://www.hotstar.com&drmScheme=clearkey&drmLicense=fe7718fbb3fb4ba78c07cc0f578744e6:624e24b1843b459fab0a949609416f0d"
+}]
 
 
 
