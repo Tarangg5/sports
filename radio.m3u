@@ -1,1 +1,41 @@
-
+#EXTM3U
+#EXTINF:-1 group-title="radio", VIVID BHARATI
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/chunklist.m3u8
+#EXTINF:-1 group-title="radio", FM GOLD
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8
+#EXTINF:-1 group-title="radio", FM RAINBOW
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio004/hlspbaudio00464kbps.m3u8
+#EXTINF:-1 group-title="radio", AIR RADIO NEWS
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio00264kbps.m3u8
+#EXTINF:-1 group-title="radio", Akashwani Sasaram
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8
+#EXTINF:-1 group-title="radio", AKASHWANI CHHATISGARH
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio118/chunklist.m3u8
+#EXTINF:-1 group-title="radio", SARAIPALAI
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio254/chunklist.m3u8
+#EXTINF:-1 group-title="radio", MD RAFI
+https://stream.zeno.fm/2xx62x8ztm0uv
+#EXTINF:-1 group-title="radio", BOLLYWOOD 90S
+https://stream.zeno.fm/143d7gty24zuv
+#EXTINF:-1 group-title="radio", KISHOR KUMAR
+https://server.mixify.in:8010/radio.mp3
+#EXTINF:-1 group-title="radio", BIG FM
+https://stream.zeno.fm/dbstwo3dvhhtv
+#EXTINF:-1 group-title="radio", REMIX
+https://stream.zeno.fm/9phrkb1e3v8uv
+#EXTINF:-1 group-title="radio", ishq radio
+https://drive.uber.radio/uber/bollywoodlove/icecast.audio
+#EXTINF:-1 group-title="radio", HITS OF BOLLYWOOD
+https://stream.zeno.fm/a2gyqzwpwfeuv
+#EXTINF:-1 group-title="radio", RETRO RADIO BOLLYWOOD
+https://stream.zeno.fm/g372rxef798uv
+#EXTINF:-1 group-title="radio", Bollywood Radio and beyond
+https://s6.yesstreaming.net/proxy/john1237?mp=/live
+#EXTINF:-1 group-title="radio", RADIO BAINGAN
+https://stream.zeno.fm/eyxg23ky4x8uv
+#EXTINF:-1 group-title="radio", INDRAPRASHT
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio006/hlspbaudio00664kbps.m3u8
+#EXTINF:-1 group-title="radio", VBS DELHI
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio238/hlspbaudio23864kbps.m3u8
+#EXTINF:-1 group-title="radio", AKASHVANI PATNA
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio087/chunklist.m3u8
