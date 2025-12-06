@@ -11,9 +11,9 @@
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=83fd44762766d1db4e1894322785e8bc:2d698dd72747f6174ef57d2e87c7a4bb
+#KODIPROP:inputstream.adaptive.license_key=e53e2059792cc651cfa5501563a15223:5e8ffbbcdfb1a008a780328bc684ad9a
 #EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",IND VS SA
-https://otte.live.fly.ww.aiv-cdn.net/bom-nitro/live/dash/enc/j8mntrh22y/out/v1/5750d1cc17f5426093f94a461a239dd2/cenc.mpd
+https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash-sd/enc/mbpejb3uam/out/v1/f1f688b62cb64b3ebb579266ad6739ac/cenc-sd.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
