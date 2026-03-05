@@ -1,4 +1,6 @@
 #EXTM3U
+#EXTM3U x-tvg-url="https://swifttv.xyz/epg/guide.xml.gz"
+#EXTM3U x-tvg-url="https://avkb.xyz/dpl/guide.xml"
 
 #EXTINF:-1 tvg-logo="https://img.media.jio.com/tvpimages/13/81/302112_1749665154709_l_medium.jpg" group-title="Sports", Star Sports 1 Hindi
 #KODIPROP:inputstream.adaptive.license_type=clearkey
