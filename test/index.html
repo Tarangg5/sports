@@ -3,109 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jio TV Player</title>
+    <title>Dynamic Jio Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.js"></script>
     <style>
-        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
-        .shaka-video-container { width: 100%; max-width: 1000px; aspect-ratio: 16/9; background: #111; }
-        #loading { margin-bottom: 10px; color: #ffcc00; }
-        #error { color: #ff4444; display: none; margin-bottom: 10px; }
+        body { margin: 0; background: #000; color: #fff; font-family: sans-serif; }
+        .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
+        .shaka-video-container { width: 100%; max-width: 900px; aspect-ratio: 16/9; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .info { margin-top: 15px; text-align: center; }
+        #channelLogo { width: 50px; border-radius: 5px; vertical-align: middle; margin-right: 10px; }
+        #loading { color: yellow; }
+        #error { color: red; display: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div id="loading">Connecting to Stream...</div>
-<div id="error"></div>
+<div class="container">
+    <div id="loading">Loading Live Stream...</div>
+    <div id="error"></div>
 
-<div class="shaka-video-container" data-shaka-player-container>
-    <video id="video" autoplay playsinline style="width:100%; height:100%"></video>
+    <div class="shaka-video-container">
+        <video id="video" autoplay playsinline style="width:100%; height:100%"></video>
+    </div>
+
+    <div class="info">
+        <img id="channelLogo" src="" alt="">
+        <span id="channelName" style="font-size: 20px;"></span>
+    </div>
 </div>
 
 <script>
-// AAPKA NAYA WORKER LINK
-const M3U_URL = "https://cool-salad-7156.sonuujamuicamp.workers.dev/";
+// --- PASTE YOUR SCRIPT HERE ---
+const API = "https://pkll.xojiv79335.workers.dev/";
 
-async function initPlayer() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    
+function getId() {
+    return new URLSearchParams(location.search).get("id");
+}
+
+async function fetchChannel() {
+    const id = getId();
     if (!id) {
-        document.getElementById('loading').innerText = "Error: Please add ?id=CHANNEL_ID to URL";
-        return;
+        showError("Channel ID missing in URL (?id=...)");
+        return null;
     }
-
     try {
-        const response = await fetch(M3U_URL);
-        const text = await response.text();
-        
-        // M3U parsing logic to find the specific channel by ID
-        const lines = text.split('\n');
-        let channel = {};
-
-        for (let i = 0; i < lines.length; i++) {
-            if (lines[i].includes(`tvg-id="${id}"`)) {
-                // KodiProp format se key aur headers nikalna
-                const keyLine = lines[i+2]; // #KODIPROP:inputstream.adaptive.license_key=...
-                const cookieLine = lines[i+3]; // #EXTHTTP:{"Cookie":"..."}
-                
-                channel.license_key = keyLine.split('=')[1]?.trim();
-                // JSON parsing to get Cookie value
-                const cookieJson = cookieLine.replace('#EXTHTTP:', '').trim();
-                channel.cookie = JSON.parse(cookieJson).Cookie;
-                channel.url = lines[i+4]?.trim();
-                break;
-            }
-        }
-
-        if (!channel.url) throw new Error("Channel ID not found in M3U");
-
-        shaka.polyfill.installAll();
-        const video = document.getElementById('video');
-        const player = new shaka.Player(video);
-        const container = document.querySelector('.shaka-video-container');
-        const ui = new shaka.ui.Overlay(player, container, video);
-
-        // --- CLEARKEY CONFIG ---
-        const [kid, key] = channel.license_key.split(':');
-        player.configure({
-            drm: { clearKeys: { [kid]: key } },
-            streaming: { lowLatencyMode: true }
-        });
-
-        // --- JIO SPECIFIC REQUEST HEADERS ---
-        player.getNetworkingEngine().registerRequestFilter((type, request) => {
-            // Referer aur User-Agent jo aapne manga tha
-            request.headers["Referer"] = "https://www.jiotv.com/";
-            request.headers["User-Agent"] = "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
-            
-            if (channel.cookie) {
-                request.headers["Cookie"] = channel.cookie;
-            }
-
-            // Segment URLs mein cookie token append karna (For MPD)
-            if (type === shaka.net.NetworkingEngine.RequestType.SEGMENT || type === shaka.net.NetworkingEngine.RequestType.MANIFEST) {
-                if (!request.uris[0].includes("__hdnea__")) {
-                    const sep = request.uris[0].includes("?") ? "&" : "?";
-                    request.uris[0] += sep + channel.cookie;
-                }
-            }
-        });
-
-        await player.load(channel.url);
-        document.getElementById('loading').style.display = "none";
-
+        const res = await fetch(API);
+        const data = await res.json();
+        return data.find(c => c.channel_id == id);
     } catch (e) {
-        document.getElementById('loading').style.display = "none";
-        const errDiv = document.getElementById('error');
-        errDiv.innerText = "Error: " + e.message;
-        errDiv.style.display = "block";
-        console.error(e);
+        showError("Failed to fetch data from Worker");
+        return null;
     }
 }
 
-document.addEventListener('shaka-ui-loaded', initPlayer);
-document.addEventListener('shaka-ui-load-failed', () => alert("Shaka UI failed to load"));
+function showError(msg) {
+    document.getElementById("loading").style.display = "none";
+    const err = document.getElementById("error");
+    err.innerText = msg;
+    err.style.display = "block";
+}
+
+async function startPlayer(channel) {
+    shaka.polyfill.installAll();
+    if (!shaka.Player.isBrowserSupported()) {
+        showError("Browser not supported");
+        return;
+    }
+
+    const video = document.getElementById("video");
+    const player = new shaka.Player(video);
+    const container = document.querySelector(".shaka-video-container");
+
+    // UI Overlay for professional controls
+    const ui = new shaka.ui.Overlay(player, container, video);
+
+    player.configure({
+        drm: {
+            clearKeys: { [channel.keyId]: channel.key }
+        },
+        streaming: {
+            lowLatencyMode: true,
+            bufferingGoal: 30,
+            rebufferingGoal: 2,
+            stallEnabled: false
+        }
+    });
+
+    const cookie = channel.cookie;
+
+    player.getNetworkingEngine().registerRequestFilter((type, request) => {
+        request.headers["Referer"] = "https://www.jiotv.com/";
+        request.headers["User-Agent"] = "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
+
+        if (cookie) {
+            request.headers["Cookie"] = cookie;
+        }
+
+        if (cookie && (type === shaka.net.NetworkingEngine.RequestType.SEGMENT || type === shaka.net.NetworkingEngine.RequestType.MANIFEST)) {
+            if (!request.uris[0].includes("__hdnea__")) {
+                const sep = request.uris[0].includes("?") ? "&" : "?";
+                request.uris[0] += sep + cookie;
+            }
+        }
+    });
+
+    try {
+        await player.load(channel.channel_url);
+        document.getElementById("loading").style.display = "none";
+    } catch (e) {
+        console.error(e);
+        showError("Stream failed to start (Check if keys or cookie expired)");
+    }
+}
+
+async function init() {
+    const channel = await fetchChannel();
+    if (!channel) return;
+
+    document.getElementById("channelLogo").src = channel.channel_logo;
+    document.getElementById("channelName").innerText = channel.channel_name;
+    startPlayer(channel);
+}
+
+init();
 </script>
+
 </body>
 </html>
