@@ -15,10 +15,10 @@
 
 
 
-#EXTINF:-1 tvg-id="StarSports1HindiHD" tvg-name="Star Sports 1 Hindi HD 60" tvg-logo="https://raw.githubusercontent.com/fshawk/Images/main/Star_Sports_1_Hindi_HD.png" group-title="Sports", Star Sports 1 Hindi HD
+#EXTINF:-1 tvg-id="StarSports1HindiHD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://raw.githubusercontent.com/fshawk/Images/main/Star_Sports_1_Hindi_HD.png" group-title="Sports", Star Sports 1 Hindi HD 60
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=400131994b445d8c8817202248760fda:2d56cb6f07a75b9aff165d534ae2bfc4
-#EXTHTTP:{"Cookie":"__hdnea__=st=1774677340~exp=1774763740~acl=/*~hmac=7eb95c2f281c79f35b787601f3631c9095e6075ae5cf974df5bbbbc58ca9e7a8", "User-Agent":"JioTV"}
+#EXTHTTP:{"__hdnea__=st=1774677340~exp=1774763740~acl=/*~hmac=7eb95c2f281c79f35b787601f3631c9095e6075ae5cf974df5bbbbc58ca9e7a8", "User-Agent":"JioTV"}
 https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd
 
 
