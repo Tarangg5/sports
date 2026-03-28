@@ -7,37 +7,57 @@
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=9909e33838e1152cc512c4636f513f8f:02f67060c94bcc3307280f505ad508ab
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", WORLD CUP HINDI
-https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/nn1qrdjaha/out/v1/bc4fa7d9cebf47858bebf14ad589025e/cenc.mpd
-
-
-
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=470a5bda0ae8965c3ab4004c302bc1c8:b04888df6ed570c9435b97471504bd9b
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png", WORLDCUP ENG
-https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/lz7yhtgbjb/out/v1/bedaa948e7a24dc0b5fd5d7b38534d8c/cenc.mpd
 
 
 
 
+EXTINF:-1 tvg-id="StarSports1Hindi.in" tvg-name="Star Sports 1 Hindi" tvg-logo="https://img.media.jio.com/tvpimages/13/81/302112_1749665154709_l_medium.jpg" group-title="Sports", Star Sports 1 Hindi
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=8ea9b607549252068e260a5f4d7dd321:350c0aaffedf51cc1502e9543c7c885e
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_BTS/output/index.mpd
 
+#EXTINF:-1 tvg-id="StarSports1HindiHD.in" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://img.media.jio.com/tvpimages/5/6/301982_1749665314605_l_medium.jpg" group-title="Sports", Star Sports 1 Hindi HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=400131994b445d8c8817202248760fda:2d56cb6f07a75b9aff165d534ae2bfc4
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=192b1115da041585c77200128549efa1:634e10efe4abbb14be400a3ccbac0258
-#EXTINF:-1 tvg-id="AstroCricket" tvg-name="Astro Cricket HD" group-title="Sports" tvg-logo="https://iili.io/1Nz0AP.png",TNT SPORTS 4
-https://ta.bia-cf.live.pv-cdn.net/bom-nitro/live/clients/dash/enc/ecp6xidc5d/out/v1/b8a94677c56e4411aef7ecc2431cec0a/cenc.mpd
+#EXTINF:-1 tvg-id="StarSports2Hindi.in" tvg-name="Star Sports 2 Hindi" tvg-logo="https://img.media.jio.com/tvpimages/57/17/302124_1749130246443_l_medium.jpg" group-title="Sports", Star Sports 2 Hindi
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=a3ed8dc0e0cb5d238da80ee0a85bd2e1:67a96992e6406606f3480ab58d7f540c
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/StarSports2Hin_BTS/output/index.mpd
 
+#EXTINF:-1 tvg-id="StarSports2HindiHD.in" tvg-name="Star Sports 2 Hindi HD" tvg-logo="https://img.media.jio.com/tvpimages/56/36/301229_1742214332015_l_medium.jpg" group-title="Sports", Star Sports 2 Hindi HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=bd1ea6a1c1fb5dcdb709434e0826bbc0:f57f22cba32739ce7beb1fab3f3d060b
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/StarSportsHD2Hin_BTS/output/index.mpd
+
+#EXTINF:-1 tvg-id="StarSports1.in" tvg-name="Star Sports 1" tvg-logo="https://img.media.jio.com/tvpimages/56/92/302115_1749665579801_l_medium.jpg" group-title="Sports", Star Sports 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=df20894ec30954d3b28097c138f4cfda:ff9b6292b1cddbd11a046029cb314634
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_BTS/output/index.mpd
+
+#EXTINF:-1 tvg-id="StarSports1HD.in" tvg-name="Star Sports 1 HD" tvg-logo="https://img.media.jio.com/tvpimages/76/32/301981_1749665664018_l_medium.jpg" group-title="Sports", Star Sports 1 HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=965dc2ddb1d85138ad787999a7f30ca5:859695076e67fe961836b564db6d689c
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd
+
+#EXTINF:-1 tvg-id="StarSports2.in" tvg-name="Star Sports 2" tvg-logo="https://img.media.jio.com/tvpimages/11/30/302116_1749666029079_l_medium.jpg" group-title="Sports", Star Sports 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=fc3aafe80845584199a637249fad2ffa:ca4474972fdb4bf8ecb164482853c692
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_2_BTS/output/index.mpd
+
+#EXTINF:-1 tvg-id="StarSports2HD.in" tvg-name="Star Sports 2 HD" tvg-logo="https://img.media.jio.com/tvpimages/41/51/301983_1749666169105_l_medium.jpg" group-title="Sports", Star Sports 2 HD
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9457eb90129456fa8ea95e10ba4ac51e:e620a970cea474c491ac78ae71a4d764
+#EXTHTTP:{"Cookie":"__hdnea__=st=1774665377~exp=1774686977~acl=/*~hmac=65a0998af6bb266d791f519fe3043514d3239119a079d819e530bda940c6ea7b"}
+https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/output/index.mpd
 
 #KODIPROP:inputstreamaddon=inputstream.adaptive
 #KODIPROP:inputstream.adaptive.manifest_type=dash
