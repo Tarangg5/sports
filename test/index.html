@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jio TV Live Player</title>
+    <title>Dynamic Jio Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.js"></script>
     <style>
         body { margin: 0; background: #000; color: #fff; font-family: sans-serif; }
         .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
-        .shaka-video-container { width: 100%; max-width: 900px; aspect-ratio: 16/9; box-shadow: 0 0 30px rgba(0,0,0,0.7); }
+        .shaka-video-container { width: 100%; max-width: 900px; aspect-ratio: 16/9; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         .info { margin-top: 15px; text-align: center; }
-        #channelLogo { width: 50px; border-radius: 8px; vertical-align: middle; margin-right: 12px; }
-        #loading { color: #ffcc00; font-weight: bold; margin-bottom: 10px; }
-        #error { color: #ff4444; display: none; font-weight: bold; margin-bottom: 10px; }
+        #channelLogo { width: 50px; border-radius: 5px; vertical-align: middle; margin-right: 10px; }
+        #loading { color: yellow; }
+        #error { color: red; display: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div id="loading">Streaming Data Load Ho Raha Hai...</div>
+    <div id="loading">Loading Live Stream...</div>
     <div id="error"></div>
 
-    <div class="shaka-video-container" data-shaka-player-container>
+    <div class="shaka-video-container">
         <video id="video" autoplay playsinline style="width:100%; height:100%"></video>
     </div>
 
     <div class="info">
         <img id="channelLogo" src="" alt="">
-        <span id="channelName" style="font-size: 22px; font-weight: bold;"></span>
+        <span id="channelName" style="font-size: 20px;"></span>
     </div>
 </div>
 
 <script>
-// AAPKA NAYA M3U WORKER LINK
-const API = "https://cool-salad-7156.sonuujamuicamp.workers.dev/";
+// --- PASTE YOUR SCRIPT HERE ---
+const API = "https://pkll.xojiv79335.workers.dev/";
 
 function getId() {
     return new URLSearchParams(location.search).get("id");
@@ -43,36 +43,15 @@ function getId() {
 async function fetchChannel() {
     const id = getId();
     if (!id) {
-        showError("URL mein Channel ID missing hai! (?id=153)");
+        showError("Channel ID missing in URL (?id=...)");
         return null;
     }
     try {
         const res = await fetch(API);
-        const text = await res.text();
-        const lines = text.split('\n');
-        
-        let channel = {};
-        for (let i = 0; i < lines.length; i++) {
-            if (lines[i].includes(`tvg-id="${id}"`)) {
-                // Info Line se Logo aur Name nikalein
-                channel.channel_name = lines[i].split(',')[1]?.trim();
-                const logoMatch = lines[i].match(/tvg-logo="([^"]+)"/);
-                channel.channel_logo = logoMatch ? logoMatch[1] : "";
-                
-                // KodiProp aur URL nikalein
-                const keyLine = lines[i+1].includes('license_key') ? lines[i+1] : lines[i+2];
-                const cookieLine = lines[i+2].includes('EXTHTTP') ? lines[i+2] : lines[i+3];
-                
-                channel.license_key = keyLine.split('=')[1]?.trim();
-                const cookieJson = cookieLine.replace('#EXTHTTP:', '').trim();
-                channel.cookie = JSON.parse(cookieJson).Cookie;
-                channel.channel_url = lines[i+4]?.trim();
-                break;
-            }
-        }
-        return channel.channel_url ? channel : null;
+        const data = await res.json();
+        return data.find(c => c.channel_id == id);
     } catch (e) {
-        showError("Worker se data fetch karne mein error aaya.");
+        showError("Failed to fetch data from Worker");
         return null;
     }
 }
@@ -86,15 +65,22 @@ function showError(msg) {
 
 async function startPlayer(channel) {
     shaka.polyfill.installAll();
+    if (!shaka.Player.isBrowserSupported()) {
+        showError("Browser not supported");
+        return;
+    }
+
     const video = document.getElementById("video");
     const player = new shaka.Player(video);
     const container = document.querySelector(".shaka-video-container");
 
+    // UI Overlay for professional controls
     const ui = new shaka.ui.Overlay(player, container, video);
 
-    const [kid, key] = channel.license_key.split(':');
     player.configure({
-        drm: { clearKeys: { [kid]: key } },
+        drm: {
+            clearKeys: { [channel.keyId]: channel.key }
+        },
         streaming: {
             lowLatencyMode: true,
             bufferingGoal: 30,
@@ -103,18 +89,20 @@ async function startPlayer(channel) {
         }
     });
 
+    const cookie = channel.cookie;
+
     player.getNetworkingEngine().registerRequestFilter((type, request) => {
         request.headers["Referer"] = "https://www.jiotv.com/";
         request.headers["User-Agent"] = "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
 
-        if (channel.cookie) {
-            request.headers["Cookie"] = channel.cookie;
+        if (cookie) {
+            request.headers["Cookie"] = cookie;
         }
 
-        if (channel.cookie && (type === shaka.net.NetworkingEngine.RequestType.SEGMENT || type === shaka.net.NetworkingEngine.RequestType.MANIFEST)) {
+        if (cookie && (type === shaka.net.NetworkingEngine.RequestType.SEGMENT || type === shaka.net.NetworkingEngine.RequestType.MANIFEST)) {
             if (!request.uris[0].includes("__hdnea__")) {
                 const sep = request.uris[0].includes("?") ? "&" : "?";
-                request.uris[0] += sep + channel.cookie;
+                request.uris[0] += sep + cookie;
             }
         }
     });
@@ -123,23 +111,21 @@ async function startPlayer(channel) {
         await player.load(channel.channel_url);
         document.getElementById("loading").style.display = "none";
     } catch (e) {
-        showError("Stream start nahi ho saki. Token ya Key expire ho gayi hogi.");
+        console.error(e);
+        showError("Stream failed to start (Check if keys or cookie expired)");
     }
 }
 
 async function init() {
     const channel = await fetchChannel();
-    if (!channel) {
-        showError("Channel nahi mila!");
-        return;
-    }
+    if (!channel) return;
 
     document.getElementById("channelLogo").src = channel.channel_logo;
     document.getElementById("channelName").innerText = channel.channel_name;
     startPlayer(channel);
 }
 
-document.addEventListener('shaka-ui-loaded', init);
+init();
 </script>
 
 </body>
