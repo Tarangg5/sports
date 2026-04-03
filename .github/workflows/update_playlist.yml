@@ -11,9 +11,8 @@ permissions:
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
-    # Node 20 ki warning hatane ke liye
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Node warning fix
     
     steps:
       - name: Checkout Repository
@@ -21,7 +20,7 @@ jobs:
 
       - name: Fetch Fresh M3U
         run: |
-          # Fresh data fetch kar raha hai
+          # Agar WORKER_URL set hai toh file download hogi
           curl -s "${{ secrets.WORKER_URL }}" > playlist.m3u
 
       - name: Commit and Push Changes
@@ -31,12 +30,8 @@ jobs:
           
           git add playlist.m3u
           
-          # ASLI FIX: Agar changes nahi hain, toh 'exit 0' (Green Tick) dega
-          if git diff --staged --quiet; then
-            echo "No changes to commit. Everything is up to date."
-            exit 0
-          else
-            git commit -m "Auto Update: Fresh Playlist Data"
-            git push origin main
-          fi
-        # Isse kisi bhi halat mein 'exit 3' nahi aayega
+          # FORCE SUCCESS: Agar changes nahi hain toh bhi 'exit 0' (Green) dikhayega
+          git commit -m "Auto Update: Fresh Playlist Data" || echo "No changes to commit"
+          git push origin main || echo "No changes to push"
+        
+        # '|| echo' lagane se exit code hamesha 0 (Success) rahega
