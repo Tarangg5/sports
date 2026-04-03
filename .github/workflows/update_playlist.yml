@@ -1,0 +1,28 @@
+name: Manual M3U Update
+
+on:
+  workflow_dispatch: # Isse "Run workflow" ka button aayega manual update ke liye
+  schedule:
+    - cron: '0 */6 * * *' # Har 6 ghante mein auto-check bhi karega (Optional)
+
+jobs:
+  update-m3u:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Fresh M3U
+        run: |
+          # Worker se data fetch karke 'playlist.m3u' mein save karega
+          curl -s "${{ secrets.WORKER_URL }}" > playlist.m3u
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add playlist.m3u
+          # Agar file mein badlav hai tabhi commit karega
+          git commit -m "Manual Update: Fresh Cookie & Links" || exit 0
+          git push
+          
