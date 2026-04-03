@@ -5,26 +5,27 @@ on:
   schedule:
     - cron: '0 */6 * * *' # Har 6 ghante mein auto
 
-permissions: # Permission error fix karne ke liye
-  contents: write
+permissions:
+  contents: write # Permission error fix karne ke liye
 
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
+    env:
+      # Is line se Node 20 ki warning khatam ho jayegi
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Full history lega taaki push mein error na aaye
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # Direct Node 24 set kar diya warning hatane ke liye
+          node-version: '24'
 
       - name: Fetch Fresh M3U
         run: |
-          # WORKER_URL secret check karein agar error aaye
+          # Worker se data fetch karke temp file mein save karega
           curl -s "${{ secrets.WORKER_URL }}" > playlist.m3u
 
       - name: Commit and Push Changes
@@ -34,9 +35,9 @@ jobs:
           
           git add playlist.m3u
           
-          # Check if there are changes to commit
+          # Agar koi badlav nahi hai, toh script peacefully exit karegi (Exit Code 0)
           if git diff --staged --quiet; then
-            echo "No changes detected in playlist.m3u, skipping commit."
+            echo "No changes detected in playlist.m3u. Skipping push."
           else
             git commit -m "Auto Update: Fresh Playlist Data"
             git push origin main
