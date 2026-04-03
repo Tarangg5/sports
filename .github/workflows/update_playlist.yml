@@ -1,31 +1,27 @@
 name: Manual M3U Update
 
 on:
-  workflow_dispatch: # Manual Button
+  workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Har 6 ghante mein auto
+    - cron: '0 */6 * * *'
 
 permissions:
-  contents: write # Permission error fix karne ke liye
+  contents: write
 
 jobs:
   update-m3u:
     runs-on: ubuntu-latest
+    # Node 20 ki warning hatane ke liye
     env:
-      # Is line se Node 20 ki warning khatam ho jayegi
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
       - name: Fetch Fresh M3U
         run: |
-          # Worker se data fetch karke temp file mein save karega
+          # Fresh data fetch kar raha hai
           curl -s "${{ secrets.WORKER_URL }}" > playlist.m3u
 
       - name: Commit and Push Changes
@@ -35,10 +31,12 @@ jobs:
           
           git add playlist.m3u
           
-          # Agar koi badlav nahi hai, toh script peacefully exit karegi (Exit Code 0)
+          # ASLI FIX: Agar changes nahi hain, toh 'exit 0' (Green Tick) dega
           if git diff --staged --quiet; then
-            echo "No changes detected in playlist.m3u. Skipping push."
+            echo "No changes to commit. Everything is up to date."
+            exit 0
           else
             git commit -m "Auto Update: Fresh Playlist Data"
             git push origin main
           fi
+        # Isse kisi bhi halat mein 'exit 3' nahi aayega
