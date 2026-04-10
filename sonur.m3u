@@ -4,58 +4,8 @@
 
 #EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi ASLI 4K
 #EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705141.ts
+http://79.127.221.50:49893/ghLs2zdZSnFvSS0000d720311376b9513b16b7828516607abd1b/index.m3u8?token=6c30a2dc6d1851a4b93265c520174497
 
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar English ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705142.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Bhojpuri ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705165.ts
-
-# ===== EXTRA 4K =====
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi ASLI 4K 2
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705144.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar English ASLI 4K 2
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705143.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Haryanvi ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705164.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Bengali ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705163.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Gujarati ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705158.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Marathi ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705157.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Tamil ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705153.ts
-
-# ===== FHD =====
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi FHD
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705131.ts
-
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar English FHD
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/705132.ts
-
-# ===== EXTRA CHANNEL =====
-#EXTINF:-1 tvg-id="star4k.live" tvg-name="Star 4K Live" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",Star 4K Live (No Exposure)
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://starshare.online:443/live/Jen12345/Jen54321/703299.ts
 
 
 
