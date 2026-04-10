@@ -3,4 +3,4 @@
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
 #EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
-https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8
+https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
