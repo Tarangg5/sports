@@ -6,20 +6,23 @@
 ####EXTVLCOPT:http-user-agent=@StreamFlex19
 ###http://vipqutnnapi.top:8080/live/VIP01571708409037004/adaac3364e63/7340.ts
 
+#EXTM3U
+#EXTINF:-1 tvg-id="IPL_ENG" tvg-name="IPL English" group-title="⚡ IPL CUP", IPL English (Live)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTHTTP:{"Cookie":"CloudFront-Key-Pair-Id=APKAJC3ILMJXG4AINKJA; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovLypsaXZlLWNmLmNkbi5ob3RzdGFyLmNvbS9jbWFmL2xpdmUvMjAyNDM0NS9pbmFsbG93LWlwbC0yMDI2L2VuZy8xNTQwMDY1NzI3LzE1bWluZHZybTAxMWFkY2RlYzBiNWIwNDhkNWFjMDM2OTM2NmJhNTg0NDkxMGFwcmlsMjAyNi8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc1OTE0MjA3fX19XX0_; CloudFront-Signature=Gjv5IZ-Y4twNa3IshY-eevjk1MC465UdBFPvIVdci3grV8kx8zeAGC5h~hdDOG5Bg2gSoU3GQDXIaHi~c46EmA-xsSEU-60eqKjT6QpLZnuD4gocG7sC8-zaHNZh14M4I03hde~a5jKs5LFYoolJ2y8Ju2RjBUaSY4fgrbr8csv8Caimw7rt8bKRkImOhP0sy9ISURpXsB89ViuBu5CbG8mylndXcEwCeJMz-k~KuYRFDKJSuvrERTCWryrUsRg5KkMniuEE3ab3hUPHMm3FVl~pjPSUeI~1AlE6NSmraEOlaNfmzsdng-CaUiLWJykzcSKPU2PO-u5micKJRk~svQ__"}
+https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
 
 
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi ASLI 4K
+
+
+
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="⚡ IPL CUP",JioHotstar Hindi ASLI 4K
 #EXTVLCOPT:http-user-agent=@StreamFlex19
 https://dillzy.sayanmete8yt.workers.dev/live/abc123.m3u8
 
 
-
-#EXTINF:-1 tvg-id="IPL_ENG" tvg-name="IPL English" group-title="JioHotstar | Live Feed", IPL English (Live)
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://www.hotstar.com/
-#EXTVLCOPT:http-cookie=CloudFront-Key-Pair-Id=APKAJC3ILMJXG4AINKJA; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovLypsaXZlLWNmLmNkbi5ob3RzdGFyLmNvbS9jbWFmL2xpdmUvMjAyNDM0NS9pbmFsbG93LWlwbC0yMDI2L2VuZy8xNTQwMDY1NzI3LzE1bWluZHZybTAxMWFkY2RlYzBiNWIwNDhkNWFjMDM2OTM2NmJhNTg0NDkxMGFwcmlsMjAyNi8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc1OTE0MjA3fX19XX0_; CloudFront-Signature=Gjv5IZ-Y4twNa3IshY-eevjk1MC465UdBFPvIVdci3grV8kx8zeAGC5h~hdDOG5Bg2gSoU3GQDXIaHi~c46EmA-xsSEU-60eqKjT6QpLZnuD4gocG7sC8-zaHNZh14M4I03hde~a5jKs5LFYoolJ2y8Ju2RjBUaSY4fgrbr8csv8Caimw7rt8bKRkImOhP0sy9ISURpXsB89ViuBu5CbG8mylndXcEwCeJMz-k~KuYRFDKJSuvrERTCWryrUsRg5KkMniuEE3ab3hUPHMm3FVl~pjPSUeI~1AlE6NSmraEOlaNfmzsdng-CaUiLWJykzcSKPU2PO-u5micKJRk~svQ__
-https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
 
 
 
