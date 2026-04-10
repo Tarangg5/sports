@@ -3,20 +3,21 @@
 # ===== ORIGINAL ASLI 4K =====
 
 
-#EXTM3U
-#EXTINF:-1 tvg-id="IPL_HINDI" tvg-name="IPL Hindi" group-title="⚡ IPL CUP", IPL Hindi (Live)
+
+#EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTHTTP:{"Cookie":"CloudFront-Key-Pair-Id=APKAJC3ILMJXG4AINKJA; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovLypsaXZlLWNmLmNkbi5ob3RzdGFyLmNvbS9jbWFmL2xpdmUvMjAyNDcxMy9pbmFsbG93LWlwbC0yMDI2L2hpbi8xNTQwMDY1NzI3LzE1bWluZHZybTAxMWFkY2RlYzBiNWIwNDhkNWFjMDM2OTM2NmJhNTg0NDkxMGFwcmlsMjAyNi8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc1OTEzNjI1fX19XX0_; CloudFront-Signature=M3NlGU6W8peye5YsGrmV5hjYiyaHry9tlAJV~zjEaXtqYgd1K~SX1mKwChmi4Ub7YadR0J-vkEFtsViDDfknlkoqHEBc-3S1EEUKAMJ2NmYAlJMPXPbLZ9vE-BkrWTKd1ApUGxBE8YBPjEK7EDrCZXbiRRRsOconzWyRbQs5fjQAHk7TeYHZ4F4LXVMT-0iMg4p6SRGphxOYqWC5go3LVudr9NcMUb7Oy7jLHjRdStTHScQ9puyyrZKZuDosr5MmfZVjBR4Ew6DrZbaUWMSq~Dl2uWbY1lXM8PNnglOUJNzjD7F9Bne8oB6-sbo~J3EuEy5hwDNxsjd~JTrJkLFlKg__"}
-https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-hin.m3u8
+#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+https://livevideos.cricbuzz.com/hls/live/2123519/WCB-CA-HINDI/9241/149768/master.m3u8
 
 
 
 
-
-#EXTINF:-1 tvg-id="IPL_ENG" tvg-name="IPL English" group-title="⚡ IPL CUP", IPL English (Live)
+#EXTINF:-1 tvg-id="Cricbuzz_English" tvg-name="Cricbuzz English" group-title="⚡ LIVE TV", Cricbuzz English (Live)
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTHTTP:{"Cookie":"CloudFront-Key-Pair-Id=APKAJC3ILMJXG4AINKJA; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovLypsaXZlLWNmLmNkbi5ob3RzdGFyLmNvbS9jbWFmL2xpdmUvMjAyNDM0NS9pbmFsbG93LWlwbC0yMDI2L2VuZy8xNTQwMDY1NzI3LzE1bWluZHZybTAxMWFkY2RlYzBiNWIwNDhkNWFjMDM2OTM2NmJhNTg0NDkxMGFwcmlsMjAyNi8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc1OTE0MjA3fX19XX0_; CloudFront-Signature=Gjv5IZ-Y4twNa3IshY-eevjk1MC465UdBFPvIVdci3grV8kx8zeAGC5h~hdDOG5Bg2gSoU3GQDXIaHi~c46EmA-xsSEU-60eqKjT6QpLZnuD4gocG7sC8-zaHNZh14M4I03hde~a5jKs5LFYoolJ2y8Ju2RjBUaSY4fgrbr8csv8Caimw7rt8bKRkImOhP0sy9ISURpXsB89ViuBu5CbG8mylndXcEwCeJMz-k~KuYRFDKJSuvrERTCWryrUsRg5KkMniuEE3ab3hUPHMm3FVl~pjPSUeI~1AlE6NSmraEOlaNfmzsdng-CaUiLWJykzcSKPU2PO-u5micKJRk~svQ__"}
-https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
+#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+https://livevideos.cricbuzz.com/hls/live/2123398/WCB-CA/9241/149768/master.m3u8
+
+
 
 
 
@@ -31,6 +32,11 @@ https://livetv.hotstar.com/mp1/gec-india-1540065788/fa6a4f0005ef4f90ab24484d165b
 
 
 
+
+#EXTINF:-1 tvg-id="Cricbuzz_Live_Alt" tvg-name="Cricbuzz Live Alt" group-title="⚡ LIVE TV", Cricbuzz Live (English)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+https://livevideos.cricbuzz.com/hls/live/2123398/WCB-CA/9241/149768/master.m3u8
 
 
 
