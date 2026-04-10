@@ -1,13 +1,6 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="IPL_ENG" tvg-name="IPL English" group-title="⚡ IPL CUP", IPL English (Live)
+#EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE EVENTS", Hotstar Event
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTHTTP:{"Cookie":"CloudFront-Key-Pair-Id=APKAJC3ILMJXG4AINKJA; CloudFront-Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovLypsaXZlLWNmLmNkbi5ob3RzdGFyLmNvbS9jbWFmL2xpdmUvMjAyNDM0NS9pbmFsbG93LWlwbC0yMDI2L2VuZy8xNTQwMDY1NzI3LzE1bWluZHZybTAxMWFkY2RlYzBiNWIwNDhkNWFjMDM2OTM2NmJhNTg0NDkxMGFwcmlsMjAyNi8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzc1OTE0MjA3fX19XX0_; CloudFront-Signature=Gjv5IZ-Y4twNa3IshY-eevjk1MC465UdBFPvIVdci3grV8kx8zeAGC5h~hdDOG5Bg2gSoU3GQDXIaHi~c46EmA-xsSEU-60eqKjT6QpLZnuD4gocG7sC8-zaHNZh14M4I03hde~a5jKs5LFYoolJ2y8Ju2RjBUaSY4fgrbr8csv8Caimw7rt8bKRkImOhP0sy9ISURpXsB89ViuBu5CbG8mylndXcEwCeJMz-k~KuYRFDKJSuvrERTCWryrUsRg5KkMniuEE3ab3hUPHMm3FVl~pjPSUeI~1AlE6NSmraEOlaNfmzsdng-CaUiLWJykzcSKPU2PO-u5micKJRk~svQ__"}
-https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
-
-
-
-#EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE", Hotstar Event (Dual Fix)
-#EXT-X-KODI-PROP:inputstream.adaptive.license_type=clearkey
-#EXT-X-KODI-PROP:inputstream.adaptive.manifest_type=hls
-#EXT-X-KODI-PROP:inputstream.adaptive.stream_headers=Cookie=hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b&User-Agent=Hotstar%3Bin.startv.hotstar%2F25.03.19.2.11274%20(Android%2F15)
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
 https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8
