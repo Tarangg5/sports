@@ -2,15 +2,16 @@
 
 # ===== ORIGINAL ASLI 4K =====
 
-#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi ASLI 4K
+#EXTINF:-1 tvg-id="matchtime.jiohotstar" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar ENG ASLI 4K
 #EXTVLCOPT:http-user-agent=@StreamFlex19
 http://vipqutnnapi.top:8080/live/VIP01571708409037004/adaac3364e63/7340.ts
 
 
 
 
-
-
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="JioHotstar | Live Feed",JioHotstar Hindi ASLI 4K
+#EXTVLCOPT:http-user-agent=@StreamFlex19
+https://dillzy.sayanmete8yt.workers.dev/live/abc123.m3u8
 
 
 
