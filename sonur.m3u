@@ -14,13 +14,16 @@ https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
 
 
 
+#EXTINF:-1 tvg-id="Hotstar_GEC" tvg-name="Hotstar GEC" group-title="⚡ LIVE TV", Hotstar GEC (MPD)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=81872faa1d6b45fa9045cdeb2e310000:9b88168e61274587a471962c46b94675
+#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b","User-Agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://livetv.hotstar.com/mp1/gec-india-1540065788/fa6a4f0005ef4f90ab24484d165b0aaf/index.mpd
 
 
 
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Match Time Info" tvg-logo="https://img.hotstar.com/image/upload/v1737554969/web-assets/prod/images/rebrand/logo.png" group-title="⚡ IPL CUP",JioHotstar Hindi ASLI 4K
-#EXTVLCOPT:http-user-agent=@StreamFlex19
-https://dillzy.sayanmete8yt.workers.dev/live/abc123.m3u8
+
 
 
 
