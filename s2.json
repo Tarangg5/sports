@@ -5,7 +5,7 @@
 https://codeberg.org/bugbyte/eyepl/raw/branch/main/eyepl-eng.m3u8
 
 
-#EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE EVENTS", Hotstar Event (NS Player Fix)
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|Cookie=hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b&User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
 
+#EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE EVENTS", Hotstar Event (Final Fix)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8?|cookie=hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b&User-Agent=Hotstar%3Bin.startv.hotstar%2F25.03.19.2.11274%20(Android%2F15)
