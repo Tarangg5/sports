@@ -22,20 +22,20 @@ https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0
 
 
 
-#EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
-https://vsd217.okcdn.ru/cmaf/14479634074367/sig/bWTTvjBHMj8/expires/1776003776250/srcIp/152.58.158.63/urls/185.226.53.85/clientType/36/srcAg/CHROME/mid/13586581768191/get/hls_13586581768191.yDXHzlMnBuI.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36&X-Forwarded-For=100.42.240.25
+####EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
+####KODIPROP:inputstream.adaptive.license_type=clearkey
+###EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+###EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+##https://vsd217.okcdn.ru/cmaf/14479634074367/sig/bWTTvjBHMj8/expires/1776003776250/srcIp/152.58.158.63/urls/185.226.53.85/clientType/36/srcAg/CHROME/mid/13586581768191/get/hls_13586581768191.yDXHzlMnBuI.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36&X-Forwarded-For=100.42.240.25
 
 
 
 #EXTINF:-1 tvg-id="Cricbuzz_English" tvg-name="Cricbuzz English" group-title="⚡ LIVE TV", Cricbuzz English (Live)
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=1e23e51b09a67b83813c17049870bcd4:c3d6288e378b0dc55320fd0e6fd2e55f
+#KODIPROP:inputstream.adaptive.license_key=a8a4acb421aa98dcb5748cd92a8dcb39:c226dc3bde109562804e214bf89d0d7f
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
 #EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
-https://cors-proxy.cooks.fyi/https://ev-fast-mpd.starzplayarabia.com/live/eds/CricLife1/DASH/CricLife1.mpd
+https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/eajgowpkve/out/v1/1e448b3f09884547b77af6c9056b404d/cenc.mpd
 
 
 
