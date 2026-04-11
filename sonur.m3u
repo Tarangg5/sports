@@ -3,6 +3,85 @@
 # ===== ORIGINAL ASLI 4K =====
 
 
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports Hindi 1" group-title="⚡ LIVE TV", Star Sports Hindi 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=81872faa1d6b45fa9045cdeb2e310000:9b88168e61274587a471962c46b94675
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952042~acl=%2f*~id=980e9d79c49905a6ac948013a5436007~data=hdntl~hmac=1f44ced95e1a9978fd97700e3708bb87335a21e4fa3484ccfe233e47176776b3"}
+https://livetv.hotstar.com/mp1/gec-india-1540065788/fa6a4f0005ef4f90ab24484d165b0aaf/index.mpd
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1" group-title="⚡ LIVE TV", Star Sports 1
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=b7cdde012ce04e90a08b90622e020000:13603245acab444faef6cab5198de55f
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952045~acl=%2f*~id=16fc019e1110a0d45800544d7819a6f9~data=hdntl~hmac=5a498b820c2813c68f444d36167f6b47731ef6b8f6153cb786a5170f01173f61"}
+https://livetv.hotstar.com/mp1/gec-india-1540065782/fce958099ca84fc3b980e651a4a668a8/index.mpd
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2" group-title="⚡ LIVE TV", Star Sports 2
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9dacc80134404c34ba184022c28d0000:982183fb4d9449c995859b7cff512092
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952049~acl=%2f*~id=0bf849ac907f47d7a5bd99b0c9f1ca94~data=hdntl~hmac=9afb8231896c85d9191c25bf5aef1b75c84d1fe77bd37b89bbde6215c77530"}
+https://livetv.hotstar.com/mp2/gec-india-1540065785/a00717b1324f45eb814eec9e48a12db8/index.mpd
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Hindi HD" group-title="⚡ LIVE TV", Star Sports 2 Hindi HD
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952039~acl=%2f*~id=cea88c04c427cc80bf5e976d80e1bd98~data=hdntl~hmac=4b47521a25cf86d9bfb8b856db0ab963574dd6e04d9807020a6616cc670b1279"}
+https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0e3e64ae415771d8e460317ce97aa5e.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Hindi" group-title="⚡ LIVE TV", Star Sports 2 Hindi
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952039~acl=%2f*~id=cea88c04c427cc80bf5e976d80e1bd98~data=hdntl~hmac=4b47521a25cf86d9bfb8b856db0ab963574dd6e04d9807020a6616cc670b1279"}
+https://jcevents.hotstar.com/bpk-tv/2c7182c8e6a22cfa6ebc02bbc9ed6dd0/Fallback/2c7182c8e6a22cfa6ebc02bbc9ed6dd0.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Telugu" group-title="⚡ LIVE TV", Star Sports 2 Telugu
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952039~acl=%2f*~id=cea88c04c427cc80bf5e976d80e1bd98~data=hdntl~hmac=4b47521a25cf86d9bfb8b856db0ab963574dd6e04d9807020a6616cc670b1279"}
+https://jcevents.hotstar.com/bpk-tv/034d1fb94cae87294a06f4dc266084b9/Fallback/034d1fb94cae87294a06f4dc266084b9.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Tamil" group-title="⚡ LIVE TV", Star Sports 2 Tamil
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952039~acl=%2f*~id=cea88c04c427cc80bf5e976d80e1bd98~data=hdntl~hmac=4b47521a25cf86d9bfb8b856db0ab963574dd6e04d9807020a6616cc670b1279"}
+https://jcevents.hotstar.com/bpk-tv/4db6f833701e78ae4443cb268020f03b/Fallback/4db6f833701e78ae4443cb268020f03b.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="TATA IPL TV" group-title="⚡ LIVE TV", TATA IPL TV
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775952039~acl=%2f*~id=cea88c04c427cc80bf5e976d80e1bd98~data=hdntl~hmac=4b47521a25cf86d9bfb8b856db0ab963574dd6e04d9807020a6616cc670b1279"}
+https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Cricbuzz Hindi" group-title=" LIVE TV", Cricbuzz Hindi (Live)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+https://livevideos.cricbuzz.com/hls/live/2123519/WCB-CA-HINDI/9241/149768/master.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36&X-Forwarded-For=100.42.240.25
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Cricbuzz English" group-title=" LIVE TV", Cricbuzz English (Live)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+https://livevideos.cricbuzz.com/hls/live/2123398/WCB-CA/9241/149768/master.m3u8
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Hotstar Hin" group-title=" LIVE TV", Hotstar GEC (MPD)
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=81872faa1d6b45fa9045cdeb2e310000:9b88168e61274587a471962c46b94675
+#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b","User-Agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+https://livetv.hotstar.com/mp1/gec-india-1540065788/fa6a4f0005ef4f90ab24484d165b0aaf/index.mpd
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Hotstar Event" group-title=" LIVE TV", Hotstar Event
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
+https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="rkdyiptv new" group-title="⚡ LIVE TV", Hotstar Event
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
+https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+
+
+
+
 
 #EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
 #KODIPROP:inputstream.adaptive.license_type=clearkey
