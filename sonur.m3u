@@ -22,11 +22,11 @@ https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0
 
 
 
-#EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
-#EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
-https://livevideos.cricbuzz.com/hls/live/2123519/WCB-CA-HINDI/9241/149779/master.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36&X-Forwarded-For=100.42.240.25
+##EXTINF:-1 tvg-id="Cricbuzz_Hindi" tvg-name="Cricbuzz Hindi" group-title="⚡ LIVE TV", Cricbuzz Hindi (Live)
+##KODIPROP:inputstream.adaptive.license_type=clearkey
+##EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+##EXTHTTP:{"Cookie":"hdntl=exp=1775911839~acl=%2f*~id=de0685d1-d73a-4727-8c35-4feb33ee7385~data=hdntl~hmac=3148ba876293d7aa622f83d5e578c5c35184f17497dcfcb9a495f23d86516149","User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36","X-Forwarded-For":"100.42.240.25"}
+###https://livevideos.cricbuzz.com/hls/live/2123519/WCB-CA-HINDI/9241/149779/master.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36&X-Forwarded-For=100.42.240.25
 
 
 
@@ -41,23 +41,17 @@ https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/h0j1lnfwdz/out/v1
 
 
 
-#EXTINF:-1 tvg-id="Hotstar_GEC" tvg-name="Hotstar GEC" group-title="⚡ LIVE TV", Hotstar GEC (MPD)
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=81872faa1d6b45fa9045cdeb2e310000:9b88168e61274587a471962c46b94675
-#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b","User-Agent":"Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
-https://livetv.hotstar.com/mp1/gec-india-1540065788/fa6a4f0005ef4f90ab24484d165b0aaf/index.mpd
 
 
 
 
 
 
-
-#EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE TV", Hotstar Event
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
-https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+####EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE TV", Hotstar Event
+###KODIPROP:inputstream.adaptive.license_type=clearkey
+####EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
+###EXTHTTP:{"Cookie":"hdntl=exp=1775913342~acl=%2f*~id=bc356ab021f25f10cd6b353d641cc9cc~data=hdntl~hmac=790adf7b459accb692e8589047e03ee976d846317270c259e010c8334e38779b"}
+####https://jcevents.hotstar.com/bpk-tv/e03bbf7688f4b14faa3782e78851c3d9_CTV/Fallback/index2.m3u8|User-Agent=Hotstar;in.startv.hotstar/25.03.19.2.11274 (Android/15)
 
 
 
