@@ -22,7 +22,7 @@ https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/index.m
 
 #EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Hindi HD" group-title="⚡ LIVE TV", Star Sports 2 Hindi HD
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-#EXTHTTP:{"Cookie":"hdntl=exp=1776047868~acl=%2f*~id=309b313c88bc10830e7b1040237a0285~data=hdntl~hmac=ce5724e7b1d10e77651041294656eae7274c9a4bb63b736b31affc1f29c4ecfe","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
+#EXTHTTP:{"Cookie":"hdntl=exp=1776047868~accl=%2f*~id=309b313c88bc10830e7b1040237a0285~data=hdntl~hmac=ce5724e7b1d10e77651041294656eae7274c9a4bb63b736b31affc1f29c4ecfe","Origin":"https://www.hotstar.com","Referer":"https://www.hotstar.com/"}
 https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0e3e64ae415771d8e460317ce97aa5e.m3u8
 
 
