@@ -14,7 +14,7 @@ https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/WDVLive/index.mpd
 #EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Sports_HD1_Hindi.png" group-title="⚡ LIVE TV",Star Sports 1 Hindi HD 50fps
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=400131994b445d8c8817202248760fda:2d56cb6f07a75b9aff165d534ae2bfc4
-#EXTHTTP:{"Cookie":"__hdnea__=st=1775913541~exp=1775935141~acl=/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/*~hmac=4873a468ea6452aa8ffcb7037899d27fdfe6c80a0d4d95237217ccb7e9243ca1"}
+#EXTHTTP:{"Cookie":"__hdnea__=st=1775965857~exp=1775987457~acl=/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/*~hmac=a29c18f2a6515936344e62aecddf980150009bb3c3ac4125bdfa2bc5741a32be"}
 https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/index.mpd
 
 
