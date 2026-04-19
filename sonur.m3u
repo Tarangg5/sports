@@ -60,8 +60,9 @@ http://datahub11.com/live/Anthony2/Anthony123/2494.ts
 
 
 
-
-
+EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar hin without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+http://datahub11.com/live/Anthony2/Anthony123/705137.ts
 
 
 ####EXTINF:-1 tvg-id="Hotstar_Event" tvg-name="Hotstar Event" group-title="⚡ LIVE TV", Hotstar Event
