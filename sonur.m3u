@@ -171,11 +171,9 @@ https://dyjmyiv3bp2ez.cloudfront.net/pub-iotv9hinjzgtpe/liveabr/pub-iotv9hinjzgt
 
 
 
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
+
 #EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="4K",TRAVELXP 4K HDR
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=6da8c268d58a0fe4ff75d297359a8ad7:eb0ae4c2c24a52070154499bb09a36cb
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 https://deltatesttatasky.akamaized.net/out/i/968284.m3u8
 
 
