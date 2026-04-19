@@ -39,7 +39,9 @@ https://jcevents.hotstar.com/bpk-tv/f0e3e64ae415771d8e460317ce97aa5e/Fallback/f0
 
 
 
-
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 2 Hindi HD" tvg-logo="https://i.postimg.cc/hvvtSw-CV/Astro-Cricket.png" group-title="⚡ LIVE TV", Cricbuzz Eng without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+http://datahub11.com/live/Anthony2/Anthony123/2494.ts
 
 
 
