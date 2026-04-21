@@ -763,3 +763,99 @@ https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_tapsports.mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=609d795905904705028ef54653019af7:2c791eb611e57a7d7f203022bc1b9ba3
 https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/duqbirmk0d/out/v1/40f53c7cbc95498db3afd081c377d776/cenc.mpd
+
+
+
+
+
+
+
+
+#EXTM3U
+
+#EXTINF:-1 group-title="radio",Vivid Bharati (AIR)
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/chunklist.m3u8
+
+#EXTINF:-1 group-title="radio",FM Gold Delhi
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio005/hlspbaudio00564kbps.m3u8
+
+#EXTINF:-1 group-title="radio",FM Rainbow
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio004/hlspbaudio00464kbps.m3u8
+
+#EXTINF:-1 group-title="radio",AIR News 24x7
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio002/hlspbaudio00264kbps.m3u8
+
+#EXTINF:-1 group-title="radio",Akashwani Patna
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio087/chunklist.m3u8
+
+#EXTINF:-1 group-title="radio",Hindi Song
+https://stream.zeno.fm/0h3xz4xskchvv
+
+#EXTINF:-1 group-title="radio",Radio Rang
+https://stream.zeno.fm/n58tt09cqchvv
+
+#EXTINF:-1 group-title="radio",Akashwani Sasaram
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8
+
+#EXTINF:-1 group-title="radio",VBS Delhi
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio238/hlspbaudio23864kbps.m3u8
+
+#EXTINF:-1 group-title="radio",Indraprasth
+https://airhlspush.pc.cdn.bitgravity.com/httppush/hlspbaudio006/hlspbaudio00664kbps.m3u8
+
+#EXTINF:-1 group-title="radio",Akashwani Chhattisgarh
+https://air.pc.cdn.bitgravity.com/air/live/pbaudio118/chunklist.m3u8
+
+#EXTINF:-1 group-title="radio",HINDI MELODY
+https://stream.zeno.fm/f25zvfe37p8uv
+
+#EXTINF:-1 group-title="radio",Sad song
+https://stream.zeno.fm/yvqymrxdxi7vv
+
+#EXTINF:-1 group-title="radio",Madhoor Sangeet
+https://stream.zeno.fm/yv2k0dp18vzuv
+
+#EXTINF:-1 group-title="radio",Big FM 92.7
+https://stream.zeno.fm/dbstwo3dvhhtv
+
+#EXTINF:-1 group-title="radio",Arijit Singh Hits
+https://stream.zeno.fm/wn6muavgfr2tv
+
+#EXTINF:-1 group-title="radio",Remix
+https://stream.zeno.fm/9phrkb1e3v8uv
+
+#EXTINF:-1 group-title="radio",Md Rafi Hits
+https://stream.zeno.fm/2xx62x8ztm0uv
+
+#EXTINF:-1 group-title="radio",Kishore Kumar Radio
+https://server.mixify.in:8010/radio.mp3
+
+#EXTINF:-1 group-title="radio",Bollywood 90s Hits
+https://stream.zeno.fm/143d7gty24zuv
+
+#EXTINF:-1 group-title="radio",FM Moradabad 89.6
+https://streamasiacdn.atc-labs.com/fmmoradabad.aac
+
+#EXTINF:-1 group-title="radio",Mohabbat Radio
+https://stream.zeno.fm/u7dyh8zsgtzuv
+
+#EXTINF:-1 group-title="radio",Lata Mangeshkar Hits
+https://stream.zeno.fm/xe1ye67prfhvv
+
+#EXTINF:-1 group-title="radio",Ishq FM Love Songs
+https://drive.uber.radio/uber/bollywoodlove/icecast.audio
+
+#EXTINF:-1 group-title="radio",Radio Retro Bollywood
+https://stream.zeno.fm/g372rxef798uv
+
+#EXTINF:-1 group-title="radio",Radio Baingan
+https://stream.zeno.fm/eyxg23ky4x8uv
+
+#EXTINF:-1 group-title="radio",Bhakti Sagar
+https://stream.zeno.fm/r51n9k1vsa0uv
+
+#EXTINF:-1 group-title="radio",BBC NEWS ENG
+https://as-hls-ww.live.cf.md.bbci.co.uk/pool_07364996/live/ww/bbc_world_service_news_internet/bbc_world_service_news_internet.isml/bbc_world_service_news_internet-audio%3d48000.norewind.m3u8
+
+
+
