@@ -43,7 +43,7 @@ http://datahub11.com/live/Anthony2/Anthony123/705131.ts
 
 
 
-EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Haryanvi without Ads
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Haryanvi without Ads
 #EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
 http://datahub11.com/Anthony2/Anthony123/705161
 
