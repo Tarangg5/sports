@@ -51,10 +51,10 @@ http://datahub11.com/Anthony2/Anthony123/705161
 
 
 
-#EXTINF:-1 tvg-logo="https://i.ibb.co/qkgW1nd/c0a0c8607691347e22942f2b86473199.png" group-title="Movies",Star Gold Select HD
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.ibb.co/qkgW1nd/c0a0c8607691347e22942f2b86473199.png" group-title="Movies",Star Gold Select HD
 http://datahub11.com/Anthony2/Anthony123/210
 
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/yousef-88/TV-Logos/main/Logos/Star%20Gold.png" group-title="Movies",STAR GOLD
+#EXTINF:-1 tvg-id="" tvg-logo="https://raw.githubusercontent.com/yousef-88/TV-Logos/main/Logos/Star%20Gold.png" group-title="Movies",STAR GOLD HD
 http://datahub11.com/Anthony2/Anthony123/194
 
 
