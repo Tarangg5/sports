@@ -84,6 +84,40 @@ https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01412-xiaomiasia-yrfmusic-xiaomi/pl
 
 
 
+#EXTINF:-1 tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BHOJPURI_CINEMA/images/LOGO_HD/image.png" group-title="movies",Bhojpuri Cinema (720p)
+https://live-bhojpuri.akamaized.net/liveabr/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.imgur.com/NwOQUDp.png" group-title="movies",B4U Bhojpuri (1080p)
+https://cdnb4u.wiseplayout.com/B4U_Bhojpuri/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",HINDE MOVIES
+https://cloudfrontnet.vercel.app/tplay/playout/209612/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",HINDE MOVIES 2
+https://cloudfrontnet.vercel.app/tplay/playout/209622/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",HINDE DABBING MOVIES
+https://cloudfrontnet.vercel.app/tplay/playout/209593/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",THE MOVIE CLUB
+https://cc-r5hupcym5oehh.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-r5hupcym5oehh/SBUM/RunnTV/BollyFlix_IN/BollyFlix_IN.m3u8
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/subirkumarpaul/Logo/main/B4U%20Movies.png" group-title="movies",B4U KADAK
+https://cdn-2.pishow.tv/live/227/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.ibb.co/KjjqnRH/Picsart-23-06-30-21-35-20-283.png" group-title="movies",SHEEMAROO BOLLYWOOD
+https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00864-shemarooenterta-shemabollywood-ono/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/jhmovie/images/7/7b/Goldmines_logo.png/revision/latest?cb=20240404141630" group-title="movies",GOLDMINES
+https://cdn-2.pishow.tv/live/1459/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",GOLDMINES MOVIES
+https://cdn-2.pishow.tv/live/1461/master.m3u8
+
+#EXTINF:-1 tvg-logo="https://bugsfreeweb.github.io/LiveTVCollector/BugsfreeLogo/default-logo.png" group-title="movies",GOLDMINES MOVIES 2
+https://cdn-2.pishow.tv/live/1460/master.m3u8
+
+
 #KODIPROP:inputstream.adaptive.manifest_type=dash
 #EXTINF:-1 tvg-id="" tvg-name="Prime Hindi "tvg-logo="hhttps://i.postimg.cc/hvvtSwCV/Astro-Cricket.png" group-title="News",NEWS18 HINDI
 #KODIPROP:inputstream.adaptive.license_type=clearkey
