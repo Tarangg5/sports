@@ -3,9 +3,10 @@
     "channel_id": "1",
     "channel_name": "Star Sports 1 Hindi HD",
     "channel_logo": "https://img.media.jio.com/tvpimages/5/6/301982_1749665314605_l_medium.jpg",
-    "channel_url": "https://jiotvioslive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd?__hdnea__=st=1775369715~exp=1775456115~acl=/*~hmac=7c1dfc36fb25179c72b05c31f12865f3bce03b77bd2e5da4efb5bc968caffacd",
+    "channel_url": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/index.mpd",
     "keyId": "400131994b445d8c8817202248760fda",
     "key": "2d56cb6f07a75b9aff165d534ae2bfc4",
-    "cookie": "__hdnea__=st=1775369715~exp=1775456115~acl=/*~hmac=7c1dfc36fb25179c72b05c31f12865f3bce03b77bd2e5da4efb5bc968caffacd"
+    "cookie": "__hdnea__=st=1776772342~exp=1776793942~acl=/bpk-tv/Star_Sports_HD1_Hindi_BTS/WDVLive/*~hmac=98f283d48e5b1aa8ff7f610282f7a1736fc570b670a1ddd837fdb5d5ca74551c",
+    "keyId": "400131994b445d8c8817202248760fda"
   }
 ]
