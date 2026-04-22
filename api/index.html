@@ -1,64 +1,217 @@
-<script>
-    const workerUrl = "https://your-worker.workers.dev/";
-
-    async function searchChannels() {
-        const query = document.getElementById('searchInput').value;
-        const listContainer = document.getElementById('channelList');
-        
-        if(query.length < 3) {
-            alert("Kam se kam 3 words likhiye!");
-            return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONU NEON PLAYER | Search & Copy</title>
+    <style>
+        /* Neon Theme Styling */
+        body {
+            background: #0f0f0f;
+            color: #00ffcc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
         }
 
-        listContainer.innerHTML = "<p>Searching... Please wait...</p>";
+        h2 { text-shadow: 0 0 10px #00ffcc; }
+        h2 span { color: #fff; }
 
-        try {
-            const response = await fetch(`${workerUrl}?search=${query}`);
-            const data = await response.text();
-            parseM3U(data);
-        } catch (error) {
-            listContainer.innerHTML = "<p style='color:red'>Error loading channels.</p>";
+        .search-container {
+            margin: 20px auto;
+            width: 95%;
+            max-width: 600px;
         }
-    }
 
-    function parseM3U(m3uData) {
-        const listContainer = document.getElementById('channelList');
-        listContainer.innerHTML = ""; 
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #00ffcc;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 30px;
+            outline: none;
+            font-size: 16px;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+        }
 
-        const lines = m3uData.split('\n');
-        for (let i = 0; i < lines.length; i++) {
-            if (lines[i].startsWith('#EXTINF')) {
-                const info = lines[i];
-                const streamUrl = lines[i + 1];
+        .btn-search {
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #00ffcc;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #000;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .btn-search:hover {
+            box-shadow: 0 0 20px #00ffcc;
+            transform: scale(1.05);
+        }
+
+        #channelList {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .channel-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 15px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .channel-card:hover {
+            border-color: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+
+        .channel-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: #000;
+            margin-bottom: 10px;
+        }
+
+        .channel-name {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+            color: #eee;
+        }
+
+        .btn-copy {
+            background: #00ffcc;
+            color: #000;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+
+        .btn-copy:active {
+            transform: scale(0.95);
+            background: #fff;
+        }
+
+        /* Loading Spinner */
+        .loader { color: #fff; font-style: italic; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>SONU NEON <span>PLAYER</span></h2>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search Channel (e.g. Star, Sony, Zee)...">
+        <button class="btn-search" onclick="searchChannels()">Dhundho</button>
+    </div>
+
+    <div id="channelList">
+        </div>
+
+    <script>
+        // YAHAN APNA CLOUDFLARE WORKER URL DALO
+        const workerUrl = "https://your-worker.workers.dev/";
+
+        async function searchChannels() {
+            const query = document.getElementById('searchInput').value.trim();
+            const listContainer = document.getElementById('channelList');
+
+            if (query.length < 3) {
+                alert("Please enter at least 3 characters!");
+                return;
+            }
+
+            listContainer.innerHTML = "<div class='loader'>Searching in 147MB database...</div>";
+
+            try {
+                // Worker ko search query ke sath call kar rahe hain
+                const response = await fetch(`${workerUrl}?search=${encodeURIComponent(query)}`);
+                const m3uData = await response.text();
                 
-                const nameMatch = info.match(/,(.*)$/);
-                const name = nameMatch ? nameMatch[1] : "Unknown Channel";
-                
-                const logoMatch = info.match(/tvg-logo="(.*?)"/);
-                const logo = logoMatch ? logoMatch[1] : "https://via.placeholder.com/150?text=No+Logo";
-
-                // Card design with Copy Button
-                const card = document.createElement('div');
-                card.className = 'channel-card';
-                card.innerHTML = `
-                    <img src="${logo}" alt="Logo">
-                    <span class="channel-name">${name}</span>
-                    <button class="btn-copy" onclick="copyToClipboard('${streamUrl}')" 
-                        style="margin-top:10px; background:#00ffcc; color:#000; border:none; padding:5px; border-radius:5px; cursor:pointer; width:100%; font-weight:bold;">
-                        Copy Link
-                    </button>
-                `;
-                listContainer.appendChild(card);
+                parseAndDisplay(m3uData);
+            } catch (error) {
+                listContainer.innerHTML = "<p style='color:red'>Server Connect Nahi Ho Paya.</p>";
             }
         }
-    }
 
-    // Link Copy karne wala function
-    function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert("Link Copy Ho Gaya! ✅");
-        }).catch(err => {
-            console.error('Copy fail ho gaya: ', err);
-        });
-    }
-</script>
+        function parseAndDisplay(data) {
+            const listContainer = document.getElementById('channelList');
+            listContainer.innerHTML = ""; 
+
+            if (!data.includes('#EXTINF')) {
+                listContainer.innerHTML = "<p>Koi channel nahi mila. Kuch aur search karein.</p>";
+                return;
+            }
+
+            const lines = data.split('\n');
+            
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].startsWith('#EXTINF')) {
+                    const infoLine = lines[i];
+                    const streamUrl = lines[i + 1] ? lines[i + 1].trim() : "";
+                    
+                    if (!streamUrl.startsWith('http')) continue;
+
+                    // Channel Name Extract
+                    const nameMatch = infoLine.match(/,(.*)$/);
+                    const name = nameMatch ? nameMatch[1] : "Unknown Channel";
+                    
+                    // Logo Extract
+                    const logoMatch = infoLine.match(/tvg-logo="(.*?)"/);
+                    const logo = (logoMatch && logoMatch[1]) ? logoMatch[1] : "https://via.placeholder.com/80?text=No+Logo";
+
+                    // Card design
+                    const card = document.createElement('div');
+                    card.className = 'channel-card';
+                    card.innerHTML = `
+                        <img src="${logo}" onerror="this.src='https://via.placeholder.com/80?text=TV'">
+                        <span class="channel-name">${name}</span>
+                        <button class="btn-copy" onclick="copyUrl('${streamUrl}', this)">
+                            COPY LINK
+                        </button>
+                    `;
+                    listContainer.appendChild(card);
+                }
+            }
+        }
+
+        // Copy Function
+        function copyUrl(url, button) {
+            navigator.clipboard.writeText(url).then(() => {
+                const originalText = button.innerText;
+                button.innerText = "COPIED! ✅";
+                button.style.background = "#fff";
+                
+                // 2 second baad button wapas normal ho jayega
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.background = "#00ffcc";
+                }, 2000);
+            }).catch(err => {
+                alert("Copy fail ho gaya, manually copy karein.");
+            });
+        }
+    </script>
+</body>
+</html>
