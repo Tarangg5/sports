@@ -46,6 +46,11 @@ http://datahub11.com/Anthony2/Anthony123/705161
 
 
 
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",Star Movies HD
+http://datahub11.com/live/Anthony2/Anthony123/9384.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR MOVIES SELECT HD
+http://datahub11.com/live/Anthony2/Anthony123/218.ts
 
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.ibb.co/qkgW1nd/c0a0c8607691347e22942f2b86473199.png" group-title="Movies",Star Gold Select HD
 http://datahub11.com/Anthony2/Anthony123/98859
