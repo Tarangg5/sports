@@ -1,96 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONU NEON PLAYER - Search</title>
-    <style>
-        body { background: #0f0f0f; color: #00ffcc; font-family: 'Segoe UI', sans-serif; text-align: center; }
-        .search-container { margin: 20px auto; width: 90%; max-width: 500px; }
-        input[type="text"] {
-            width: 100%; padding: 12px; border: 2px solid #00ffcc; background: #1a1a1a;
-            color: #fff; border-radius: 25px; outline: none; font-size: 16px;
+<script>
+    const workerUrl = "https://your-worker.workers.dev/";
+
+    async function searchChannels() {
+        const query = document.getElementById('searchInput').value;
+        const listContainer = document.getElementById('channelList');
+        
+        if(query.length < 3) {
+            alert("Kam se kam 3 words likhiye!");
+            return;
         }
-        .btn-search {
-            margin-top: 10px; padding: 10px 25px; background: #00ffcc; border: none;
-            border-radius: 20px; cursor: pointer; font-weight: bold; color: #000;
+
+        listContainer.innerHTML = "<p>Searching... Please wait...</p>";
+
+        try {
+            const response = await fetch(`${workerUrl}?search=${query}`);
+            const data = await response.text();
+            parseM3U(data);
+        } catch (error) {
+            listContainer.innerHTML = "<p style='color:red'>Error loading channels.</p>";
         }
-        #channelList { margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; }
-        .channel-card {
-            background: #1a1a1a; border: 1px solid #333; margin: 10px; padding: 15px;
-            width: 150px; border-radius: 10px; transition: 0.3s; cursor: pointer;
-        }
-        .channel-card:hover { border-color: #00ffcc; transform: scale(1.05); }
-        .channel-card img { width: 100%; border-radius: 5px; }
-        .channel-name { font-size: 14px; margin-top: 8px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    </style>
-</head>
-<body>
+    }
 
-    <h2>SONU NEON <span style="color:#fff">PLAYER</span></h2>
+    function parseM3U(m3uData) {
+        const listContainer = document.getElementById('channelList');
+        listContainer.innerHTML = ""; 
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search Channel Name (e.g. Star, Sony, Zee)...">
-        <button class="btn-search" onclick="searchChannels()">Dhundho</button>
-    </div>
-
-    <div id="channelList">
-        </div>
-
-    <script>
-        // Apne Cloudflare Worker ka URL yahan dalein
-        const workerUrl = "https://blue-sea-415d.sonuujamuicamp.workers.dev/";
-
-        async function searchChannels() {
-            const query = document.getElementById('searchInput').value;
-            const listContainer = document.getElementById('channelList');
-            listContainer.innerHTML = "<p>Searching... Please wait...</p>";
-
-            try {
-                // Worker ko search query ke sath call kar rahe hain
-                const response = await fetch(`${workerUrl}?search=${query}`);
-                const data = await response.text();
+        const lines = m3uData.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            if (lines[i].startsWith('#EXTINF')) {
+                const info = lines[i];
+                const streamUrl = lines[i + 1];
                 
-                parseM3U(data);
-            } catch (error) {
-                listContainer.innerHTML = "<p style='color:red'>Error loading channels.</p>";
+                const nameMatch = info.match(/,(.*)$/);
+                const name = nameMatch ? nameMatch[1] : "Unknown Channel";
+                
+                const logoMatch = info.match(/tvg-logo="(.*?)"/);
+                const logo = logoMatch ? logoMatch[1] : "https://via.placeholder.com/150?text=No+Logo";
+
+                // Card design with Copy Button
+                const card = document.createElement('div');
+                card.className = 'channel-card';
+                card.innerHTML = `
+                    <img src="${logo}" alt="Logo">
+                    <span class="channel-name">${name}</span>
+                    <button class="btn-copy" onclick="copyToClipboard('${streamUrl}')" 
+                        style="margin-top:10px; background:#00ffcc; color:#000; border:none; padding:5px; border-radius:5px; cursor:pointer; width:100%; font-weight:bold;">
+                        Copy Link
+                    </button>
+                `;
+                listContainer.appendChild(card);
             }
         }
+    }
 
-        function parseM3U(m3uData) {
-            const listContainer = document.getElementById('channelList');
-            listContainer.innerHTML = ""; // Clear purani list
-
-            const lines = m3uData.split('\n');
-            for (let i = 0; i < lines.length; i++) {
-                if (lines[i].startsWith('#EXTINF')) {
-                    const info = lines[i];
-                    const url = lines[i + 1];
-                    
-                    // Channel name extract karna
-                    const nameMatch = info.match(/,(.*)$/);
-                    const name = nameMatch ? nameMatch[1] : "Unknown Channel";
-                    
-                    // Logo extract karna (agar m3u mein hai)
-                    const logoMatch = info.match(/tvg-logo="(.*?)"/);
-                    const logo = logoMatch ? logoMatch[1] : "https://via.placeholder.com/150?text=No+Logo";
-
-                    // Card banana
-                    const card = document.createElement('div');
-                    card.className = 'channel-card';
-                    card.onclick = () => window.open(url, '_blank'); // Click par play hoga
-                    card.innerHTML = `
-                        <img src="${logo}" alt="Logo">
-                        <span class="channel-name">${name}</span>
-                    `;
-                    listContainer.appendChild(card);
-                }
-            }
-            
-            if (listContainer.innerHTML === "") {
-                listContainer.innerHTML = "<p>No channels found. Try another name.</p>";
-            }
-        }
-    </script>
-</body>
-</html>
+    // Link Copy karne wala function
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Link Copy Ho Gaya! ✅");
+        }).catch(err => {
+            console.error('Copy fail ho gaya: ', err);
+        });
+    }
+</script>
