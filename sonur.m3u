@@ -9,13 +9,7 @@
 ###EXTHTTP:{"Cookie":"__hdnea__=stt=1775965958~exp=1775987558~acl=/bpk-tv/Star_Sports_HD1_BTS/WDVLive/*~hmac=11d42ba4bd72c52bbbb0fdfc3e33ead8f22a39acbec4b7dd22bea4004bded517"}
 ##https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/WDVLive/index.mpd
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://i.postimg.cc/hvvtSw-CV/Astro-Cricket.png" group-title="⚡ LIVE TV", FOX 501 HD WITHOUT ADS
-#EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1
-https://lchd-314.zenostreams-cdn-001.com/fox501.m3u8
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://i.postimg.cc/hvvtSw-CV/Astro-Cricket.png" group-title="⚡ LIVE TV", Willow 2 hindi
-#EXTVLCOPT:http-user-agent=ExoPlayerDemo/2.15.1 (Linux; Android 13) ExoPlayerLib/2.15.1
-https://lchd-314.zenostreams-cdn-001.com/willowhindi.m3u8
 
 
 
