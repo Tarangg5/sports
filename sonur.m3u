@@ -75,6 +75,18 @@ http://datahub11.com/Anthony2/Anthony123/230
 http://datahub11.com/Anthony2/Anthony123/98860
 
 
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Tulsi kumar song
+http://datahub11.com/live/Anthony2/Anthony123/135445.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Abhijit Bhattacharjee song
+http://datahub11.com/live/Anthony2/Anthony123/135447.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Alka yagnik song
+http://datahub11.com/live/Anthony2/Anthony123/135448.ts
+
+
+
+
 
 ###EXTINF:-1 tvg-id="Star_Sports_1_HD" tvg-name="Star Sports 1 HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Sports_HD1.png" group-title="⚡ LIVE TV",Staar Sports 2 Hindi HD 50fps
 ###KODIPROP:inputstream.adaptive.license_type=clearkey
