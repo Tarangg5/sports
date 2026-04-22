@@ -3,213 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONU NEON PLAYER | Search & Copy</title>
+    <title>SONU NEON PLAYER | Live & Movies</title>
     <style>
-        /* Neon Theme Styling */
-        body {
-            background: #0f0f0f;
-            color: #00ffcc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+        body { background: #0f0f0f; color: #00ffcc; font-family: sans-serif; text-align: center; padding: 20px; }
+        .search-box { margin-bottom: 20px; }
+        input[type="text"] { width: 80%; padding: 12px; border-radius: 20px; border: 2px solid #00ffcc; background: #1a1a1a; color: #fff; outline: none; }
+        
+        .type-selector { margin: 15px; }
+        .type-btn { padding: 8px 20px; background: #1a1a1a; color: #00ffcc; border: 1px solid #00ffcc; cursor: pointer; border-radius: 15px; margin: 5px; }
+        .active { background: #00ffcc !important; color: #000 !important; font-weight: bold; }
 
-        h2 { text-shadow: 0 0 10px #00ffcc; }
-        h2 span { color: #fff; }
-
-        .search-container {
-            margin: 20px auto;
-            width: 95%;
-            max-width: 600px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #00ffcc;
-            background: #1a1a1a;
-            color: #fff;
-            border-radius: 30px;
-            outline: none;
-            font-size: 16px;
-            box-sizing: border-box;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-        }
-
-        .btn-search {
-            margin-top: 15px;
-            padding: 12px 30px;
-            background: #00ffcc;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #000;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        .btn-search:hover {
-            box-shadow: 0 0 20px #00ffcc;
-            transform: scale(1.05);
-        }
-
-        #channelList {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 20px;
-            padding: 10px;
-        }
-
-        .channel-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            padding: 15px;
-            border-radius: 15px;
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .channel-card:hover {
-            border-color: #00ffcc;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-        }
-
-        .channel-card img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            border-radius: 10px;
-            background: #000;
-            margin-bottom: 10px;
-        }
-
-        .channel-name {
-            font-size: 14px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-            height: 40px;
-            overflow: hidden;
-            color: #eee;
-        }
-
-        .btn-copy {
-            background: #00ffcc;
-            color: #000;
-            border: none;
-            padding: 8px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 12px;
-            transition: 0.2s;
-        }
-
-        .btn-copy:active {
-            transform: scale(0.95);
-            background: #fff;
-        }
-
-        /* Loading Spinner */
-        .loader { color: #fff; font-style: italic; margin-top: 20px; }
+        .btn-search { padding: 10px 30px; background: #00ffcc; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+        .card { background: #1a1a1a; padding: 10px; border-radius: 10px; border: 1px solid #333; }
+        .card img { width: 100%; height: 120px; object-fit: contain; border-radius: 5px; }
+        .copy-btn { background: #fff; color: #000; border: none; padding: 5px; width: 100%; margin-top: 10px; cursor: pointer; border-radius: 5px; font-size: 11px; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <h2>SONU NEON <span>PLAYER</span></h2>
 
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search Channel (e.g. Star, Sony, Zee)...">
-        <button class="btn-search" onclick="searchChannels()">Dhundho</button>
+    <div class="type-selector">
+        <button id="liveBtn" class="type-btn active" onclick="setType('live')">LIVE TV</button>
+        <button id="vodBtn" class="type-btn" onclick="setType('vod')">MOVIES</button>
     </div>
 
-    <div id="channelList">
-        </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search name here...">
+        <br>
+        <button class="btn-search" onclick="doSearch()">DHUNDHO</button>
+    </div>
+
+    <div id="list"></div>
 
     <script>
-        // YAHAN APNA CLOUDFLARE WORKER URL DALO
-        const workerUrl = "https://blue-sea-415d.sonuujamuicamp.workers.dev/";
+        let currentType = 'live';
+        const workerUrl = "https://blue-sea-415d.sonuujamuicamp.workers.dev/"; // APNA WORKER URL DALO
 
-        async function searchChannels() {
-            const query = document.getElementById('searchInput').value.trim();
-            const listContainer = document.getElementById('channelList');
-
-            if (query.length < 3) {
-                alert("Please enter at least 3 characters!");
-                return;
-            }
-
-            listContainer.innerHTML = "<div class='loader'>Searching in 147MB database...</div>";
-
-            try {
-                // Worker ko search query ke sath call kar rahe hain
-                const response = await fetch(`${workerUrl}?search=${encodeURIComponent(query)}`);
-                const m3uData = await response.text();
-                
-                parseAndDisplay(m3uData);
-            } catch (error) {
-                listContainer.innerHTML = "<p style='color:red'>Server Connect Nahi Ho Paya.</p>";
-            }
+        function setType(type) {
+            currentType = type;
+            document.getElementById('liveBtn').classList.toggle('active', type === 'live');
+            document.getElementById('vodBtn').classList.toggle('active', type === 'vod');
         }
 
-        function parseAndDisplay(data) {
-            const listContainer = document.getElementById('channelList');
-            listContainer.innerHTML = ""; 
+        async function doSearch() {
+            const query = document.getElementById('searchInput').value;
+            const listDiv = document.getElementById('list');
+            if(query.length < 3) return alert("3 letters min!");
 
-            if (!data.includes('#EXTINF')) {
-                listContainer.innerHTML = "<p>Koi channel nahi mila. Kuch aur search karein.</p>";
-                return;
-            }
+            listDiv.innerHTML = "Searching...";
 
+            try {
+                const res = await fetch(`${workerUrl}?search=${query}&type=${currentType}`);
+                const data = await res.text();
+                displayResults(data);
+            } catch (e) { listDiv.innerHTML = "Error!"; }
+        }
+
+        function displayResults(data) {
+            const listDiv = document.getElementById('list');
+            listDiv.innerHTML = "";
             const lines = data.split('\n');
-            
+
             for (let i = 0; i < lines.length; i++) {
                 if (lines[i].startsWith('#EXTINF')) {
-                    const infoLine = lines[i];
-                    const streamUrl = lines[i + 1] ? lines[i + 1].trim() : "";
-                    
-                    if (!streamUrl.startsWith('http')) continue;
+                    const name = lines[i].split(',')[1];
+                    const url = lines[i+1];
+                    const logoMatch = lines[i].match(/tvg-logo="(.*?)"/);
+                    const logo = logoMatch ? logoMatch[1] : 'https://via.placeholder.com/150';
 
-                    // Channel Name Extract
-                    const nameMatch = infoLine.match(/,(.*)$/);
-                    const name = nameMatch ? nameMatch[1] : "Unknown Channel";
-                    
-                    // Logo Extract
-                    const logoMatch = infoLine.match(/tvg-logo="(.*?)"/);
-                    const logo = (logoMatch && logoMatch[1]) ? logoMatch[1] : "https://via.placeholder.com/80?text=No+Logo";
-
-                    // Card design
                     const card = document.createElement('div');
-                    card.className = 'channel-card';
+                    card.className = 'card';
                     card.innerHTML = `
-                        <img src="${logo}" onerror="this.src='https://via.placeholder.com/80?text=TV'">
-                        <span class="channel-name">${name}</span>
-                        <button class="btn-copy" onclick="copyUrl('${streamUrl}', this)">
-                            COPY LINK
-                        </button>
+                        <img src="${logo}">
+                        <div style="font-size:12px; margin:5px 0; height:30px; overflow:hidden;">${name}</div>
+                        <button class="copy-btn" onclick="copyIt('${url}', this)">COPY LINK</button>
                     `;
-                    listContainer.appendChild(card);
+                    listDiv.appendChild(card);
                 }
             }
         }
 
-        // Copy Function
-        function copyUrl(url, button) {
-            navigator.clipboard.writeText(url).then(() => {
-                const originalText = button.innerText;
-                button.innerText = "COPIED! ✅";
-                button.style.background = "#fff";
-                
-                // 2 second baad button wapas normal ho jayega
-                setTimeout(() => {
-                    button.innerText = originalText;
-                    button.style.background = "#00ffcc";
-                }, 2000);
-            }).catch(err => {
-                alert("Copy fail ho gaya, manually copy karein.");
+        function copyIt(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerText = "COPIED! ✅";
+                setTimeout(() => btn.innerText = "COPY LINK", 2000);
             });
         }
     </script>
