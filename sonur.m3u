@@ -85,6 +85,79 @@ http://datahub11.com/live/Anthony2/Anthony123/135447.ts
 http://datahub11.com/live/Anthony2/Anthony123/135448.ts
 
 
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Guru randhawa music
+http://datahub11.com/live/Anthony2/Anthony123/135449.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Mohit Chauhan song
+http://datahub11.com/live/Anthony2/Anthony123/135442.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Lucky Ali song
+http://datahub11.com/live/Anthony2/Anthony123/135439.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-MOHAMMAD RAFI SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135440.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KUNAL GANJAWALA SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135437.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KISHOR KUMAR SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135436.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ANURADHA PAWDWAL SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135433.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-HIMESH RESHAMMIYA SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135434.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ADNAN SAMI SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135432.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SHAAN SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135431.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SHREYA GHOSHAL SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135430.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-MUKESH SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135429.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-PANKAJ UDAS SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135428.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-A.R RAHMAN SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135427.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KAVITA KRISHNAMURTI SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135426.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-NEHA KAKKAR SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135425.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-K.K SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135424.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KUMAR SANU SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135423.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ARJIT SINGH SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135422.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SUNIDHI CHAUHAN SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135421.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-UDIT NARAYAN SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135420.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-LATA MANGESHKAR SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135417.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-PALAK MUCHHAL SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135451.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ALISHA CHINAI SONGS HD
+http://datahub11.com/live/Anthony2/Anthony123/135450.ts
+
+
 
 
 
@@ -440,77 +513,6 @@ https://linearjitp-playback.astro.com.my/dash-wv/linear/2309/default_ott.mpd
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; UltraBox Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/136.0.7103.61 Mobile Safari/537.36
 https://linearjitp-playback.astro.com.my/dash-wv/linear/5073/default_primary.mpd
 
-#EXTINF:-1 tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/357_144.png" group-title="Astro GO" tvg-id="StarVijay",Star Vijay
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=af35608a7d4b13d1158c2ef6d6c1a010:d01c81050dfab309c6be7e60d03c2d82
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; UltraBox Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/136.0.7103.61 Mobile Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/2707/default_primary.mpd
-
-#EXTINF:-1 tvg-name="SunMusic" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/417_144.png" group-title="Music" tvg-id="SunMusic",Sun Music
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=beaca9461f7ca0d58ba529fed2e7b610:da0a70148e126eb40cce02665753896d
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; UltraBox Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/136.0.7103.61 Mobile Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/5011/default_primary.mpd
-
-#EXTINF:-1 tvg-id="SunTV" tvg-name="SUN TV HD" group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/358_144.png", Sun TV
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"699Wuko1YsyCBTopUpdUMg", "kid":"gwdv8vaNF2S1WcQyq0nKEA" } ], "type":"temporary" }
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/2310/default_ott.mpd
-
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"URkFvxkUdLQStOwRdRWnnA", "kid":"5GNU+znCjllWvJRqwqBQEA" } ], "type":"temporary" }
-#EXTINF:-1 tvg-id="ColorsTamil" tvg-name="Colors Tamil HD" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/298_144.png" group-title="Astro GO", Colors Tamil
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/2101/default_ott.mpd
-
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"Znoz9NW7NYfy1SCYhoOerA", "kid":"DU4+fawtWLk7+BmnL+jVEA" } ], "type":"temporary" }
-#EXTINF:-1 tvg-id="ZeeTamilHD"  group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/297_144.png",Zee Tamil
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/2311/default_ott.mpd
-
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"c2SM66N1FkWSbUVCHIXZJw", "kid":"jnhjqOdwsNcuvkpoQ3tkEA" } ], "type":"temporary" }
-#EXTINF:-1 tvg-id="216" tvg-name="KTV" group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/477_144.png", KTV
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-http://linearjitp-playback.astro.com.my/dash-wv/linear/5088/default_ott.mpd
-  
-#EXTINF:-1 tvg-id="Adithya" tvg-name="Adithya" group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/67_144.png", Adithya
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"XrN2KxpGMaC5jiXiPO8Bkw", "kid":"hZ9bIFTEBz6PDaRj0gi5EA" } ], "type":"temporary" }
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 14; 17223-43-223532-432-4121-32-43-2-1212-3124-12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Mobile Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/915/default_ott.mpd
-
-#EXTINF:-1 tvg-id="SunNews" tvg-name="Sun News" group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/478_144.png", Sun News
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"rAh5IEchjKKgHyu9EtkFAQ", "kid":"ChccwbuQ94ggzyXMVfDuEA" } ], "type":"temporary" }
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/5087/default_ott.mpd
-
-#EXTINF:-1 tvg-id="SunLife" tvg-name="Sun Life" group-title="Astro GO" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/476_144.png",Sun Life
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key={ "keys":[ { "kty":"oct", "k":"cmMEcIxCn2E+wtxTYZ1vdg", "kid":"4+G+lObBk/oheHzoQ122EA" } ], "type":"temporary" }
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 10; MiTV-AXSO0 Build/QTZCS200912.005) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36
-https://linearjitp-playback.astro.com.my/dash-wv/linear/5089/default_ott.mpd
-
-#EXTINF:-1 tvg-id="337.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/DD728749-B762-4F91-81F8-EA1016F97EF3/0-16x9.png?width=530&updatedTime=0&dt=Web" group-title="Astro GO",Zee Thirai
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=bd7282e920e5437a9b1f01bc6f81795c:99763370f0763b0f7119aab091cc70c8
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
-https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(ZeeThi)/master.mpd
-
-#EXTINF:-1 tvg-id="303.unifi" tvg-logo="https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/BD814A07-3CF5-4686-B552-31FF782BB8F7/0-16x9.png?width=530&updatedTime=0&dt=Web" group-title="Astro GO",Sony YAY!
-#KODIPROP:inputstreamaddon=inputstream.adaptive
-#KODIPROP:inputstream.adaptive.manifest_type=dash
-#KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
-#KODIPROP:inputstream.adaptive.license_key=582e9e382cb0495886afbabdbdb6fbf7:c0f550839b235443724cd007392b6e40
-https://unifi-live2.secureswiftcontent.com/Content/DASH/Live/channel(SonyYay)/master.mpd
-
-#EXTINF: -1 tvg-id="Animax" tvg-logo="https://tataprime.wordpress.com/wp-content/uploads/2024/07/20240707_1001225329215954789331277.png" group-title="Kids",Animax
-https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8
 
 #EXTINF:-1 tvg-id="ZeeCinema" tvg-name="Zee Cinema" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/490_144.png" group-title="Astro GO",Z Cinema
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Linux; Android 13; UltraBox Build/TP1A.220624.014; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/136.0.7103.61 Mobile Safari/537.36
@@ -631,30 +633,10 @@ https://vodzong.mjunoon.tv:8087/streamtest/Animal-Planet-158-3/playlist.m3u8
 #KODIPROP:inputstream.adaptive.license_key=34ce95b60c424e169619816c5181aded:0e2a2117d705613542618f58bf26fc8e
 https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_bbcearth_hd1/default/index.mpd
 
-#EXTINF:-1 tvg-id="CartoonNetwork" group-title="Astro GO" tvg-logo="https://linear-poster.astro.com.my/prod/logo/Cartoon_Network_v1.png",Cartoon Network
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=a2d1f552ff9541558b3296b5a932136b:cdd48fa884dc0c3a3f85aeebca13d444
-https://qp-pldt-live-grp-12-prod.akamaized.net/out/u/dr_cartoonnetworkhd.mpd
 
-#EXTINF:-1 tvg-id="Nickelodeon" group-title="Astro GO" tvg-logo="https://linear-poster.astro.com.my/prod/logo/Nicklelodeon_v1.png",Nickelodeon
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=9ce58f37576b416381b6514a809bfd8b:f0fbb758cdeeaddfa3eae538856b4d72
-https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_nickelodeon/default/index.mpd
 
-#EXTINF:-1  tvg-id="animax" tvg-logo="https://i.imgur.com/5gJTEHT.png" group-title="Astro GO",Animax
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=1e7b9d2c6a4f4d8c9f33b5c1a8d7e260:67336c0c5b24fb4b8caac248dad3c55d
-https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/cg_animax_sd_new/default/index.mpd
 
-#EXTINF:-1  tvg-id="dreamworks-hd" tvg-logo="https://imgur.com/SASnGFo.png" group-title="Astro GO",DreamWorks HD
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=7b1e9c4d5a2f4d8c9f106d3a8b2c1e77:8b2904224c6cee13d2d4e06c0a3b2887
-https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_dreamworks_hd1/default/index.mpd
 
-#EXTINF:-1 tvg-id="NickJr" tvg-logo="http://linear-poster.astro.com.my/prod/logo/logo_10000498_v1.png"  group-title="Astro GO",Nick Jr
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=bab5c11178b646749fbae87962bf5113:0ac679aad3b9d619ac39ad634ec76bc8
-https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_nickjr/default/index.mpd
 
 #EXTINF:-1 tvg-id="History" tvg-logo="https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/144_144.png" group-title="Astro GO",History HD
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
@@ -666,15 +648,7 @@ https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_historyhd/default/index
 #KODIPROP:inputstream.adaptive.license_key=cf861d26e7834166807c324d57df5119:64a81e30f6e5b7547e3516bbf8c647d0
 https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/dr_lifetime/default/index.mpd
 
-#EXTINF:-1  tvg-id="asian-food-network" tvg-logo="https://i.imgur.com/PUe61Ov.png" group-title="Astro GO",Asian Food Network
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=1619db30b9ed42019abb760a0a3b5e7f:5921e47fb290ae263291b851c0b4b6e4
-https://qp-pldt-live-bpk-01-prod.akamaized.net/bpk-tv/asianfoodnetwork_sd/default/index.mpd
 
-#EXTINF:-1 tvg-id="foodnetwork" tvg-name="FOOD NETWORK" tvg-logo="https://raw.githubusercontent.com/bashlin/TVlogo/main/img/FoodNetwork.png" group-title="Astro GO",FOOD NETWORK
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=4a9d2f7c1e6b4c8d8a55d7b1e3f0c926:2e62531bdb450480a18197b14f4ebc77
-https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_foodnetwork_hd1/default/index.mpd
 
 #EXTINF:-1 tvg-id="HGTV" group-title="Astro GO" tvg-logo="http://linear-poster.astro.com.my/prod/logo/HGTV_v1.pngg",HGTV
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -789,7 +763,7 @@ https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/duqbirmk0d/out/v1
 
 
 
-#EXTM3U
+
 
 #EXTINF:-1 group-title="radio",Vivid Bharati (AIR)
 https://air.pc.cdn.bitgravity.com/air/live/pbaudio001/chunklist.m3u8
