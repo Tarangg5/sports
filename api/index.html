@@ -3,34 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONU NEON PLAYER | Live & Movies</title>
+    <title>SONU NEON PLAYER | 3-in-1</title>
     <style>
         body { background: #0f0f0f; color: #00ffcc; font-family: sans-serif; text-align: center; padding: 20px; }
-        .search-box { margin-bottom: 20px; }
-        input[type="text"] { width: 80%; padding: 12px; border-radius: 20px; border: 2px solid #00ffcc; background: #1a1a1a; color: #fff; outline: none; }
-        
-        .type-selector { margin: 15px; }
-        .type-btn { padding: 8px 20px; background: #1a1a1a; color: #00ffcc; border: 1px solid #00ffcc; cursor: pointer; border-radius: 15px; margin: 5px; }
-        .active { background: #00ffcc !important; color: #000 !important; font-weight: bold; }
-
-        .btn-search { padding: 10px 30px; background: #00ffcc; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; margin-top: 10px; }
-        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
-        .card { background: #1a1a1a; padding: 10px; border-radius: 10px; border: 1px solid #333; }
-        .card img { width: 100%; height: 120px; object-fit: contain; border-radius: 5px; }
-        .copy-btn { background: #fff; color: #000; border: none; padding: 5px; width: 100%; margin-top: 10px; cursor: pointer; border-radius: 5px; font-size: 11px; font-weight: bold; }
+        .type-selector { margin: 15px; display: flex; justify-content: center; flex-wrap: wrap; }
+        .type-btn { padding: 10px 15px; background: #1a1a1a; color: #00ffcc; border: 1px solid #00ffcc; cursor: pointer; border-radius: 15px; margin: 5px; flex: 1; max-width: 120px; font-size: 12px; }
+        .active { background: #00ffcc !important; color: #000 !important; font-weight: bold; box-shadow: 0 0 10px #00ffcc; }
+        input[type="text"] { width: 85%; padding: 12px; border-radius: 25px; border: 2px solid #00ffcc; background: #1a1a1a; color: #fff; outline: none; margin-bottom: 10px; }
+        .btn-search { padding: 12px 40px; background: #00ffcc; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-top: 25px; }
+        .card { background: #1a1a1a; padding: 10px; border-radius: 12px; border: 1px solid #333; transition: 0.3s; }
+        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+        .copy-btn { background: #fff; color: #000; border: none; padding: 7px; width: 100%; margin-top: 10px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 11px; }
     </style>
 </head>
 <body>
 
-    <h2>SONU NEON <span>PLAYER</span></h2>
+    <h2 style="text-shadow: 0 0 10px #00ffcc;">SONU NEON <span style="color:#fff">PLAYER</span></h2>
 
     <div class="type-selector">
         <button id="liveBtn" class="type-btn active" onclick="setType('live')">LIVE TV</button>
         <button id="vodBtn" class="type-btn" onclick="setType('vod')">MOVIES</button>
+        <button id="seriesBtn" class="type-btn" onclick="setType('series')">SERIES</button>
     </div>
 
     <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search name here...">
+        <input type="text" id="searchInput" placeholder="Search (Star, Pathaan, Mirzapur)...">
         <br>
         <button class="btn-search" onclick="doSearch()">DHUNDHO</button>
     </div>
@@ -39,23 +37,23 @@
 
     <script>
         let currentType = 'live';
-        const workerUrl = "https://blue-sea-415d.sonuujamuicamp.workers.dev/"; // APNA WORKER URL DALO
+        const workerUrl = "https://your-worker.workers.dev/"; // APNA WORKER URL DALO
 
         function setType(type) {
             currentType = type;
             document.getElementById('liveBtn').classList.toggle('active', type === 'live');
             document.getElementById('vodBtn').classList.toggle('active', type === 'vod');
+            document.getElementById('seriesBtn').classList.toggle('active', type === 'series');
         }
 
         async function doSearch() {
             const query = document.getElementById('searchInput').value;
             const listDiv = document.getElementById('list');
-            if(query.length < 3) return alert("3 letters min!");
-
-            listDiv.innerHTML = "Searching...";
+            if(query.length < 3) return alert("3 words min!");
+            listDiv.innerHTML = "<p style='color:#fff'>Searching...</p>";
 
             try {
-                const res = await fetch(`${workerUrl}?search=${query}&type=${currentType}`);
+                const res = await fetch(`${workerUrl}?search=${encodeURIComponent(query)}&type=${currentType}`);
                 const data = await res.text();
                 displayResults(data);
             } catch (e) { listDiv.innerHTML = "Error!"; }
@@ -75,10 +73,13 @@
 
                     const card = document.createElement('div');
                     card.className = 'card';
+                    // Series ke liye text alag dikhayenge
+                    const btnText = url.startsWith('SERIES_ID') ? "COPY SERIES ID" : "COPY LINK";
+                    
                     card.innerHTML = `
                         <img src="${logo}">
-                        <div style="font-size:12px; margin:5px 0; height:30px; overflow:hidden;">${name}</div>
-                        <button class="copy-btn" onclick="copyIt('${url}', this)">COPY LINK</button>
+                        <div style="font-size:11px; margin:8px 0; height:35px; overflow:hidden; color:#fff;">${name}</div>
+                        <button class="copy-btn" onclick="copyIt('${url}', this)">${btnText}</button>
                     `;
                     listDiv.appendChild(card);
                 }
@@ -87,8 +88,9 @@
 
         function copyIt(text, btn) {
             navigator.clipboard.writeText(text).then(() => {
+                const oldText = btn.innerText;
                 btn.innerText = "COPIED! ✅";
-                setTimeout(() => btn.innerText = "COPY LINK", 2000);
+                setTimeout(() => btn.innerText = oldText, 2000);
             });
         }
     </script>
