@@ -7,31 +7,34 @@
     <style>
         body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; text-align: center; }
         .btn { background: #238636; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 10px; font-weight: bold; }
+        .btn:hover { background: #2ea043; }
         .btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
         .input-group { margin-bottom: 15px; }
-        input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 80%; max-width: 400px; }
+        input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 85%; max-width: 450px; }
         #status { margin-top: 20px; color: #58a6ff; font-weight: bold; }
         #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
         textarea { width: 100%; height: 200px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
-        a { color: #58a6ff; font-weight: bold; font-size: 18px; word-break: break-all; }
+        a { color: #58a6ff; font-weight: bold; font-size: 16px; word-break: break-all; }
+        .save-info { color: #8b949e; font-size: 12px; margin-top: 5px; }
     </style>
 </head>
 <body>
 
     <h2>M3U GitHub Auto-Updater 🐙</h2>
-    <p>Ek baar Token aur Gist ID daalein, fir hamesha ke liye link fix!</p>
+    <p>Railway Master Setup: Token aur ID ab save rahenge!</p>
 
     <div class="input-group">
-        <input type="password" id="ghToken" placeholder="Yahan GitHub Token Daalein">
+        <input type="password" id="ghToken" placeholder="GitHub Token yahan daalein">
     </div>
     <div class="input-group">
-        <input type="text" id="gistId" placeholder="Gist ID (Bana hua hai toh daalein, warna khali chhodein)">
+        <input type="text" id="gistId" placeholder="Gist ID yahan daalein">
+        <div class="save-info">Ye dono cheezein aapke browser mein save ho jayengi.</div>
     </div>
 
     <button id="fetchBtn" class="btn">1. Fetch Channels</button>
     <button id="uploadBtn" class="btn" style="background:#8957e5; display:none;">2. Push to GitHub Gist</button>
     
-    <div id="status">GitHub Token taiyar rakhein...</div>
+    <div id="status">Details bhariye aur shuru karein...</div>
     
     <div id="linkBox">
         <strong>Aapka Permanent RAW Link:</strong><br><br>
@@ -42,8 +45,10 @@
 
     <script>
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
-        const totalPages = 29;
+        const totalPages = 21;
 
+        const ghTokenInput = document.getElementById('ghToken');
+        const gistIdInput = document.getElementById('gistId');
         const fetchBtn = document.getElementById('fetchBtn');
         const uploadBtn = document.getElementById('uploadBtn');
         const status = document.getElementById('status');
@@ -51,6 +56,16 @@
         const linkBox = document.getElementById('linkBox');
         const finalLink = document.getElementById('finalLink');
 
+        // --- LOCAL STORAGE SE DATA LOAD KARNA ---
+        window.onload = () => {
+            const savedToken = localStorage.getItem('gh_token');
+            const savedGistId = localStorage.getItem('gist_id');
+            if (savedToken) ghTokenInput.value = savedToken;
+            if (savedGistId) gistIdInput.value = savedGistId;
+            if (savedToken && savedGistId) status.innerText = "Saved details mil gayi! Fetch shuru karein.";
+        };
+
+        // 1. Fetch Logic
         fetchBtn.addEventListener('click', async () => {
             fetchBtn.disabled = true;
             output.value = "";
@@ -58,14 +73,14 @@
 
             try {
                 for (let i = 1; i <= totalPages; i++) {
-                    status.innerText = `🔄 Fetching Page ${i}...`;
+                    status.innerText = `🔄 Fetching Page ${i} of ${totalPages}...`;
                     const response = await fetch(`${baseUrl}?page=${i}`);
                     const text = await response.text();
                     const cleanContent = text.replace("#EXTM3U", "").trim();
                     if (cleanContent) fullPlaylist += cleanContent + "\n\n";
                 }
                 output.value = fullPlaylist;
-                status.innerText = "Fetch Complete! Ab GitHub par Push karein.";
+                status.innerText = "Fetch Complete! Ab GitHub par update karein.";
                 uploadBtn.style.display = "inline-block";
             } catch (err) {
                 status.innerText = "❌ Fetch Error: " + err.message;
@@ -74,46 +89,46 @@
             }
         });
 
+        // 2. Upload Logic
         uploadBtn.addEventListener('click', async () => {
-            const token = document.getElementById('ghToken').value;
-            const existingGistId = document.getElementById('gistId').value;
+            const token = ghTokenInput.value;
+            const gistId = gistIdInput.value;
             const content = output.value;
 
-            if (!token) return alert("Pehle GitHub Token daalein!");
+            if (!token || !gistId) return alert("Token aur Gist ID dono zaroori hain!");
+
+            // Token aur ID ko browser mein save karna
+            localStorage.setItem('gh_token', token);
+            localStorage.setItem('gist_id', gistId);
 
             status.innerText = "🐙 GitHub par update ho raha hai...";
             uploadBtn.disabled = true;
 
-            const url = existingGistId ? `https://api.github.com/gists/${existingGistId}` : "https://api.github.com/gists";
-            const method = existingGistId ? "PATCH" : "POST";
-
             try {
-                const res = await fetch(url, {
-                    method: method,
+                const res = await fetch(`https://api.github.com/gists/${gistId}`, {
+                    method: "PATCH",
                     headers: {
                         "Authorization": `token ${token}`,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        "description": "My IPTV Master Playlist",
-                        "public": true,
                         "files": { "playlist.m3u": { "content": content } }
                     })
                 });
 
                 const data = await res.json();
-                if (data.id) {
+                if (res.ok) {
                     const rawUrl = data.files["playlist.m3u"].raw_url;
                     finalLink.href = rawUrl;
                     finalLink.innerText = rawUrl;
                     linkBox.style.display = "block";
-                    status.innerText = "Success! Link OTT Navigator mein daalein.";
-                    // Gist ID save karle taaki agli baar update ho naya na bane
-                    document.getElementById('gistId').value = data.id;
-                    alert("Agli baar ke liye ye Gist ID save karlein: " + data.id);
+                    status.innerText = "Success! Gist Update Ho Gaya. ✅";
+                } else {
+                    throw new Error(data.message || "Update fail hua");
                 }
             } catch (err) {
                 status.innerText = "❌ Error: " + err.message;
+                alert("Check karein: Token sahi hai? ID sahi hai?");
             } finally {
                 uploadBtn.disabled = false;
             }
