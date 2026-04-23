@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3U Playlist Master</title>
+    <title>M3U Master Combiner</title>
     <style>
         body { font-family: sans-serif; background: #121212; color: white; padding: 20px; text-align: center; }
-        .btn { background: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        .btn:disabled { background: #555; }
-        #status { margin-top: 20px; color: #aaa; }
-        textarea { width: 100%; height: 300px; margin-top: 20px; background: #1e1e1e; color: #00ff00; border: 1px solid #333; padding: 10px; font-family: monospace; }
+        .btn { background: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; margin: 5px; transition: 0.3s; }
+        .btn:hover { background: #0056b3; }
+        .btn:disabled { background: #555; cursor: not-allowed; }
+        .btn-copy { background: #28a745; display: none; } /* Shuru mein chhupa rahega */
+        .btn-copy:hover { background: #218838; }
+        #status { margin-top: 20px; color: #aaa; font-weight: bold; }
+        textarea { width: 100%; height: 300px; margin-top: 20px; background: #1e1e1e; color: #00ff00; border: 1px solid #333; padding: 10px; font-family: monospace; border-radius: 8px; }
     </style>
 </head>
 <body>
 
     <h2>M3U Master Combiner</h2>
-    <p>Ye script Page 1 se 14 tak sabhi channels ko jod degi.</p>
+    <p>Page 1 se 21 tak sabhi channels fetch karke copy karein.</p>
 
     <button id="fetchBtn" class="btn">Generate Full Playlist</button>
+    <button id="copyBtn" class="btn btn-copy">Copy Playlist</button>
     
     <div id="status">Taiyar rahein...</div>
     
@@ -27,12 +31,15 @@
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
         const totalPages = 21;
 
-        document.getElementById('fetchBtn').addEventListener('click', async () => {
-            const btn = document.getElementById('fetchBtn');
-            const status = document.getElementById('status');
-            const output = document.getElementById('output');
-            
-            btn.disabled = true;
+        const fetchBtn = document.getElementById('fetchBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const status = document.getElementById('status');
+        const output = document.getElementById('output');
+
+        // Fetch Function
+        fetchBtn.addEventListener('click', async () => {
+            fetchBtn.disabled = true;
+            copyBtn.style.display = "none"; // Purana button chhupao
             output.value = "";
             let fullPlaylist = "#EXTM3U\n# Combined Playlist from Browser\n\n";
 
@@ -44,7 +51,6 @@
                         const response = await fetch(`${baseUrl}?page=${i}`);
                         const text = await response.text();
                         
-                        // Header hata kar content extract karein
                         const cleanContent = text.replace("#EXTM3U", "").trim();
                         
                         if (cleanContent && !cleanContent.includes("No more channels")) {
@@ -56,23 +62,30 @@
                 }
 
                 output.value = fullPlaylist;
-                status.innerText = "Sabhik channels fetch ho gaye! Copy karke use karein.";
-                
-                // Auto-Download Option
-                const blob = new Blob([fullPlaylist], { type: 'text/plain' });
-                const a = document.createElement('a');
-                a.href = URL.createObjectURL(blob);
-                a.download = "master_playlist.m3u";
-                a.innerText = "Playlist Download Karein";
-                a.style.display = "block";
-                a.style.marginTop = "10px";
-                a.style.color = "#00ff00";
-                document.body.appendChild(a);
+                status.innerText = "Sabhik channels fetch ho gaye!";
+                copyBtn.style.display = "inline-block"; // Ab copy button dikhao
 
             } catch (err) {
                 status.innerText = "Error: " + err.message;
             } finally {
-                btn.disabled = false;
+                fetchBtn.disabled = false;
+            }
+        });
+
+        // Copy Function
+        copyBtn.addEventListener('click', () => {
+            output.select();
+            output.setSelectionRange(0, 99999); // Mobile ke liye
+            
+            try {
+                navigator.clipboard.writeText(output.value);
+                const originalText = copyBtn.innerText;
+                copyBtn.innerText = "Copied! ✅";
+                setTimeout(() => {
+                    copyBtn.innerText = originalText;
+                }, 2000);
+            } catch (err) {
+                alert("Copy karne mein dikat hui, please manually copy karein.");
             }
         });
     </script>
