@@ -51,18 +51,8 @@ http://datahub11.com/Anthony2/Anthony123/705161
 https://cable74tataplay.akamaized.net/dash/sanaplus.mpd
 #EXTINF: -1 tvg-logo="https://tataprime.wordpress.com/wp-content/uploads/2024/06/20240625_0713451452390300174130287.png" group-title="Music",SR Musix TV
 http://srnet.bmlive.net:1935/srmusic/myStream/playlist.m3u8
-#EXTINF: -1  group-title="Music" tvg-logo="https://tataprime.files.wordpress.com/2024/04/20240408_0942331739649577038058207.png", Rasi Music
-https://rasinetworks.in/live/rasimusichd/index.mpd
-#EXTINF: -1  tvg-name="MN Music" group-title="Music" tvg-logo="https://tataprime.files.wordpress.com/2024/03/20240315_0846274573125433222986374.png",MN Music
-http://mntv.livebox.co.in/musichls/live.m3u8
-#EXTINF: -1 tvg-id="96" tvg-logo="https://tatalogo.pages.dev/96.png" group-title="Music", Zoom
-https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/zoom-tv/master.m3u8
-#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/kXTCYqg.png" group-title="Music", Music India
-https://cdn-2.pishow.tv/live/226/master.m3u8
-#EXTINF: -1 tvg-id="139" tvg-logo="https://tatalogo.pages.dev/139.png" group-title="Music", 9xM
-https://d14c63magvk61v.cloudfront.net/strm/channels/9xm/master.m3u8
-#EXTINF: -1 tvg-id="39" tvg-logo="https://tatalogo.pages.dev/39.png" group-title="Music", 9x Jalwa
-https://d14c63magvk61v.cloudfront.net/strm/channels/9xjalwa/master.m3u8
+
+
 
 
 
