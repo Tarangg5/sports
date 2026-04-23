@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M3U Master Combiner</title>
+    <title>M3U GitHub Master 🛰️</title>
     <style>
-        body { font-family: sans-serif; background: #121212; color: white; padding: 20px; text-align: center; }
-        .btn { background: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; margin: 5px; transition: 0.3s; }
-        .btn:hover { background: #0056b3; }
-        .btn:disabled { background: #555; cursor: not-allowed; }
-        .btn-upload { background: #ffc107; color: black; display: none; } /* Upload Button */
-        .btn-upload:hover { background: #e0a800; }
-        #status { margin-top: 20px; color: #aaa; font-weight: bold; }
-        #linkBox { margin-top: 15px; display: none; padding: 15px; background: #333; border-radius: 8px; word-break: break-all; }
-        textarea { width: 100%; height: 300px; margin-top: 20px; background: #1e1e1e; color: #00ff00; border: 1px solid #333; padding: 10px; font-family: monospace; border-radius: 8px; }
-        a { color: #00ff00; text-decoration: none; font-weight: bold; }
+        body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; text-align: center; }
+        .btn { background: #238636; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 10px; font-weight: bold; }
+        .btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
+        .input-group { margin-bottom: 15px; }
+        input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 80%; max-width: 400px; }
+        #status { margin-top: 20px; color: #58a6ff; font-weight: bold; }
+        #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+        textarea { width: 100%; height: 200px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
+        a { color: #58a6ff; font-weight: bold; font-size: 18px; word-break: break-all; }
     </style>
 </head>
 <body>
 
-    <h2>M3U Master Combiner</h2>
-    <p>Sabhik pages fetch karein aur direct link banayein.</p>
+    <h2>M3U GitHub Auto-Updater 🐙</h2>
+    <p>Ek baar Token aur Gist ID daalein, fir hamesha ke liye link fix!</p>
 
-    <button id="fetchBtn" class="btn">1. Generate Full Playlist</button>
-    <button id="uploadBtn" class="btn btn-upload">2. Auto Upload & Get Link</button>
+    <div class="input-group">
+        <input type="password" id="ghToken" placeholder="Yahan GitHub Token Daalein">
+    </div>
+    <div class="input-group">
+        <input type="text" id="gistId" placeholder="Gist ID (Bana hua hai toh daalein, warna khali chhodein)">
+    </div>
+
+    <button id="fetchBtn" class="btn">1. Fetch Channels</button>
+    <button id="uploadBtn" class="btn" style="background:#8957e5; display:none;">2. Push to GitHub Gist</button>
     
-    <div id="status">Taiyar rahein...</div>
+    <div id="status">GitHub Token taiyar rakhein...</div>
     
     <div id="linkBox">
-        Playlist Link: <br>
-        <a id="finalLink" href="#" target="_blank"></a>
+        <strong>Aapka Permanent RAW Link:</strong><br><br>
+        <a id="finalLink" href="#" target="_blank">Link yahan aayega</a>
     </div>
     
-    <textarea id="output" readonly placeholder="Result yahan dikhega..."></textarea>
+    <textarea id="output" readonly></textarea>
 
     <script>
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
-        const totalPages = 21;
+        const totalPages = 14;
 
         const fetchBtn = document.getElementById('fetchBtn');
         const uploadBtn = document.getElementById('uploadBtn');
@@ -45,71 +51,69 @@
         const linkBox = document.getElementById('linkBox');
         const finalLink = document.getElementById('finalLink');
 
-        // 1. Fetch Logic
         fetchBtn.addEventListener('click', async () => {
             fetchBtn.disabled = true;
-            uploadBtn.style.display = "none";
-            linkBox.style.display = "none";
             output.value = "";
-            let fullPlaylist = "#EXTM3U\n# Combined Playlist\n\n";
+            let fullPlaylist = "#EXTM3U\n\n";
 
             try {
                 for (let i = 1; i <= totalPages; i++) {
-                    status.innerText = `Fetching Page ${i} of ${totalPages}...`;
+                    status.innerText = `🔄 Fetching Page ${i}...`;
                     const response = await fetch(`${baseUrl}?page=${i}`);
                     const text = await response.text();
                     const cleanContent = text.replace("#EXTM3U", "").trim();
-                    if (cleanContent && !cleanContent.includes("No more channels")) {
-                        fullPlaylist += cleanContent + "\n\n";
-                    }
+                    if (cleanContent) fullPlaylist += cleanContent + "\n\n";
                 }
-
                 output.value = fullPlaylist;
-                status.innerText = "Fetch Poora Hua! Ab upload karein.";
+                status.innerText = "Fetch Complete! Ab GitHub par Push karein.";
                 uploadBtn.style.display = "inline-block";
-
             } catch (err) {
-                status.innerText = "Error: " + err.message;
+                status.innerText = "❌ Fetch Error: " + err.message;
             } finally {
                 fetchBtn.disabled = false;
             }
         });
 
-        // 2. Auto Upload Logic (Using dpaste.org API)
         uploadBtn.addEventListener('click', async () => {
+            const token = document.getElementById('ghToken').value;
+            const existingGistId = document.getElementById('gistId').value;
             const content = output.value;
-            if (!content) return;
 
-            status.innerText = "Uploading to Cloud... Please wait.";
+            if (!token) return alert("Pehle GitHub Token daalein!");
+
+            status.innerText = "🐙 GitHub par update ho raha hai...";
             uploadBtn.disabled = true;
 
+            const url = existingGistId ? `https://api.github.com/gists/${existingGistId}` : "https://api.github.com/gists";
+            const method = existingGistId ? "PATCH" : "POST";
+
             try {
-                // dpaste.org API call
-                const response = await fetch('https://dpaste.org/api/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({
-                        'content': content,
-                        'expiry_days': 30, // 30 din tak link zinda rahega
-                        'syntax': 'text'
+                const res = await fetch(url, {
+                    method: method,
+                    headers: {
+                        "Authorization": `token ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        "description": "My IPTV Master Playlist",
+                        "public": true,
+                        "files": { "playlist.m3u": { "content": content } }
                     })
                 });
 
-                const rawUrl = await response.text();
-                const cleanUrl = rawUrl.trim() + ".txt"; // .txt lagane se raw content milta hai
-
-                if (cleanUrl.startsWith("https")) {
-                    finalLink.href = cleanUrl;
-                    finalLink.innerText = cleanUrl;
+                const data = await res.json();
+                if (data.id) {
+                    const rawUrl = data.files["playlist.m3u"].raw_url;
+                    finalLink.href = rawUrl;
+                    finalLink.innerText = rawUrl;
                     linkBox.style.display = "block";
-                    status.innerText = "Upload Successful! Link niche hai.";
-                } else {
-                    throw new Error("Invalid response from server");
+                    status.innerText = "Success! Link OTT Navigator mein daalein.";
+                    // Gist ID save karle taaki agli baar update ho naya na bane
+                    document.getElementById('gistId').value = data.id;
+                    alert("Agli baar ke liye ye Gist ID save karlein: " + data.id);
                 }
-
             } catch (err) {
-                status.innerText = "Upload failed: " + err.message;
-                alert("Upload fail hua. Manually copy karne ki koshish karein.");
+                status.innerText = "❌ Error: " + err.message;
             } finally {
                 uploadBtn.disabled = false;
             }
