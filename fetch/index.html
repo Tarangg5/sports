@@ -11,7 +11,10 @@
         .btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
         .input-group { margin-bottom: 15px; }
         input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 85%; max-width: 450px; }
-        #status { margin-top: 20px; color: #58a6ff; font-weight: bold; }
+        
+        /* Status ab Fetch buttons ke upar hai */
+        #status { margin-top: 20px; margin-bottom: 10px; color: #58a6ff; font-weight: bold; }
+        
         #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
         textarea { width: 100%; height: 200px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
         a { color: #58a6ff; font-weight: bold; font-size: 16px; word-break: break-all; }
@@ -31,10 +34,10 @@
         <div class="save-info">Ye dono cheezein aapke browser mein save ho jayengi.</div>
     </div>
 
+    <div id="status">Details bhariye aur shuru karein...</div>
+
     <button id="fetchBtn" class="btn">1. Fetch Channels</button>
     <button id="uploadBtn" class="btn" style="background:#8957e5; display:none;">2. Push to GitHub Gist</button>
-    
-    <div id="status">Details bhariye aur shuru karein...</div>
     
     <div id="linkBox">
         <strong>Aapka Permanent RAW Link:</strong><br><br>
@@ -45,7 +48,7 @@
 
     <script>
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
-        const totalPages = 21;
+        const totalPages = 29;
 
         const ghTokenInput = document.getElementById('ghToken');
         const gistIdInput = document.getElementById('gistId');
@@ -56,7 +59,15 @@
         const linkBox = document.getElementById('linkBox');
         const finalLink = document.getElementById('finalLink');
 
-        // --- LOCAL STORAGE SE DATA LOAD KARNA ---
+        // IST Time function
+        function getISTTime() {
+            return new Date().toLocaleString('en-IN', { 
+                timeZone: 'Asia/Kolkata', 
+                day: '2-digit', month: 'short', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', hour12: true 
+            });
+        }
+
         window.onload = () => {
             const savedToken = localStorage.getItem('gh_token');
             const savedGistId = localStorage.getItem('gist_id');
@@ -65,11 +76,14 @@
             if (savedToken && savedGistId) status.innerText = "Saved details mil gayi! Fetch shuru karein.";
         };
 
-        // 1. Fetch Logic
         fetchBtn.addEventListener('click', async () => {
             fetchBtn.disabled = true;
+            uploadBtn.style.display = "none";
+            linkBox.style.display = "none";
             output.value = "";
-            let fullPlaylist = "#EXTM3U\n\n";
+            
+            const timeNow = getISTTime();
+            let fullPlaylist = `#EXTM3U\n# LAST UPDATED: ${timeNow} (IST)\n\n`;
 
             try {
                 for (let i = 1; i <= totalPages; i++) {
@@ -80,7 +94,7 @@
                     if (cleanContent) fullPlaylist += cleanContent + "\n\n";
                 }
                 output.value = fullPlaylist;
-                status.innerText = "Fetch Complete! Ab GitHub par update karein.";
+                status.innerText = `Fetch Complete! ✅ (${timeNow})`;
                 uploadBtn.style.display = "inline-block";
             } catch (err) {
                 status.innerText = "❌ Fetch Error: " + err.message;
@@ -89,7 +103,6 @@
             }
         });
 
-        // 2. Upload Logic
         uploadBtn.addEventListener('click', async () => {
             const token = ghTokenInput.value;
             const gistId = gistIdInput.value;
@@ -97,20 +110,16 @@
 
             if (!token || !gistId) return alert("Token aur Gist ID dono zaroori hain!");
 
-            // Token aur ID ko browser mein save karna
             localStorage.setItem('gh_token', token);
             localStorage.setItem('gist_id', gistId);
 
-            status.innerText = "🐙 GitHub par update ho raha hai...";
+            status.innerText = "🚀 GitHub par update ho raha hai...";
             uploadBtn.disabled = true;
 
             try {
                 const res = await fetch(`https://api.github.com/gists/${gistId}`, {
                     method: "PATCH",
-                    headers: {
-                        "Authorization": `token ${token}`,
-                        "Content-Type": "application/json"
-                    },
+                    headers: { "Authorization": `token ${token}` },
                     body: JSON.stringify({
                         "files": { "playlist.m3u": { "content": content } }
                     })
@@ -128,7 +137,6 @@
                 }
             } catch (err) {
                 status.innerText = "❌ Error: " + err.message;
-                alert("Check karein: Token sahi hai? ID sahi hai?");
             } finally {
                 uploadBtn.disabled = false;
             }
