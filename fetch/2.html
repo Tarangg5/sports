@@ -6,60 +6,49 @@
     <title>M3U GitHub Master 🛰️</title>
     <style>
         body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; text-align: center; }
-        
-        /* Status ko sabse highlight rakha hai */
-        #status { 
-            margin-bottom: 20px; 
-            color: #58a6ff; 
-            font-weight: bold; 
-            font-size: 1.2rem; 
-            background: #161b22; 
-            padding: 15px; 
-            border-radius: 10px; 
-            border: 1px solid #30363d;
-        }
-
         .btn { background: #238636; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 10px; font-weight: bold; }
         .btn:hover { background: #2ea043; }
         .btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
-        
         .input-group { margin-bottom: 15px; }
         input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 85%; max-width: 450px; }
         
-        #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
-        textarea { width: 100%; height: 180px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
+        /* Status ab Fetch buttons ke upar hai */
+        #status { margin-top: 20px; margin-bottom: 10px; color: #58a6ff; font-weight: bold; }
         
-        a { color: #58a6ff; font-weight: bold; font-size: 15px; word-break: break-all; }
+        #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+        textarea { width: 100%; height: 200px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
+        a { color: #58a6ff; font-weight: bold; font-size: 16px; word-break: break-all; }
         .save-info { color: #8b949e; font-size: 12px; margin-top: 5px; }
-        .update-tag { color: #7ee787; font-size: 13px; display: block; margin-top: 5px; }
     </style>
 </head>
 <body>
 
-    <div id="status">Taiyar: Details check karein aur Fetch shuru karein.</div>
+    <h2>M3U GitHub Auto-Updater 🐙</h2>
+    <p>Railway Master Setup: Token aur ID ab save rahenge!</p>
 
     <div class="input-group">
         <input type="password" id="ghToken" placeholder="GitHub Token yahan daalein">
     </div>
     <div class="input-group">
         <input type="text" id="gistId" placeholder="Gist ID yahan daalein">
-        <div class="save-info">Token aur ID browser mein auto-save ho jayenge.</div>
+        <div class="save-info">Ye dono cheezein aapke browser mein save ho jayengi.</div>
     </div>
 
-    <button id="fetchBtn" class="btn">1. Fetch All Channels</button>
+    <div id="status">Details bhariye aur shuru karein...</div>
+
+    <button id="fetchBtn" class="btn">1. Fetch Channels</button>
     <button id="uploadBtn" class="btn" style="background:#8957e5; display:none;">2. Push to GitHub Gist</button>
     
     <div id="linkBox">
-        <strong style="color: #7ee787;">Update Success! ✅</strong><br><br>
-        <a id="finalLink" href="#" target="_blank">Raw Link Yahan Hai</a>
-        <span id="updateTimeTag" class="update-tag"></span>
+        <strong>Aapka Permanent RAW Link:</strong><br><br>
+        <a id="finalLink" href="#" target="_blank">Link yahan aayega</a>
     </div>
     
-    <textarea id="output" readonly placeholder="Logs yahan dikhenge..."></textarea>
+    <textarea id="output" readonly></textarea>
 
     <script>
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
-        const totalPages = 21; // Aapki updated limit
+        const totalPages = 21;
 
         const ghTokenInput = document.getElementById('ghToken');
         const gistIdInput = document.getElementById('gistId');
@@ -69,14 +58,8 @@
         const output = document.getElementById('output');
         const linkBox = document.getElementById('linkBox');
         const finalLink = document.getElementById('finalLink');
-        const updateTimeTag = document.getElementById('updateTimeTag');
 
-        // Load Saved Info
-        window.onload = () => {
-            ghTokenInput.value = localStorage.getItem('gh_token') || '';
-            gistIdInput.value = localStorage.getItem('gist_id') || '';
-        };
-
+        // IST Time function
         function getISTTime() {
             return new Date().toLocaleString('en-IN', { 
                 timeZone: 'Asia/Kolkata', 
@@ -85,7 +68,14 @@
             });
         }
 
-        // 1. Fetch Logic
+        window.onload = () => {
+            const savedToken = localStorage.getItem('gh_token');
+            const savedGistId = localStorage.getItem('gist_id');
+            if (savedToken) ghTokenInput.value = savedToken;
+            if (savedGistId) gistIdInput.value = savedGistId;
+            if (savedToken && savedGistId) status.innerText = "Saved details mil gayi! Fetch shuru karein.";
+        };
+
         fetchBtn.addEventListener('click', async () => {
             fetchBtn.disabled = true;
             uploadBtn.style.display = "none";
@@ -97,7 +87,7 @@
 
             try {
                 for (let i = 1; i <= totalPages; i++) {
-                    status.innerText = `🔄 Processing: Page ${i} / ${totalPages}`;
+                    status.innerText = `🔄 Fetching Page ${i} of ${totalPages}...`;
                     const response = await fetch(`${baseUrl}?page=${i}`);
                     const text = await response.text();
                     const cleanContent = text.replace("#EXTM3U", "").trim();
@@ -113,13 +103,12 @@
             }
         });
 
-        // 2. Upload Logic
         uploadBtn.addEventListener('click', async () => {
             const token = ghTokenInput.value;
             const gistId = gistIdInput.value;
             const content = output.value;
 
-            if (!token || !gistId) return alert("Token aur ID dono bhariye!");
+            if (!token || !gistId) return alert("Token aur Gist ID dono zaroori hain!");
 
             localStorage.setItem('gh_token', token);
             localStorage.setItem('gist_id', gistId);
@@ -141,11 +130,10 @@
                     const rawUrl = data.files["playlist.m3u"].raw_url;
                     finalLink.href = rawUrl;
                     finalLink.innerText = rawUrl;
-                    updateTimeTag.innerText = "Updated at: " + getISTTime();
                     linkBox.style.display = "block";
-                    status.innerText = "Gist Updated Successfully! 🔥";
+                    status.innerText = "Success! Gist Update Ho Gaya. ✅";
                 } else {
-                    throw new Error(data.message || "Update fail");
+                    throw new Error(data.message || "Update fail hua");
                 }
             } catch (err) {
                 status.innerText = "❌ Error: " + err.message;
