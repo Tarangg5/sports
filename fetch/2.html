@@ -5,47 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M3U GitHub Master 🛰️</title>
     <style>
-        body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 15px; text-align: center; }
-        #status { background: #161b22; padding: 15px; border-radius: 10px; margin-bottom: 20px; color: #58a6ff; font-weight: bold; font-size: 18px; border: 1px solid #30363d; }
-        .btn-container { margin-bottom: 20px; }
-        .btn { background: #238636; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 5px; font-weight: bold; }
-        .btn-push { background: #8957e5; display: none; }
-        #linkBox { margin: 15px auto; padding: 15px; background: #23863622; border: 1px solid #238636; border-radius: 10px; display: none; max-width: 500px; }
-        .input-group { margin-bottom: 10px; }
-        input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 8px; border-radius: 5px; width: 90%; max-width: 400px; font-size: 13px; }
-        textarea { width: 100%; height: 180px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 11px; margin-top: 10px; }
-        a { color: #58a6ff; font-weight: bold; font-size: 14px; word-break: break-all; }
-        .label-text { font-size: 12px; color: #8b949e; margin-bottom: 5px; display: block; }
+        body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; text-align: center; }
+        
+        /* Status ko sabse highlight rakha hai */
+        #status { 
+            margin-bottom: 20px; 
+            color: #58a6ff; 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            background: #161b22; 
+            padding: 15px; 
+            border-radius: 10px; 
+            border: 1px solid #30363d;
+        }
+
+        .btn { background: #238636; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 16px; margin: 10px; font-weight: bold; }
+        .btn:hover { background: #2ea043; }
+        .btn:disabled { background: #21262d; color: #484f58; cursor: not-allowed; }
+        
+        .input-group { margin-bottom: 15px; }
+        input { background: #0d1117; border: 1px solid #30363d; color: white; padding: 10px; border-radius: 5px; width: 85%; max-width: 450px; }
+        
+        #linkBox { margin-top: 20px; display: none; padding: 20px; background: #161b22; border: 1px solid #30363d; border-radius: 10px; }
+        textarea { width: 100%; height: 180px; margin-top: 20px; background: #010409; color: #7ee787; border: 1px solid #30363d; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 12px; }
+        
+        a { color: #58a6ff; font-weight: bold; font-size: 15px; word-break: break-all; }
+        .save-info { color: #8b949e; font-size: 12px; margin-top: 5px; }
+        .update-tag { color: #7ee787; font-size: 13px; display: block; margin-top: 5px; }
     </style>
 </head>
 <body>
 
-    <div id="status">Taiyar: Fetch shuru karein!</div>
+    <div id="status">Taiyar: Details check karein aur Fetch shuru karein.</div>
 
-    <div class="btn-container">
-        <button id="fetchBtn" class="btn">1. Fetch All Channels</button>
-        <button id="uploadBtn" class="btn btn-push">2. Push to GitHub</button>
+    <div class="input-group">
+        <input type="password" id="ghToken" placeholder="GitHub Token yahan daalein">
+    </div>
+    <div class="input-group">
+        <input type="text" id="gistId" placeholder="Gist ID yahan daalein">
+        <div class="save-info">Token aur ID browser mein auto-save ho jayenge.</div>
     </div>
 
+    <button id="fetchBtn" class="btn">1. Fetch All Channels</button>
+    <button id="uploadBtn" class="btn" style="background:#8957e5; display:none;">2. Push to GitHub Gist</button>
+    
     <div id="linkBox">
-        <span style="color: #7ee787; font-size: 14px;">✅ GitHub Update Success!</span><br>
+        <strong style="color: #7ee787;">Update Success! ✅</strong><br><br>
         <a id="finalLink" href="#" target="_blank">Raw Link Yahan Hai</a>
+        <span id="updateTimeTag" class="update-tag"></span>
     </div>
-
-    <div style="border-top: 1px solid #30363d; padding-top: 15px;">
-        <div class="input-group">
-            <input type="password" id="ghToken" placeholder="GitHub Token">
-        </div>
-        <div class="input-group">
-            <input type="text" id="gistId" placeholder="Gist ID">
-        </div>
-    </div>
-
-    <textarea id="output" readonly></textarea>
+    
+    <textarea id="output" readonly placeholder="Logs yahan dikhenge..."></textarea>
 
     <script>
         const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
-        const totalPages = 14;
+        const totalPages = 21; // Aapki updated limit
 
         const ghTokenInput = document.getElementById('ghToken');
         const gistIdInput = document.getElementById('gistId');
@@ -55,46 +69,42 @@
         const output = document.getElementById('output');
         const linkBox = document.getElementById('linkBox');
         const finalLink = document.getElementById('finalLink');
+        const updateTimeTag = document.getElementById('updateTimeTag');
 
+        // Load Saved Info
         window.onload = () => {
             ghTokenInput.value = localStorage.getItem('gh_token') || '';
             gistIdInput.value = localStorage.getItem('gist_id') || '';
         };
 
-        // IST Time nikalne ka function
         function getISTTime() {
-            const now = new Date();
-            return now.toLocaleString('en-IN', { 
+            return new Date().toLocaleString('en-IN', { 
                 timeZone: 'Asia/Kolkata', 
-                day: '2-digit', 
-                month: 'short', 
-                year: 'numeric', 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                hour12: true 
+                day: '2-digit', month: 'short', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', hour12: true 
             });
         }
 
+        // 1. Fetch Logic
         fetchBtn.addEventListener('click', async () => {
             fetchBtn.disabled = true;
             uploadBtn.style.display = "none";
             linkBox.style.display = "none";
             output.value = "";
             
-            // Time stamp ko playlist ke shuru mein jodna
-            const updateTime = getISTTime();
-            let fullPlaylist = `#EXTM3U\n# LAST UPDATED: ${updateTime} (IST)\n# POWERED BY: RAILWAY MASTER\n\n`;
+            const timeNow = getISTTime();
+            let fullPlaylist = `#EXTM3U\n# LAST UPDATED: ${timeNow} (IST)\n\n`;
 
             try {
                 for (let i = 1; i <= totalPages; i++) {
-                    status.innerText = `🔄 Processing Page ${i}...`;
+                    status.innerText = `🔄 Processing: Page ${i} / ${totalPages}`;
                     const response = await fetch(`${baseUrl}?page=${i}`);
                     const text = await response.text();
                     const cleanContent = text.replace("#EXTM3U", "").trim();
                     if (cleanContent) fullPlaylist += cleanContent + "\n\n";
                 }
                 output.value = fullPlaylist;
-                status.innerText = `Channels Fetched! ✅ (${updateTime})`;
+                status.innerText = `Fetch Complete! ✅ (${timeNow})`;
                 uploadBtn.style.display = "inline-block";
             } catch (err) {
                 status.innerText = "❌ Fetch Error: " + err.message;
@@ -103,29 +113,45 @@
             }
         });
 
+        // 2. Upload Logic
         uploadBtn.addEventListener('click', async () => {
             const token = ghTokenInput.value;
             const gistId = gistIdInput.value;
-            if (!token || !gistId) return alert("Details bhariye!");
+            const content = output.value;
+
+            if (!token || !gistId) return alert("Token aur ID dono bhariye!");
 
             localStorage.setItem('gh_token', token);
             localStorage.setItem('gist_id', gistId);
-            status.innerText = "🚀 GitHub par bhej rahe hain...";
+
+            status.innerText = "🚀 GitHub par update ho raha hai...";
+            uploadBtn.disabled = true;
 
             try {
                 const res = await fetch(`https://api.github.com/gists/${gistId}`, {
                     method: "PATCH",
                     headers: { "Authorization": `token ${token}` },
-                    body: JSON.stringify({ files: { "playlist.m3u": { content: output.value } } })
+                    body: JSON.stringify({
+                        "files": { "playlist.m3u": { "content": content } }
+                    })
                 });
+
                 const data = await res.json();
                 if (res.ok) {
-                    finalLink.href = data.files["playlist.m3u"].raw_url;
-                    finalLink.innerText = data.files["playlist.m3u"].raw_url;
+                    const rawUrl = data.files["playlist.m3u"].raw_url;
+                    finalLink.href = rawUrl;
+                    finalLink.innerText = rawUrl;
+                    updateTimeTag.innerText = "Updated at: " + getISTTime();
                     linkBox.style.display = "block";
-                    status.innerText = "Gist Updated! 🔥";
+                    status.innerText = "Gist Updated Successfully! 🔥";
+                } else {
+                    throw new Error(data.message || "Update fail");
                 }
-            } catch (err) { status.innerText = "❌ Error: " + err.message; }
+            } catch (err) {
+                status.innerText = "❌ Error: " + err.message;
+            } finally {
+                uploadBtn.disabled = false;
+            }
         });
     </script>
 </body>
