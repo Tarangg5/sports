@@ -73,21 +73,38 @@
         });
 
         // Copy Function
-        copyBtn.addEventListener('click', () => {
-            output.select();
-            output.setSelectionRange(0, 99999); // Mobile ke liye
-            
-            try {
-                navigator.clipboard.writeText(output.value);
-                const originalText = copyBtn.innerText;
-                copyBtn.innerText = "Copied! ✅";
-                setTimeout(() => {
-                    copyBtn.innerText = originalText;
-                }, 2000);
-            } catch (err) {
-                alert("Copy karne mein dikat hui, please manually copy karein.");
-            }
-        });
+        // Copy Function ko isse badal dein
+copyBtn.addEventListener('click', () => {
+    // 1. Textarea se text uthao
+    output.focus();
+    output.select();
+    output.setSelectionRange(0, 999999); // Bahut badi list ke liye range badha di
+
+    try {
+        // 2. Pehla raasta: Modern API
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(output.value);
+        } else {
+            // 3. Dusra raasta (Agar upar wala fail ho): Document Exec
+            document.execCommand('copy');
+        }
+
+        // Feedback dikhao
+        const originalText = copyBtn.innerText;
+        copyBtn.innerText = "Full Playlist Copied! ✅";
+        copyBtn.style.background = "#155724"; // Green color
+        
+        setTimeout(() => {
+            copyBtn.innerText = originalText;
+            copyBtn.style.background = "#28a745";
+        }, 2000);
+
+    } catch (err) {
+        // 4. Agar dono fail ho jayein toh manual select karwao
+        alert("Auto-copy fail hua. Textbox par long-press karke 'Select All' aur 'Copy' karein.");
+    }
+});
+
     </script>
 </body>
 </html>
