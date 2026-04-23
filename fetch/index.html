@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U Playlist Master</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; padding: 20px; text-align: center; }
+        .btn { background: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .btn:disabled { background: #555; }
+        #status { margin-top: 20px; color: #aaa; }
+        textarea { width: 100%; height: 300px; margin-top: 20px; background: #1e1e1e; color: #00ff00; border: 1px solid #333; padding: 10px; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <h2>M3U Master Combiner</h2>
+    <p>Ye script Page 1 se 14 tak sabhi channels ko jod degi.</p>
+
+    <button id="fetchBtn" class="btn">Generate Full Playlist</button>
+    
+    <div id="status">Taiyar rahein...</div>
+    
+    <textarea id="output" readonly placeholder="Result yahan dikhega..."></textarea>
+
+    <script>
+        const baseUrl = "https://vathaalanew.sonuujamuicamp.workers.dev/";
+        const totalPages = 14;
+
+        document.getElementById('fetchBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('fetchBtn');
+            const status = document.getElementById('status');
+            const output = document.getElementById('output');
+            
+            btn.disabled = true;
+            output.value = "";
+            let fullPlaylist = "#EXTM3U\n# Combined Playlist from Browser\n\n";
+
+            try {
+                for (let i = 1; i <= totalPages; i++) {
+                    status.innerText = `Fetching Page ${i} of ${totalPages}...`;
+                    
+                    try {
+                        const response = await fetch(`${baseUrl}?page=${i}`);
+                        const text = await response.text();
+                        
+                        // Header hata kar content extract karein
+                        const cleanContent = text.replace("#EXTM3U", "").trim();
+                        
+                        if (cleanContent && !cleanContent.includes("No more channels")) {
+                            fullPlaylist += cleanContent + "\n\n";
+                        }
+                    } catch (e) {
+                        console.error(`Page ${i} failed:`, e);
+                    }
+                }
+
+                output.value = fullPlaylist;
+                status.innerText = "Sabhik channels fetch ho gaye! Copy karke use karein.";
+                
+                // Auto-Download Option
+                const blob = new Blob([fullPlaylist], { type: 'text/plain' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = "master_playlist.m3u";
+                a.innerText = "Playlist Download Karein";
+                a.style.display = "block";
+                a.style.marginTop = "10px";
+                a.style.color = "#00ff00";
+                document.body.appendChild(a);
+
+            } catch (err) {
+                status.innerText = "Error: " + err.message;
+            } finally {
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
