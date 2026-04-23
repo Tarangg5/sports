@@ -93,14 +93,17 @@ http://datahub11.com/Anthony2/Anthony123/28729
 http://datahub11.com/Anthony2/Anthony123/157081
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR GOLD ROMANCE
 http://datahub11.com/Anthony2/Anthony123/972
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",Discovery HD
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",Discovery Channel HD
 http://datahub11.com/Anthony2/Anthony123/9393
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",National geographic HD
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",National Geographic HD
 http://datahub11.com/Anthony2/Anthony123/7342
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",ANIMAL PLANET HD
 http://datahub11.com/Anthony2/Anthony123/9391
-#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",History TV 18
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",History TV18
 http://datahub11.com/Anthony2/Anthony123/9392
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",Nat geo wild
+http://datahub11.com/live/Anthony2/Anthony123/98875.ts
+
 
 #EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",ZEE Cinema HD
 http://datahub11.com/Anthony2/Anthony123/98860
