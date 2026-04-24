@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="en" data-fp="l9e1mnvgf5k"><head>
+    <script>
+/* ===============================
+   🔥 ULTRA DEVTOOLS PROTECTION
+================================ */
+
+// ❌ 1. F12 / Inspect block
+document.addEventListener("keydown", function(e) {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
+        (e.ctrlKey && e.key === "U")
+    ) {
+        crashPage();
+        return false;
+    }
+});
+
+// ❌ 2. Right click block
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+    crashPage();
+});
+
+// ❌ 3. DevTools size detection
+setInterval(() => {
+    if (
+        window.outerWidth - window.innerWidth > 160 ||
+        window.outerHeight - window.innerHeight > 160
+    ) {
+        crashPage();
+    }
+}, 500);
+
+// ❌ 4. Console detection trick
+(function() {
+    let devtools = false;
+
+    const element = new Image();
+    Object.defineProperty(element, 'id', {
+        get: function() {
+            devtools = true;
+            crashPage();
+        }
+    });
+
+    setInterval(function() {
+        devtools = false;
+        console.log(element);
+    }, 1000);
+})();
+
+// ❌ 5. Debugger loop trap
+setInterval(function() {
+    debugger;
+}, 100);
+
+// ❌ 6. Performance timing check
+let start = performance.now();
+debugger;
+let end = performance.now();
+
+if (end - start > 100) {
+    crashPage();
+}
+
+// ❌ 7. Infinite freeze function
+function crashPage() {
+    document.body.innerHTML = "";
+
+    // CPU freeze
+    while (true) {
+        console.log("Blocked 🔒");
+    }
+}
+
+// ❌ 8. Disable console
+console.log = function() {};
+console.warn = function() {};
+console.error = function() {};
+console.clear();
+
+// ❌ 9. Detect devtools via timing loop
+setInterval(() => {
+    let t0 = performance.now();
+    debugger;
+    let t1 = performance.now();
+
+    if (t1 - t0 > 50) {
+        crashPage();
+    }
+}, 1000);
+
+// ❌ 10. iframe protection
+if (window.top !== window.self) {
+    crashPage();
+}
+</script>
+    <script>(function(s){s.dataset.zone='10408286',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>@allinonereborn Player</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html,body{
+  background:#000;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:system-ui,sans-serif;
+}
+
+.shaka-video-container{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#000;
+}
+
+/* Channel info overlay (top bar) - REMOVED channel name and logo, keeping only background but hidden */
+.channel-info{
+  position:absolute;
+  top:0;left:0;right:0;
+  padding:12px 15px;
+  background:linear-gradient(to bottom,rgba(0,0,0,.75),transparent);
+  display:flex;
+  align-items:center;
+  z-index:10;
+  pointer-events:none;
+  display:none; /* Hides the entire top bar */
+}
+
+.channel-logo{
+  width:38px;
+  height:38px;
+  border-radius:8px;
+  margin-right:10px;
+  object-fit:contain;
+  background:#111;
+}
+
+.channel-name{
+  color:#fff;
+  font-size:17px;
+  font-weight:600;
+}
+
+/* Status / debug bar - FULLY REMOVED */
+#status{
+  display:none;
+}
+
+/* Watermark */
+.watermark{
+  position:absolute;
+  bottom:60px;left:16px;
+  z-index:9;
+  font-size:11px;
+  font-weight:700;
+  color:rgba(255,255,255,.12);
+  pointer-events:none;
+  letter-spacing:.5px;
+}
+</style>
+<script src="https://troopinvariably.com/37/d7/1a/37d71a290dde379f3d1016fe3009fb4b.js"></script><style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection"><script type="text/javascript" src="//wayfarerorthodox.com/9c/5d/14/9c5d14453d6b11cdec5b98e5ce5af0dc.js"></script><script src="https://preferencenail.com/sfp.js"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head><script data-zone="10408286" src="https://al5sm.com/tag.min.js"></script>
+    
+
+<body>
+
+<div class="shaka-video-container shaka-mobile" id="player-container" data-shaka-player-container="" shaka-controls="true" style="cursor: none;">
+
+  <!-- Channel name + logo at top - REMOVED from display -->
+  <div class="channel-info">
+    <img id="channelLogo" class="channel-logo" onerror="this.style.display='none'">
+    <div id="channelName" class="channel-name"></div>
+  </div>
+
+  <!-- Status bar - COMPLETELY REMOVED -->
+  <div id="status"></div>
+
+  <!-- Video element -->
+  <video id="video" autoplay="" playsinline="" preload="metadata" src="blob:https://allinonereborn.online/c76fe06c-d64c-4d75-8e7f-e5ed211dfc54" class="shaka-video"></video>
+
+<div class="shaka-controls-container" shown="true"><div class="shaka-scrim-container"></div><div class="shaka-play-button-container"><button type="button" class="shaka-play-button shaka-no-propagation" icon="play" aria-label="Play"></button></div><div class="shaka-hidden-fast-forward-container"><div class="shaka-fast-foward-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_forward</span></div></div><div class="shaka-hidden-rewind-container"><div class="shaka-rewind-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_rewind</span></div></div><div class="shaka-server-side-ad-container"></div><div class="shaka-bottom-controls shaka-no-propagation"><div class="shaka-ad-controls shaka-hidden"><div class="shaka-ad-position shaka-hidden"><span class="shaka-ad-position-span"></span></div><div class="shaka-ad-counter"><span class="shaka-ad-counter-span"></span></div></div><div class="shaka-controls-button-panel shaka-show-controls-on-mouse-over"><button type="button" class="shaka-current-time" aria-label="Skip ahead to live">- 29:57</button><div class="shaka-spacer" aria-hidden="true"></div><button type="button" class="shaka-mute-button material-icons-round shaka-tooltip" aria-label="Mute">volume_up</button><button type="button" class="shaka-fullscreen-button material-icons-round shaka-tooltip" aria-label="Full screen">fullscreen</button><button type="button" class="shaka-overflow-menu-button shaka-no-propagation material-icons-round shaka-tooltip" aria-label="More settings">more_vert</button></div><div class="shaka-range-container shaka-seek-bar-container" style="background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.54) -12.4638%, rgba(255, 255, 255, 0.3) -12.4638%);"><div class="shaka-ad-markers"></div><input class="shaka-range-element shaka-seek-bar shaka-no-propagation shaka-show-controls-on-mouse-over" type="range" step="any" min="1777052301.9656668" max="1777054099.4056668" aria-label="Seek"><div id="shaka-player-ui-thumbnail-container"><img id="shaka-player-ui-thumbnail-image" draggable="false"><div id="shaka-player-ui-thumbnail-time"></div></div></div></div><div class="shaka-overflow-menu shaka-no-propagation shaka-show-controls-on-mouse-over shaka-hidden"><button type="button" class="shaka-overflow-button shaka-caption-button shaka-tooltip-status shaka-hidden" aria-pressed="false" aria-label="Captions" shaka-status="Off"><i class="material-icons-round">closed_caption_disabled</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Captions</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-overflow-button shaka-resolution-button shaka-tooltip-status" shaka-status="Auto" aria-label="Resolution"><i class="material-icons-round">settings</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Resolution</span><span class="shaka-current-selection-span">Auto</span></label></button><button type="button" class="shaka-overflow-button shaka-language-button shaka-tooltip-status shaka-hidden" aria-label="Language" shaka-status="हिन्दी"><i class="material-icons-round">language</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Language</span><span class="shaka-current-selection-span">हिन्दी</span></label></button><button type="button" class="shaka-pip-button shaka-tooltip shaka-hidden" aria-label="Enter Picture-in-Picture"><i class="material-icons-round">picture_in_picture_alt</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Picture-in-Picture</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-cast-button shaka-tooltip shaka-hidden" aria-pressed="false" aria-label="Cast..."><i class="material-icons-round">cast</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Cast...</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-overflow-button shaka-playbackrate-button shaka-tooltip-status" aria-label="Playback speed" shaka-status="1x"><i class="material-icons-round">slow_motion_video</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Playback speed</span><span class="shaka-current-selection-span">1x</span></label></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-text-languages"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Captions</span></button><button type="button" class="shaka-turn-captions-off-button" aria-selected="true"><span class="shaka-auto-span shaka-chosen-item">Off</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-resolutions"><button type="button" class="shaka-back-to-overflow-button" aria-label="Resolution"><i class="material-icons-round">arrow_back</i><span>Resolution</span></button><button type="button" class="explicit-resolution"><span>1080p</span></button><button type="button" class="explicit-resolution"><span>720p</span></button><button type="button" class="explicit-resolution"><span>540p</span></button><button type="button" class="explicit-resolution"><span>360p</span></button><button type="button" class="explicit-resolution"><span>180p</span></button><button type="button" class="shaka-enable-abr-button" aria-selected="true"><span class="shaka-auto-span shaka-chosen-item">Auto</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Language</span></button><button type="button" aria-selected="true"><span class="shaka-chosen-item">हिन्दी</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-playback-rates"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Playback speed</span></button><button type="button"><span>0.5x</span></button><button type="button"><span>0.75x</span></button><button type="button" aria-selected="true"><span class="shaka-chosen-item">1x</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button><button type="button"><span>1.25x</span></button><button type="button"><span>1.5x</span></button><button type="button"><span>1.75x</span></button><button type="button"><span>2x</span></button></div></div><div class="shaka-client-side-ad-container shaka-hidden"></div><div class="shaka-spinner-container shaka-hidden"><div class="shaka-spinner"><svg class="shaka-spinner-svg" viewBox="0 0 30 30"><circle class="shaka-spinner-path" cx="15" cy="15" r="14.5" fill="none" stroke-width="1" stroke-miterlimit="10"></circle></svg></div></div></div>
+
+<script>
+/* ── CONFIGURATION RECEIVED FROM SERVER ── */
+// All source URLs and keys come from PHP, not visible in HTML source
+const SERVER_CONFIG = {"hasChannel":true,"streamUrls":["https:\/\/jiotvmblive.cdn.jio.com\/bpk-tv\/ColorsHD_MOB\/WDVLive\/index.mpd"],"primaryCookie":"__hdnea__=st=1777038620~exp=1777060220~acl=\/*~hmac=b993f7a5439b01b933529d8b5dc176e6c5a6b5e978106865a21a1d4a83854bb6","fallbackCookie":"","keyId":"d80955a9801d8419a9152bb4d21e0635","key":"4bf8a1bafaca34d3f59515fec005f8e7"};
+function x(c){
+  return c.replace(/hmac=([a-f0-9]+)/,function(_,h){
+    let r="",i=h.length;
+    while(i--) r+=h[i];
+    return "hmac="+r;
+  });
+}
+
+/* ── STATUS - COMPLETELY REMOVED, empty functions ── */
+const statusEl = document.getElementById("status");
+
+function setStatus(msg, isError = false){
+  // STATUS COMPLETELY REMOVED - does nothing
+  return;
+}
+
+/* ── MAIN ── */
+document.addEventListener("DOMContentLoaded", async () => {
+
+  if(!SERVER_CONFIG.hasChannel || SERVER_CONFIG.streamUrls.length === 0){
+    // Silent fail - no status
+    return;
+  }
+
+  let { streamUrls, primaryCookie, fallbackCookie, keyId, key } = SERVER_CONFIG;
+
+function mix(v){
+  let a = v.split("");
+  let b = [];
+  for(let i = a.length - 1; i >= 0; i--){
+    b.push(a[i]);
+  }
+  return b.join("");
+}
+
+keyId = mix(keyId);
+key   = mix(key);
+
+  // REMOVED: channel logo and name from top bar - these lines are commented out to prevent any display
+  // document.getElementById("channelLogo").src         = channelData.logo || "";
+  // document.getElementById("channelName").textContent = channelData.name || "";
+
+  shaka.polyfill.installAll();
+  if(!shaka.Player.isBrowserSupported()){
+    return;
+  }
+
+  const videoEl   = document.getElementById("video");
+  const container = document.getElementById("player-container");
+
+  const player = new shaka.Player();
+  await player.attach(videoEl);
+
+  new shaka.ui.Overlay(player, container, videoEl);
+
+  // Configure DRM if keys are provided
+  if(keyId && key){
+    player.configure({
+      drm:{ clearKeys:{ [keyId]: key } },
+      streaming:{ lowLatencyMode:true }
+    });
+  } else {
+    player.configure({
+      streaming:{ lowLatencyMode:true }
+    });
+  }
+
+  let activeCookie = x(primaryCookie);
+
+  player.getNetworkingEngine().registerRequestFilter((type, request) => {
+    request.headers["Referer"]    = "https://www.jiotv.com/";
+    request.headers["User-Agent"] = "plaYtv/7.1.5";
+
+    if(activeCookie &&
+      (type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
+       type === shaka.net.NetworkingEngine.RequestType.SEGMENT)){
+
+      request.uris[0] = request.uris[0].split("?")[0] + "?" + activeCookie;
+    }
+  });
+
+  const cookieRounds = [x(primaryCookie)];
+
+if(fallbackCookie && fallbackCookie !== primaryCookie){
+    cookieRounds.push(x(fallbackCookie));
+}
+
+  let loaded = false;
+
+  outer:
+  for(let r = 0; r < cookieRounds.length; r++){
+
+    activeCookie = cookieRounds[r];
+
+    for(let i = 0; i < streamUrls.length; i++){
+
+      try{
+        await player.load(streamUrls[i]);
+        videoEl.play();
+
+        // REMOVED: setStatus("Playing ▶ " + channelData.name);
+        loaded = true;
+        break outer;
+
+      }catch(e){
+        // Silent fail - no status
+      }
+    }
+  }
+
+  if(!loaded){
+    // Silent fail - no status
+  }
+
+});
+</script>
+
+<!-- Anti-Adblock Popup -->
+<div class="adb" id="adb" style="display: none;">
+  <div class="adbs">
+    <h3>Adblock/Brave Shields Detected</h3>
+    <p>Please disable your adblocker or Brave Shields to continue browsing this site.</p>
+  </div>
+</div>
+
+<style>
+.adb {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.adbs {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 0px #ff0000; }
+  to { text-shadow: 0 0 1px #ff0000; }
+}
+.adbs h3 {
+  color: #d00;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+.adbs p {
+  font-size: 16px;
+  color: #333;
+}
+</style>
+
+<script>
+// ----------------- Popup Function -----------------
+function showPopup(reason = "Adblock Detected") {
+  document.getElementById("adb").style.display = "flex";
+  document.querySelector("#adb .adbs h3").innerText = reason;
+
+  if (reason.includes("Brave")) {
+  document.querySelector("#adb .adbs p").innerHTML = `
+    Please disable Brave Shields (click Brave logo → toggle Shields off) to continue browsing.<br>
+    <span style="
+      color: #ff0000;
+      font-weight: bold;
+      animation: glow 1s ease-in-out infinite alternate;
+    ">
+      If still showing message after disabling please reload page
+    </span>
+  `;
+}
+  console.warn("⚠️ Popup Triggered:", reason);
+}
+
+// ----------------- PC Browser Adblock Detection -----------------
+async function detectAdblock() {
+  let detected = false;
+
+  // bait div
+  const bait = document.createElement("div");
+  bait.className = "ad adsbox ad-banner adsense ad-container sponsored";
+  bait.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";
+  document.body.appendChild(bait);
+
+  // bait img
+  const img = document.createElement("img");
+  img.src = "https://pagead2.googlesyndication.com/pagead/imgad?id=CAASFeDxyz";
+  img.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";
+  img.onerror = () => { detected = true; };
+  document.body.appendChild(img);
+
+  // bait iframe
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://googleads.g.doubleclick.net/pagead/html/r2023/sample-ad.html";
+  iframe.style.cssText = "width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;";
+  iframe.onerror = () => { detected = true; };
+  document.body.appendChild(iframe);
+
+  // bait script
+  const script = document.createElement("script");
+  script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+  script.async = true;
+  script.onerror = () => { detected = true; };
+  document.head.appendChild(script);
+
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  if (
+    window.getComputedStyle(bait).display === "none" ||
+    bait.offsetHeight === 0 ||
+    bait.offsetParent === null
+  ) {
+    detected = true;
+  }
+
+  bait.remove();
+  img.remove();
+  iframe.remove();
+  script.remove();
+
+  return detected;
+}
+
+// ----------------- Brave Shields Detection -----------------
+async function detectBraveShields() {
+  try {
+    let res = await fetch("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", {
+      method: "GET",
+      cache: "no-store",
+      mode: "no-cors"
+    });
+
+    if (res.type === "opaque") {
+      try {
+        const buf = await res.clone().arrayBuffer();
+        console.log("🟡 Brave Response Size:", buf.byteLength);
+
+        // Corrected Logic:
+        // Size < 100 = Shields OFF
+        // Size >= 100 = Shields ON
+        if (buf.byteLength < 100) {
+          return false; // Shields OFF
+        } else {
+          return true;  // Shields ON
+        }
+      } catch (e) {
+        console.warn("🟡 Brave fetch blocked", e);
+        return true; // Shields ON
+      }
+    }
+    return true; // default treat as ON
+  } catch (e) {
+    console.error("🛑 Brave Shields hard blocked", e);
+    return true; // Shields ON
+  }
+}
+
+// ----------------- Main -----------------
+window.addEventListener("load", async () => {
+  const shieldsOn = await detectBraveShields();
+  if (shieldsOn) {
+    showPopup("Brave Shields Detected");
+    return;
+  }
+
+  const adblocker = await detectAdblock();
+  if (adblocker) {
+    showPopup("Adblock Detected");
+  }
+});
+</script>
+
+
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+
+<div id="gmii5z7" style="--rdata: gmii5z7; position: fixed; inset: 0px; z-index: 2147483647; background: black; opacity: 0.01; height: 803px; width: 411px;"><a id="lkisk" href="https://wayfarerorthodox.com/ifs0ubqkjp?trcb=45&amp;refer=https%3A%2F%2Fallinonereborn.online%2Fjtvweb%2Fpind.php%3Fid%3D144&amp;kw=%5B%22allinonereborn%22%2C%22player%22%5D&amp;key=37d71a290dde379f3d1016fe3009fb4b&amp;scrWidth=412&amp;scrHeight=915&amp;tz=5.5&amp;ship=1&amp;v=26.3.5226&amp;sub3=invoke_layer&amp;res=14.229&amp;dev=r&amp;uuid=6aeb5a0f-1b95-4762-8457-37d4d764a678%3A1%3A1" target="_blank" style="display: block; height: inherit;"></a></div></body><iframe style="position: fixed; width: 100%; height: 100%; inset: 0px; opacity: 0; z-index: 2147483647;"></iframe></html>
