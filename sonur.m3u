@@ -47,7 +47,7 @@ http://datahub11.com/Anthony2/Anthony123/705161
 #EXTINF:-1 tvg-id="1109" tvg-name="Star Sports 2 HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Sports_HD2.png" group-title="⚡ LIVE TV",Star Sports 2 HD
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=9457eb90129456fa8ea95e10ba4ac51e:e620a970cea474c491ac78ae71a4d764
-#EXTHTTP:{"Cookie":"__hdnea__=st=1777114102~exp=1777135702~acl=/bpk-tv/Star_Sports_HD2_BTS/WDVLive/*~hmac=66d0fc5324d82df0d245ee47a2f7d22e4c1a70c5b22b30a6bb4763bd4266e004"}
+#EXTHTTP:{"Cookie":"__hdnea__=st=17771141tt02~exp=1777135702~acl=/bpk-tv/Star_Sports_HD2_BTS/WDVLive/*~hmac=66d0fc5324d82df0d245ee47a2f7d22e4c1a70c5b22b30a6bb4763bd4266e004"}
 https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/WDVLive/index.mpd
 
 
