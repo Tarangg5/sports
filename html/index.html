@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JTV M3U Pro</title>
+    <title>JTV Pro Player</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background: #0b0b0b; color: #00ffcc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: #121212; padding: 30px; border-radius: 20px; border: 1px solid #00ffcc; box-shadow: 0 0 20px rgba(0, 255, 204, 0.2); }
-        h2 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
-        textarea { width: 100%; height: 400px; background: #000; color: #00ffcc; border: 1px solid #333; padding: 15px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 13px; margin-top: 20px; outline: none; box-sizing: border-box; }
-        .btn { display: inline-block; padding: 15px 40px; background: transparent; border: 2px solid #00ffcc; color: #00ffcc; text-decoration: none; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; margin: 10px; }
-        .btn:hover { background: #00ffcc; color: #000; box-shadow: 0 0 15px #00ffcc; }
-        #status { font-size: 14px; margin-bottom: 15px; color: #ffcc00; font-weight: bold; }
+        body { background: #0b0b0b; color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; }
+        .header { position: sticky; top: 0; background: #0b0b0b; padding: 15px 0; z-index: 100; border-bottom: 1px solid #333; }
+        h2 { color: #00ffcc; text-align: center; margin: 0 0 15px 0; text-transform: uppercase; font-size: 20px; }
+        
+        .search-box { width: 90%; padding: 12px; border-radius: 10px; border: 1px solid #00ffcc; background: #1a1a1a; color: #fff; display: block; margin: 0 auto 10px auto; outline: none; }
+        
+        .btn-main { display: block; width: 90%; margin: 10px auto; padding: 12px; background: #00ffcc; color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+
+        .channel-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; padding: 15px; }
+        
+        .channel-card { background: #1a1a1a; border: 1px solid #333; border-radius: 12px; padding: 10px; text-align: center; transition: 0.3s; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .channel-card:active { transform: scale(0.95); border-color: #00ffcc; background: #252525; }
+        
+        .channel-logo { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 8px; object-fit: cover; background: #000; }
+        .channel-name { font-size: 13px; font-weight: bold; color: #eee; height: 35px; overflow: hidden; }
+        
+        #status { font-size: 12px; color: #ffcc00; text-align: center; margin-top: 5px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>M3U Playlist Generator</h2>
-        <div id="status">Ready to Fetch (No Proxy Mode)</div>
-        <button class="btn" onclick="generateM3U()">GENERATE NOW</button>
-        <textarea id="output" readonly placeholder="Playlist generate hone ke baad yahan dikhegi..."></textarea>
+    <div class="header">
+        <h2>JTV Pro Player</h2>
+        <input type="text" id="searchInput" class="search-box" placeholder="Dhoondho channel..." onkeyup="filterChannels()">
+        <button class="btn-main" onclick="loadChannels()">RELOAD CHANNELS</button>
+        <div id="status">Ready</div>
     </div>
 
+    <div class="channel-container" id="channelList">
+        </div>
+
     <script>
-        async function generateM3U() {
+        let allChannels = [];
+
+        async function loadChannels() {
             const status = document.getElementById('status');
-            const output = document.getElementById('output');
+            const list = document.getElementById('channelList');
             
-            // URLs
             const channelJsonUrl = "https://raw.githubusercontent.com/sonuug5/newtest/refs/heads/main/json/jstr4web.json";
             const defaultCookieUrl = "https://allinonereborn.online/jstrweb2/cookies.json";
             const starCookieUrl = "https://allinonereborn.online/jtv-fetch/jstarcookie/cookie.json";
 
             try {
-                status.innerText = "Direct Fetching Data...";
-                
-                // Bina Proxy ke fetch
+                status.innerText = "Fetching data...";
+                list.innerHTML = "";
+
                 const [channelRes, defaultCookieRes, starCookieRes] = await Promise.all([
-                    fetch(channelJsonUrl),
-                    fetch(defaultCookieUrl),
-                    fetch(starCookieUrl)
+                    fetch(channelJsonUrl), fetch(defaultCookieUrl), fetch(starCookieUrl)
                 ]);
 
                 const channels = await channelRes.json();
                 const defaultCookieData = await defaultCookieRes.json();
                 const starFullData = await starCookieRes.json();
-
-                status.innerText = "Data Received. Processing...";
-
                 const starChannelsList = starFullData.failed_results || [];
-                
-                // Cookie Extraction Logic (Error Proof)
+
+                // Global Cookie Logic
                 let globalHdnea = "";
                 if (Array.isArray(defaultCookieData)) {
                     const cookieObj = defaultCookieData.find(item => item && item.cookie);
@@ -59,20 +68,15 @@
                     globalHdnea = defaultCookieData.cookie.trim();
                 }
 
-                let m3uPlaylist = "#EXTM3U\n";
-
-                channels.forEach((ch) => {
-                    if (!ch.url) return;
-
+                allChannels = channels.map(ch => {
                     let currentCookie = globalHdnea;
                     let cleanUrl = ch.url.split('?')[0];
 
-                    // Star Sports Matching Logic
+                    // Star Sports Cookie Logic
                     if (ch.name.toLowerCase().includes("star sports")) {
                         const matchedStar = starChannelsList.find(s => 
                             s.channel_name && s.channel_name.toLowerCase().trim() === ch.name.toLowerCase().trim()
                         );
-
                         if (matchedStar && matchedStar.error_details && matchedStar.error_details.final_url) {
                             const starUrl = matchedStar.error_details.final_url;
                             if (starUrl.includes("__hdnea__=")) {
@@ -81,23 +85,39 @@
                         }
                     }
 
-                    let finalUrl = `${cleanUrl}?${currentCookie}`;
-
-                    m3uPlaylist += `#EXTINF:-1 tvg-id="${ch.name.replace(/\s+/g, '_')}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.category}",${ch.name}\n`;
-                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
-                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_key=${ch.keyId}:${ch.key}\n`;
-                    m3uPlaylist += `#EXTHTTP:{"Cookie":"${currentCookie}"}\n`;
-                    m3uPlaylist += `${finalUrl}\n\n`;
+                    // Intent URL taiyar karna
+                    const drmParams = `&drmScheme=clearkey&drmLicense=${ch.keyId}:${ch.key}`;
+                    const intent = `intent://${cleanUrl.replace(/^https?:\/\//, '')}?|Cookie=${encodeURIComponent(currentCookie)}${drmParams}#Intent;scheme=https;package=com.genuine.leone;S.title=${encodeURIComponent(ch.name)};end`;
+                    
+                    return { ...ch, playUrl: intent };
                 });
 
-                output.value = m3uPlaylist;
-                status.innerText = "SUCCESS! Playlist Generated.";
+                displayChannels(allChannels);
+                status.innerText = `Total Channels: ${allChannels.length}`;
 
             } catch (error) {
-                status.innerHTML = `<span style="color:red">ERROR: ${error.message}</span><br><small>Shayad CORS block ho raha hai. Try with Allow CORS Extension.</small>`;
-                console.error(error);
+                status.innerText = "Error: " + error.message;
             }
         }
+
+        function displayChannels(data) {
+            const list = document.getElementById('channelList');
+            list.innerHTML = data.map(ch => `
+                <div class="channel-card" onclick="window.location.href='${ch.playUrl}'">
+                    <img class="channel-logo" src="${ch.logo}" onerror="this.src='https://via.placeholder.com/60?text=TV'">
+                    <div class="channel-name">${ch.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterChannels() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = allChannels.filter(ch => ch.name.toLowerCase().includes(query));
+            displayChannels(filtered);
+        }
+
+        // Auto load on start
+        window.onload = loadChannels;
     </script>
 </body>
 </html>
