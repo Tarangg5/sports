@@ -32,7 +32,7 @@
                 for (let i = 0; i < lines.length; i++) {
                     let line = lines[i];
                     // "Star_Sports_1_Hindi" id ya exact name check
-                    if (line.includes('tvg-id="Star_Sports_1_Hindi"') || line.includes('tvg-name="Star Sports 1 Hindi"')) {
+                    if (line.includes('tvg-id="Star_Sports_1_Hindi_HD"') || line.includes('tvg-name="Star Sports 1 Hindi HD"')) {
                         // Double check ki ye HD wala toh nahi hai (Case sensitive check)
                         if (!line.includes('HD') || line.includes('Hindi')) {
                             targetIndex = i;
