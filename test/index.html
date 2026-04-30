@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic M3U Jio Player</title>
+    <title>Dynamic Jio Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.js"></script>
     <style>
@@ -11,7 +11,7 @@
         .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
         .shaka-video-container { width: 100%; max-width: 900px; aspect-ratio: 16/9; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         .info { margin-top: 15px; text-align: center; }
-        #channelLogo { width: 50px; border-radius: 5px; vertical-align: middle; margin-right: 10px; display: none; }
+        #channelLogo { width: 50px; border-radius: 5px; vertical-align: middle; margin-right: 10px; }
         #loading { color: yellow; }
         #error { color: red; display: none; font-weight: bold; }
     </style>
@@ -33,73 +33,27 @@
 </div>
 
 <script>
-// Aapki M3U file ka URL yahan dalen
-const M3U_URL = "https://allinone.sonujabmuicamp.workers.dev/";
+// Aapka naya API link yahan rahega
+const API = "https://raw.githubusercontent.com/live4wap/skyrealname/refs/heads/main/tv4wap";
 
-function getChannelId() {
+function getId() {
     return new URLSearchParams(location.search).get("id");
 }
 
-// M3U Text ko JSON object mein badalne wala function
-function parseM3U(data) {
-    const channels = [];
-    const lines = data.split('\n');
-    let currentChannel = null;
-
-    for (let i = 0; i < lines.length; i++) {
-        let line = lines[i].trim();
-
-        if (line.startsWith('#EXTINF:')) {
-            currentChannel = {};
-            currentChannel.id = line.match(/tvg-id="([^"]+)"/)?.[1];
-            currentChannel.name = line.split(',')[1]?.trim();
-            currentChannel.logo = line.match(/tvg-logo="([^"]+)"/)?.[1];
-        } 
-        else if (line.startsWith('#KODIPROP:inputstream.adaptive.license_key=')) {
-            const keys = line.split('=')[1].split(':');
-            currentChannel.keyId = keys[0];
-            currentChannel.key = keys[1];
-        } 
-        else if (line.startsWith('#EXTHTTP:')) {
-            try {
-                const httpData = JSON.parse(line.split(':')[1]);
-                currentChannel.cookie = httpData.Cookie;
-            } catch(e) {}
-        } 
-        else if (line.startsWith('http')) {
-            currentChannel.url = line;
-            if (currentChannel.id) channels.push(currentChannel);
-            currentChannel = null;
-        }
+async function fetchChannel() {
+    const targetId = getId();
+    if (!targetId) {
+        showError("Channel ID missing in URL (?id=...)");
+        return null;
     }
-    return channels;
-}
-
-async function startPlayer(channel) {
-    shaka.polyfill.installAll();
-    const video = document.getElementById("video");
-    const player = new shaka.Player(video);
-    const container = document.querySelector(".shaka-video-container");
-    new shaka.ui.Overlay(player, container, video);
-
-    player.configure({
-        drm: {
-            clearKeys: { [channel.keyId]: channel.key }
-        }
-    });
-
-    player.getNetworkingEngine().registerRequestFilter((type, request) => {
-        request.headers["User-Agent"] = "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
-        if (channel.cookie) {
-            request.headers["Cookie"] = channel.cookie;
-        }
-    });
-
     try {
-        await player.load(channel.url);
-        document.getElementById("loading").style.display = "none";
+        const res = await fetch(API);
+        const data = await res.json();
+        // Naye JSON format ke hisaab se "id" field check kar rahe hain
+        return data.find(c => c.id == targetId);
     } catch (e) {
-        showError("Playback Failed: Check if link or keys expired.");
+        showError("Failed to fetch data from API");
+        return null;
     }
 }
 
@@ -110,36 +64,76 @@ function showError(msg) {
     err.style.display = "block";
 }
 
-async function init() {
-    const targetId = getChannelId();
-    if (!targetId) {
-        showError("URL mein ?id=CH_ID add karein");
+async function startPlayer(channel) {
+    shaka.polyfill.installAll();
+    if (!shaka.Player.isBrowserSupported()) {
+        showError("Browser not supported");
         return;
     }
 
-    try {
-        const res = await fetch(M3U_URL);
-        const text = await res.text();
-        const channels = parseM3U(text);
-        const channel = channels.find(c => c.id === targetId);
+    const video = document.getElementById("video");
+    const player = new shaka.Player(video);
+    const container = document.querySelector(".shaka-video-container");
 
-        if (channel) {
-            document.getElementById("channelName").innerText = channel.name;
-            if(channel.logo) {
-                const logoImg = document.getElementById("channelLogo");
-                logoImg.src = channel.logo;
-                logoImg.style.display = "inline-block";
-            }
-            startPlayer(channel);
-        } else {
-            showError("Channel ID '" + targetId + "' nahi mila.");
+    const ui = new shaka.ui.Overlay(player, container, video);
+
+    player.configure({
+        drm: {
+            // Naye JSON mein keyId aur key same hain
+            clearKeys: { [channel.keyId]: channel.key }
+        },
+        streaming: {
+            lowLatencyMode: true,
+            bufferingGoal: 30,
+            rebufferingGoal: 2,
+            stallEnabled: false
         }
+    });
+
+    const cookieValue = channel.cookie;
+
+    player.getNetworkingEngine().registerRequestFilter((type, request) => {
+        request.headers["Referer"] = "https://www.jiotv.com/";
+        request.headers["User-Agent"] = "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
+
+        if (cookieValue) {
+            request.headers["Cookie"] = cookieValue;
+        }
+
+        // Cookie ko URL segments mein add karna (agar tokenized URL hai)
+        if (cookieValue && (type === shaka.net.NetworkingEngine.RequestType.SEGMENT || type === shaka.net.NetworkingEngine.RequestType.MANIFEST)) {
+            if (!request.uris[0].includes("__hdnea__")) {
+                const sep = request.uris[0].includes("?") ? "&" : "?";
+                request.uris[0] += sep + cookieValue;
+            }
+        }
+    });
+
+    try {
+        // Naye JSON mein URL field ka naam "url" hai
+        await player.load(channel.url);
+        document.getElementById("loading").style.display = "none";
     } catch (e) {
-        showError("M3U load karne mein error.");
+        console.error(e);
+        showError("Stream failed to start (Check if keys or cookie expired)");
     }
+}
+
+async function init() {
+    const channel = await fetchChannel();
+    if (!channel) {
+        if(getId()) showError("Channel not found in JSON");
+        return;
+    }
+
+    // Naye JSON fields ki mapping
+    document.getElementById("channelLogo").src = channel.logo;
+    document.getElementById("channelName").innerText = channel.name;
+    startPlayer(channel);
 }
 
 init();
 </script>
+
 </body>
 </html>
