@@ -1,81 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NS Player Direct Grabber</title>
+    <title>NS Player Direct Redirect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { background: #0b0b0b; color: #00ffcc; font-family: sans-serif; text-align: center; padding-top: 30%; }
-        .loader { border: 4px solid #1a1a1a; border-top: 4px solid #00ffcc; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
+        .loader { border: 4px solid #1a1a1a; border-top: 4px solid #00ffcc; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        #status { font-size: 18px; color: #ffcc00; }
+        #status { font-weight: bold; color: #00ffcc; padding: 0 15px; }
     </style>
 </head>
 <body>
 
     <div class="loader"></div>
-    <h3 id="status">Direct Fetching from Source...</h3>
+    <h3 id="status">Direct Fetching: Star Sports 1 Hindi...</h3>
 
     <script>
-        async function directFetch() {
+        async function launchDirect() {
             const status = document.getElementById('status');
-            const SOURCE_URL = "https://allinone.sonujabmuicamp.workers.dev/";
+            const SOURCE_URL = "https://allinone.sonujabmuicamp.workers.dev/"; 
 
             try {
-                // Direct fetch bina proxy ke
+                // Seedha fetch bina proxy ke
                 const response = await fetch(SOURCE_URL);
                 const data = await response.text();
-                
-                if (!data || !data.includes('#EXTM3U')) {
-                    throw new Error("Data block ho raha hai ya empty hai (CORS Issue)");
-                }
-
                 const lines = data.split('\n');
-                let found = false;
+                
+                let targetIndex = -1;
 
+                // Strict Loop: Hum tvg-id ya tvg-name ka exact match dekh rahe hain
                 for (let i = 0; i < lines.length; i++) {
                     let line = lines[i];
-                    // Exact match ya keyword match dono check ho rahe hain
-                    if (line.includes('Star Sports 1 Hindi HD')) {
-                        
-                        let mpdUrl = "", drmKey = "", cookie = "";
-
-                        // Agli lines se data nikalna
-                        for (let j = 1; j <= 8; j++) {
-                            let dLine = lines[i + j] ? lines[i + j].trim() : "";
-                            
-                            if (dLine.includes('license_key=')) {
-                                drmKey = dLine.split('license_key=')[1].trim();
-                            }
-                            if (dLine.includes('"Cookie":')) {
-                                let cMatch = dLine.match(/"Cookie":"(.*?)"/);
-                                if (cMatch) cookie = cMatch[1];
-                            }
-                            if (dLine.startsWith('http') && dLine.includes('.mpd')) {
-                                mpdUrl = dLine;
-                            }
-                        }
-
-                        if (mpdUrl) {
-                            status.innerText = "Opening NS Player...";
-                            const intent = `intent://${mpdUrl.replace(/^https?:\/\//, '')}?|Cookie=${encodeURIComponent(cookie)}&drmScheme=clearkey&drmLicense=${drmKey}#Intent;scheme=https;package=com.genuine.leone;S.title=Star_Sports_1_Hindi;end`;
-                            window.location.href = intent;
-                            found = true;
+                    // "Star_Sports_1_Hindi" id ya exact name check
+                    if (line.includes('tvg-id="Star_Sports_1_Hindi"') || line.includes('tvg-name="Star Sports 1 Hindi"')) {
+                        // Double check ki ye HD wala toh nahi hai (Case sensitive check)
+                        if (!line.includes('HD') || line.includes('Hindi')) {
+                            targetIndex = i;
                             break;
                         }
                     }
                 }
 
-                if (!found) {
-                    status.innerText = "Channel not found in direct fetch!";
+                if (targetIndex !== -1) {
+                    let drmKey = "";
+                    let cookie = "";
+                    let mpdUrl = "";
+
+                    // Aapke worker ke structure ke hisaab se data extraction
+                    for (let j = 1; j <= 6; j++) {
+                        let currentLine = lines[targetIndex + j] ? lines[targetIndex + j].trim() : "";
+                        
+                        if (currentLine.includes('license_key=')) {
+                            drmKey = currentLine.split('license_key=')[1].trim();
+                        } 
+                        else if (currentLine.includes('"Cookie":')) {
+                            let match = currentLine.match(/"Cookie":"(.*?)"/);
+                            if (match) cookie = match[1];
+                        } 
+                        else if (currentLine.startsWith('http') && currentLine.includes('.mpd')) {
+                            mpdUrl = currentLine;
+                        }
+                    }
+
+                    if (mpdUrl) {
+                        status.innerText = "Launching NS Player...";
+                        
+                        // Intent construction
+                        const intentUrl = `intent://${mpdUrl.replace(/^https?:\/\//, '')}?|Cookie=${encodeURIComponent(cookie)}&drmScheme=clearkey&drmLicense=${drmKey}#Intent;scheme=https;package=com.genuine.leone;S.title=Star_Sports_1_Hindi;end`;
+
+                        window.location.href = intentUrl;
+                    } else {
+                        status.innerText = "Error: Stream details missing!";
+                    }
+                } else {
+                    status.innerText = "Error: Channel 'Star Sports 1 Hindi' nahi mila!";
                 }
 
             } catch (e) {
+                status.innerHTML = "<b>Fetch Failed!</b><br>Shayad browser ne block kiya ya site down hai.";
                 console.error(e);
-                status.innerHTML = "<b>CORS Error!</b><br>Browser ne direct access block kar diya hai.<br>Iske liye Proxy ya Cloudflare Worker hi use karna padega.";
             }
         }
 
-        window.onload = directFetch;
+        window.onload = launchDirect;
     </script>
 </body>
 </html>
