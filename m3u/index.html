@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JTV Auto M3U</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            background: #000; 
+            color: #ccc; 
+            font-family: monospace; 
+            margin: 0; 
+            padding: 10px; 
+            white-space: pre-wrap; 
+            word-wrap: break-word;
+            font-size: 12px;
+        }
+        #loader {
+            color: #00ffcc;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">Generating Plain M3U... Please wait.</div>
+    <div id="m3u-output"></div>
+
+    <script>
+        async function generateAutoM3U() {
+            const output = document.getElementById('m3u-output');
+            const loader = document.getElementById('loader');
+            
+            // URLs
+            const channelJsonUrl = "https://raw.githubusercontent.com/sonuug5/newtest/refs/heads/main/json/jstr4web.json";
+            const defaultCookieUrl = "https://allinonereborn.online/jstrweb2/cookies.json";
+            const starCookieUrl = "https://allinonereborn.online/jtv-fetch/jstarcookie/cookie.json";
+
+            try {
+                // Direct Fetch (Bina Proxy ke jaisa aapne pehle kaha tha)
+                const [channelRes, defaultCookieRes, starCookieRes] = await Promise.all([
+                    fetch(channelJsonUrl),
+                    fetch(defaultCookieUrl),
+                    fetch(starCookieUrl)
+                ]);
+
+                const channels = await channelRes.json();
+                const defaultCookieData = await defaultCookieRes.json();
+                const starFullData = await starCookieRes.json();
+
+                const starChannelsList = starFullData.failed_results || [];
+                
+                // Cookie Extraction
+                let globalHdnea = "";
+                if (Array.isArray(defaultCookieData)) {
+                    const cookieObj = defaultCookieData.find(item => item && item.cookie);
+                    if (cookieObj) globalHdnea = cookieObj.cookie.trim();
+                } else if (defaultCookieData && defaultCookieData.cookie) {
+                    globalHdnea = defaultCookieData.cookie.trim();
+                }
+
+                let m3uPlaylist = "#EXTM3U\n";
+
+                channels.forEach((ch) => {
+                    if (!ch.url) return;
+
+                    let currentCookie = globalHdnea;
+                    let cleanUrl = ch.url.split('?')[0];
+
+                    // Star Sports Logic
+                    if (ch.name.toLowerCase().includes("star sports")) {
+                        const matchedStar = starChannelsList.find(s => 
+                            s.channel_name && s.channel_name.toLowerCase().trim() === ch.name.toLowerCase().trim()
+                        );
+
+                        if (matchedStar && matchedStar.error_details && matchedStar.error_details.final_url) {
+                            const starUrl = matchedStar.error_details.final_url;
+                            if (starUrl.includes("__hdnea__=")) {
+                                currentCookie = "__hdnea__=" + starUrl.split("__hdnea__=")[1];
+                            }
+                        }
+                    }
+
+                    let finalUrl = `${cleanUrl}?${currentCookie}`;
+
+                    m3uPlaylist += `#EXTINF:-1 tvg-id="${ch.name.replace(/\s+/g, '_')}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.category}",${ch.name}\n`;
+                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
+                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_key=${ch.keyId}:${ch.key}\n`;
+                    m3uPlaylist += `#EXTHTTP:{"Cookie":"${currentCookie}"}\n`;
+                    m3uPlaylist += `${finalUrl}\n\n`;
+                });
+
+                // Loader hatao aur playlist dikhao
+                loader.style.display = "none";
+                output.innerText = m3uPlaylist;
+
+            } catch (error) {
+                loader.innerHTML = "<span style='color:red'>Error: " + error.message + "</span><br>CORS check karein ya refresh karein.";
+            }
+        }
+
+        // Page khulte hi auto-run
+        window.onload = generateAutoM3U;
+    </script>
+</body>
+</html>
