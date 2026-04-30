@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JTV M3U Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: #0b0b0b; color: #00ffcc; font-family: sans-serif; text-align: center; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: #1a1a1a; padding: 20px; border-radius: 15px; border: 1px solid #00ffcc; }
+        textarea { width: 100%; height: 300px; background: #000; color: #00ffcc; border: 1px solid #333; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 12px; margin-top: 15px; }
+        .btn { display: inline-block; padding: 12px 25px; background: transparent; border: 2px solid #00ffcc; color: #00ffcc; text-decoration: none; border-radius: 50px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        .btn:hover { background: #00ffcc; color: #000; }
+        #status { font-size: 14px; margin-bottom: 10px; color: #ffcc00; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>M3U Playlist Generator</h2>
+        <div id="status">Ready to Generate...</div>
+        <button class="btn" onclick="generateM3U()">GENERATE PLAYLIST</button>
+        <textarea id="output" readonly placeholder="M3U result will appear here..."></textarea>
+    </div>
+
+    <script>
+        async function generateM3U() {
+            const status = document.getElementById('status');
+            const output = document.getElementById('output');
+            const PROXY = "https://corsproxy.io/?";
+            
+            // URLs
+            const channelJsonUrl = "https://raw.githubusercontent.com/sonuug5/newtest/refs/heads/main/json/jstr4web.json";
+            const defaultCookieUrl = "https://allinonereborn.online/jstrweb2/cookies.json";
+            const starCookieUrl = "https://allinonereborn.online/jtv-fetch/jstarcookie/cookie.json";
+
+            try {
+                status.innerText = "Fetching Data from Source...";
+                
+                // Fetching all data using Proxy
+                const [channelRes, defaultCookieRes, starCookieRes] = await Promise.all([
+                    fetch(PROXY + encodeURIComponent(channelJsonUrl)),
+                    fetch(PROXY + encodeURIComponent(defaultCookieUrl)),
+                    fetch(PROXY + encodeURIComponent(starCookieUrl))
+                ]);
+
+                const channels = await channelRes.json();
+                const defaultCookieData = await defaultCookieRes.json();
+                const starFullData = await starCookieRes.json();
+
+                status.innerText = "Processing Channels & Cookies...";
+
+                const starChannelsList = starFullData.failed_results || [];
+                
+                // Extract Global Cookie
+                let globalHdnea = "";
+                const cookieObj = defaultCookieData.find(item => item.cookie);
+                if (cookieObj) {
+                    globalHdnea = cookieObj.cookie.trim();
+                }
+
+                let m3uPlaylist = "#EXTM3U\n";
+
+                channels.forEach((ch) => {
+                    let currentCookie = globalHdnea;
+                    let cleanUrl = ch.url.split('?')[0];
+
+                    // Star Sports Logic
+                    if (ch.name.toLowerCase().includes("star sports")) {
+                        const matchedStar = starChannelsList.find(s => 
+                            s.channel_name && s.channel_name.toLowerCase().trim() === ch.name.toLowerCase().trim()
+                        );
+
+                        if (matchedStar && matchedStar.error_details && matchedStar.error_details.final_url) {
+                            const starUrl = matchedStar.error_details.final_url;
+                            if (starUrl.includes("__hdnea__=")) {
+                                currentCookie = "__hdnea__=" + starUrl.split("__hdnea__=")[1];
+                            }
+                        }
+                    }
+
+                    let finalUrl = `${cleanUrl}?${currentCookie}`;
+
+                    m3uPlaylist += `#EXTINF:-1 tvg-id="${ch.name.replace(/\s+/g, '_')}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.category}",${ch.name}\n`;
+                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
+                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_key=${ch.keyId}:${ch.key}\n`;
+                    m3uPlaylist += `#EXTHTTP:{"Cookie":"${currentCookie}"}\n`;
+                    m3uPlaylist += `${finalUrl}\n\n`;
+                });
+
+                output.value = m3uPlaylist;
+                status.innerText = "Playlist Generated Successfully!";
+
+            } catch (error) {
+                status.innerText = "Error: " + error.message;
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
