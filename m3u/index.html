@@ -1,57 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JTV Auto M3U</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>JTV Plain M3U</title>
     <style>
-        body { 
-            background: #000; 
-            color: #ccc; 
-            font-family: monospace; 
-            margin: 0; 
-            padding: 10px; 
-            white-space: pre-wrap; 
-            word-wrap: break-word;
-            font-size: 12px;
-        }
-        #loader {
-            color: #00ffcc;
-            font-family: sans-serif;
-            text-align: center;
-            margin-top: 20%;
-        }
+        body { background: #000; color: #00ffcc; font-family: monospace; padding: 20px; }
+        .box { border: 1px solid #333; padding: 15px; background: #0a0a0a; white-space: pre-wrap; word-break: break-all; }
+        .top-bar { position: sticky; top: 0; background: #000; padding: 10px; border-bottom: 1px solid #00ffcc; margin-bottom: 15px; }
+        button { background: #00ffcc; color: #000; border: none; padding: 10px 20px; font-weight: bold; cursor: pointer; border-radius: 5px; }
     </style>
 </head>
 <body>
 
-    <div id="loader">Generating Plain M3U... Please wait.</div>
-    <div id="m3u-output"></div>
+    <div class="top-bar">
+        <button onclick="copyToClipboard()">COPY M3U TEXT</button>
+        <span id="status"> Fetching data...</span>
+    </div>
+
+    <div id="m3u-output" class="box">Loading Playlist...</div>
 
     <script>
-        async function generateAutoM3U() {
+        async function generateM3U() {
             const output = document.getElementById('m3u-output');
-            const loader = document.getElementById('loader');
+            const status = document.getElementById('status');
             
-            // URLs
             const channelJsonUrl = "https://raw.githubusercontent.com/sonuug5/newtest/refs/heads/main/json/jstr4web.json";
             const defaultCookieUrl = "https://allinonereborn.online/jstrweb2/cookies.json";
             const starCookieUrl = "https://allinonereborn.online/jtv-fetch/jstarcookie/cookie.json";
 
             try {
-                // Direct Fetch (Bina Proxy ke jaisa aapne pehle kaha tha)
                 const [channelRes, defaultCookieRes, starCookieRes] = await Promise.all([
-                    fetch(channelJsonUrl),
-                    fetch(defaultCookieUrl),
-                    fetch(starCookieUrl)
+                    fetch(channelJsonUrl), fetch(defaultCookieUrl), fetch(starCookieUrl)
                 ]);
 
                 const channels = await channelRes.json();
                 const defaultCookieData = await defaultCookieRes.json();
                 const starFullData = await starCookieRes.json();
-
                 const starChannelsList = starFullData.failed_results || [];
-                
-                // Cookie Extraction
+
                 let globalHdnea = "";
                 if (Array.isArray(defaultCookieData)) {
                     const cookieObj = defaultCookieData.find(item => item && item.cookie);
@@ -60,20 +46,15 @@
                     globalHdnea = defaultCookieData.cookie.trim();
                 }
 
-                let m3uPlaylist = "#EXTM3U\n";
-
-                channels.forEach((ch) => {
-                    if (!ch.url) return;
-
+                let m3u = "#EXTM3U\n";
+                channels.forEach(ch => {
                     let currentCookie = globalHdnea;
                     let cleanUrl = ch.url.split('?')[0];
 
-                    // Star Sports Logic
                     if (ch.name.toLowerCase().includes("star sports")) {
                         const matchedStar = starChannelsList.find(s => 
                             s.channel_name && s.channel_name.toLowerCase().trim() === ch.name.toLowerCase().trim()
                         );
-
                         if (matchedStar && matchedStar.error_details && matchedStar.error_details.final_url) {
                             const starUrl = matchedStar.error_details.final_url;
                             if (starUrl.includes("__hdnea__=")) {
@@ -82,26 +63,29 @@
                         }
                     }
 
-                    let finalUrl = `${cleanUrl}?${currentCookie}`;
-
-                    m3uPlaylist += `#EXTINF:-1 tvg-id="${ch.name.replace(/\s+/g, '_')}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.category}",${ch.name}\n`;
-                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
-                    m3uPlaylist += `#KODIPROP:inputstream.adaptive.license_key=${ch.keyId}:${ch.key}\n`;
-                    m3uPlaylist += `#EXTHTTP:{"Cookie":"${currentCookie}"}\n`;
-                    m3uPlaylist += `${finalUrl}\n\n`;
+                    m3u += `#EXTINF:-1 tvg-id="${ch.name.replace(/\s+/g, '_')}" tvg-name="${ch.name}" tvg-logo="${ch.logo}" group-title="${ch.category}",${ch.name}\n`;
+                    m3u += `#KODIPROP:inputstream.adaptive.license_type=clearkey\n`;
+                    m3u += `#KODIPROP:inputstream.adaptive.license_key=${ch.keyId}:${ch.key}\n`;
+                    m3u += `#EXTHTTP:{"Cookie":"${currentCookie}"}\n`;
+                    m3u += `${cleanUrl}?${currentCookie}\n\n`;
                 });
 
-                // Loader hatao aur playlist dikhao
-                loader.style.display = "none";
-                output.innerText = m3uPlaylist;
-
-            } catch (error) {
-                loader.innerHTML = "<span style='color:red'>Error: " + error.message + "</span><br>CORS check karein ya refresh karein.";
+                output.innerText = m3u;
+                status.innerText = " Done!";
+            } catch (e) {
+                status.innerText = " Error!";
+                output.innerText = e.message;
             }
         }
 
-        // Page khulte hi auto-run
-        window.onload = generateAutoM3U;
+        function copyToClipboard() {
+            const text = document.getElementById('m3u-output').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("M3U Copy ho gaya! Ab ise kisi bhi file (.m3u) mein save karke OTT Navigator mein use karein.");
+            });
+        }
+
+        window.onload = generateM3U;
     </script>
 </body>
 </html>
