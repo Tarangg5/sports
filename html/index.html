@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JTV M3U Generator</title>
+    <title>JTV M3U Pro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background: #0b0b0b; color: #00ffcc; font-family: sans-serif; text-align: center; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: #1a1a1a; padding: 20px; border-radius: 15px; border: 1px solid #00ffcc; }
-        textarea { width: 100%; height: 300px; background: #000; color: #00ffcc; border: 1px solid #333; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 12px; margin-top: 15px; }
-        .btn { display: inline-block; padding: 12px 25px; background: transparent; border: 2px solid #00ffcc; color: #00ffcc; text-decoration: none; border-radius: 50px; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .btn:hover { background: #00ffcc; color: #000; }
-        #status { font-size: 14px; margin-bottom: 10px; color: #ffcc00; }
+        body { background: #0b0b0b; color: #00ffcc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 20px; }
+        .container { max-width: 800px; margin: auto; background: #121212; padding: 30px; border-radius: 20px; border: 1px solid #00ffcc; box-shadow: 0 0 20px rgba(0, 255, 204, 0.2); }
+        h2 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+        textarea { width: 100%; height: 400px; background: #000; color: #00ffcc; border: 1px solid #333; padding: 15px; border-radius: 10px; font-family: 'Consolas', monospace; font-size: 13px; margin-top: 20px; outline: none; box-sizing: border-box; }
+        .btn { display: inline-block; padding: 15px 40px; background: transparent; border: 2px solid #00ffcc; color: #00ffcc; text-decoration: none; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; margin: 10px; }
+        .btn:hover { background: #00ffcc; color: #000; box-shadow: 0 0 15px #00ffcc; }
+        #status { font-size: 14px; margin-bottom: 15px; color: #ffcc00; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h2>M3U Playlist Generator</h2>
-        <div id="status">Ready to Generate...</div>
-        <button class="btn" onclick="generateM3U()">GENERATE PLAYLIST</button>
-        <textarea id="output" readonly placeholder="M3U result will appear here..."></textarea>
+        <div id="status">Ready to Fetch (No Proxy Mode)</div>
+        <button class="btn" onclick="generateM3U()">GENERATE NOW</button>
+        <textarea id="output" readonly placeholder="Playlist generate hone ke baad yahan dikhegi..."></textarea>
     </div>
 
     <script>
         async function generateM3U() {
             const status = document.getElementById('status');
             const output = document.getElementById('output');
-            const PROXY = "https://corsproxy.io/?";
             
             // URLs
             const channelJsonUrl = "https://raw.githubusercontent.com/sonuug5/newtest/refs/heads/main/json/jstr4web.json";
@@ -33,37 +33,41 @@
             const starCookieUrl = "https://allinonereborn.online/jtv-fetch/jstarcookie/cookie.json";
 
             try {
-                status.innerText = "Fetching Data from Source...";
+                status.innerText = "Direct Fetching Data...";
                 
-                // Fetching all data using Proxy
+                // Bina Proxy ke fetch
                 const [channelRes, defaultCookieRes, starCookieRes] = await Promise.all([
-                    fetch(PROXY + encodeURIComponent(channelJsonUrl)),
-                    fetch(PROXY + encodeURIComponent(defaultCookieUrl)),
-                    fetch(PROXY + encodeURIComponent(starCookieUrl))
+                    fetch(channelJsonUrl),
+                    fetch(defaultCookieUrl),
+                    fetch(starCookieUrl)
                 ]);
 
                 const channels = await channelRes.json();
                 const defaultCookieData = await defaultCookieRes.json();
                 const starFullData = await starCookieRes.json();
 
-                status.innerText = "Processing Channels & Cookies...";
+                status.innerText = "Data Received. Processing...";
 
                 const starChannelsList = starFullData.failed_results || [];
                 
-                // Extract Global Cookie
+                // Cookie Extraction Logic (Error Proof)
                 let globalHdnea = "";
-                const cookieObj = defaultCookieData.find(item => item.cookie);
-                if (cookieObj) {
-                    globalHdnea = cookieObj.cookie.trim();
+                if (Array.isArray(defaultCookieData)) {
+                    const cookieObj = defaultCookieData.find(item => item && item.cookie);
+                    if (cookieObj) globalHdnea = cookieObj.cookie.trim();
+                } else if (defaultCookieData && defaultCookieData.cookie) {
+                    globalHdnea = defaultCookieData.cookie.trim();
                 }
 
                 let m3uPlaylist = "#EXTM3U\n";
 
                 channels.forEach((ch) => {
+                    if (!ch.url) return;
+
                     let currentCookie = globalHdnea;
                     let cleanUrl = ch.url.split('?')[0];
 
-                    // Star Sports Logic
+                    // Star Sports Matching Logic
                     if (ch.name.toLowerCase().includes("star sports")) {
                         const matchedStar = starChannelsList.find(s => 
                             s.channel_name && s.channel_name.toLowerCase().trim() === ch.name.toLowerCase().trim()
@@ -87,10 +91,10 @@
                 });
 
                 output.value = m3uPlaylist;
-                status.innerText = "Playlist Generated Successfully!";
+                status.innerText = "SUCCESS! Playlist Generated.";
 
             } catch (error) {
-                status.innerText = "Error: " + error.message;
+                status.innerHTML = `<span style="color:red">ERROR: ${error.message}</span><br><small>Shayad CORS block ho raha hai. Try with Allow CORS Extension.</small>`;
                 console.error(error);
             }
         }
