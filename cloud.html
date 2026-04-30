@@ -1,73 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NS Player Auto-Redirect</title>
+    <title>NS Player Direct Grabber</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { background: #0b0b0b; color: #00ffcc; font-family: sans-serif; text-align: center; padding-top: 30%; }
-        .loader { border: 4px solid #1a1a1a; border-top: 4px solid #00ffcc; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        .loader { border: 4px solid #1a1a1a; border-top: 4px solid #00ffcc; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #status { font-size: 18px; color: #ffcc00; }
     </style>
 </head>
 <body>
 
     <div class="loader"></div>
-    <h3 id="status">Scanning Playlist...</h3>
+    <h3 id="status">Direct Fetching from Source...</h3>
 
     <script>
-        async function startAutoRedirect() {
+        async function directFetch() {
             const status = document.getElementById('status');
-            const SOURCE_M3U = "https://allinone.sonujabmuicamp.workers.dev/"; 
-            const PROXY = "https://corsproxy.io/?";
+            const SOURCE_URL = "https://allinone.sonujabmuicamp.workers.dev/";
 
             try {
-                const response = await fetch(PROXY + encodeURIComponent(SOURCE_M3U));
+                // Direct fetch bina proxy ke
+                const response = await fetch(SOURCE_URL);
                 const data = await response.text();
-                const lines = data.split('\n');
                 
-                let mpdUrl = "";
-                let drmKey = "";
-                let cookie = "";
+                if (!data || !data.includes('#EXTM3U')) {
+                    throw new Error("Data block ho raha hai ya empty hai (CORS Issue)");
+                }
 
-                // Poori playlist mein "Star Sports 1 Hindi" dhoondhna
+                const lines = data.split('\n');
+                let found = false;
+
                 for (let i = 0; i < lines.length; i++) {
-                    if (lines[i].includes('Star Sports 1 Hindi')) {
-                        // Jab channel mil jaye, toh uske niche ki 10 lines scan karo data ke liye
-                        for (let j = 1; j <= 10; j++) {
-                            let nextLine = lines[i + j] ? lines[i + j].trim() : "";
+                    let line = lines[i];
+                    // Exact match ya keyword match dono check ho rahe hain
+                    if (line.includes('Star Sports 1 Hindi')) {
+                        
+                        let mpdUrl = "", drmKey = "", cookie = "";
+
+                        // Agli lines se data nikalna
+                        for (let j = 1; j <= 8; j++) {
+                            let dLine = lines[i + j] ? lines[i + j].trim() : "";
                             
-                            if (nextLine.includes('license_key=')) {
-                                drmKey = nextLine.split('license_key=')[1].trim();
-                            } 
-                            if (nextLine.includes('"Cookie":')) {
-                                let match = nextLine.match(/"Cookie":"(.*?)"/);
-                                if (match) cookie = match[1];
+                            if (dLine.includes('license_key=')) {
+                                drmKey = dLine.split('license_key=')[1].trim();
                             }
-                            if (nextLine.startsWith('http') && nextLine.includes('.mpd')) {
-                                mpdUrl = nextLine;
+                            if (dLine.includes('"Cookie":')) {
+                                let cMatch = dLine.match(/"Cookie":"(.*?)"/);
+                                if (cMatch) cookie = cMatch[1];
                             }
-                            
-                            // Agar teeno cheezein mil gayi toh loop rok do
-                            if (mpdUrl && drmKey && cookie) break;
+                            if (dLine.startsWith('http') && dLine.includes('.mpd')) {
+                                mpdUrl = dLine;
+                            }
                         }
-                        if (mpdUrl) break;
+
+                        if (mpdUrl) {
+                            status.innerText = "Opening NS Player...";
+                            const intent = `intent://${mpdUrl.replace(/^https?:\/\//, '')}?|Cookie=${encodeURIComponent(cookie)}&drmScheme=clearkey&drmLicense=${drmKey}#Intent;scheme=https;package=com.genuine.leone;S.title=Star_Sports_1_Hindi;end`;
+                            window.location.href = intent;
+                            found = true;
+                            break;
+                        }
                     }
                 }
 
-                if (mpdUrl) {
-                    status.innerText = "Channel Found! Launching...";
-                    const intentUrl = `intent://${mpdUrl.replace(/^https?:\/\//, '')}?|Cookie=${encodeURIComponent(cookie)}&drmScheme=clearkey&drmLicense=${drmKey}#Intent;scheme=https;package=com.genuine.leone;S.title=Star_Sports_1_Auto;end`;
-                    window.location.href = intentUrl;
-                } else {
-                    status.innerText = "Channel not found in list. Check if name changed!";
+                if (!found) {
+                    status.innerText = "Channel not found in direct fetch!";
                 }
 
             } catch (e) {
-                status.innerText = "Error: Proxy or Source issue.";
+                console.error(e);
+                status.innerHTML = "<b>CORS Error!</b><br>Browser ne direct access block kar diya hai.<br>Iske liye Proxy ya Cloudflare Worker hi use karna padega.";
             }
         }
 
-        window.onload = startAutoRedirect;
+        window.onload = directFetch;
     </script>
 </body>
 </html>
