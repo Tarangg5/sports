@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONU NEON PLAYER | 3-in-1</title>
+    <title>SONU NEON PLAYER | Live, Movies & Series</title>
     <style>
         body { background: #0f0f0f; color: #00ffcc; font-family: sans-serif; text-align: center; padding: 20px; }
         .type-selector { margin: 15px; display: flex; justify-content: center; flex-wrap: wrap; }
         .type-btn { padding: 10px 15px; background: #1a1a1a; color: #00ffcc; border: 1px solid #00ffcc; cursor: pointer; border-radius: 15px; margin: 5px; flex: 1; max-width: 120px; font-size: 12px; }
         .active { background: #00ffcc !important; color: #000 !important; font-weight: bold; box-shadow: 0 0 10px #00ffcc; }
+        
         input[type="text"] { width: 85%; padding: 12px; border-radius: 25px; border: 2px solid #00ffcc; background: #1a1a1a; color: #fff; outline: none; margin-bottom: 10px; }
         .btn-search { padding: 12px 40px; background: #00ffcc; border: none; border-radius: 25px; cursor: pointer; font-weight: bold; }
+        
         #list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-top: 25px; }
         .card { background: #1a1a1a; padding: 10px; border-radius: 12px; border: 1px solid #333; transition: 0.3s; }
         .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
-        .copy-btn { background: #fff; color: #000; border: none; padding: 7px; width: 100%; margin-top: 10px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 11px; }
+        
+        .btn-group { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
+        .copy-btn { background: #fff; color: #000; border: none; padding: 7px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 11px; }
+        .play-btn { background: #007bff; color: #fff; border: none; padding: 7px; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 11px; text-decoration: none; display: block; }
     </style>
 </head>
 <body>
 
-    <h2 style="text-shadow: 0 0 10px #00ffcc;">SONU NEON <span style="color:#fff">PLAYER</span></h2>
+    <h2 style="text-shadow: 0 0 10px #00ffcc;">SONU NEON <span>PLAYER</span></h2>
 
     <div class="type-selector">
         <button id="liveBtn" class="type-btn active" onclick="setType('live')">LIVE TV</button>
@@ -37,7 +42,7 @@
 
     <script>
         let currentType = 'live';
-        const workerUrl = "https://blue-sea-415d.sonuujamuicamp.workers.dev/"; // APNA WORKER URL DALO
+        const workerUrl = "https://your-worker.workers.dev/"; // APNA WORKER URL DALO
 
         function setType(type) {
             currentType = type;
@@ -73,13 +78,17 @@
 
                     const card = document.createElement('div');
                     card.className = 'card';
-                    // Series ke liye text alag dikhayenge
-                    const btnText = url.startsWith('SERIES_ID') ? "COPY SERIES ID" : "COPY LINK";
                     
+                    // NS Player Intent Link
+                    const nsIntent = `intent:${url}#Intent;package=com.genuine.leone;end`;
+
                     card.innerHTML = `
                         <img src="${logo}">
                         <div style="font-size:11px; margin:8px 0; height:35px; overflow:hidden; color:#fff;">${name}</div>
-                        <button class="copy-btn" onclick="copyIt('${url}', this)">${btnText}</button>
+                        <div class="btn-group">
+                            <button class="copy-btn" onclick="copyIt('${url}', this)">COPY LINK</button>
+                            <a href="${nsIntent}" class="play-btn">PLAY IN NS</a>
+                        </div>
                     `;
                     listDiv.appendChild(card);
                 }
