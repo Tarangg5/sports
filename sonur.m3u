@@ -61,13 +61,7 @@ http://srnet.bmlive.net:1935/srmusic/myStream/playlist.m3u8
 
 
 #EXTINF: -1 tvg-id="32" tvg-logo="https://tatalogo.pages.dev/32.png" group-title="Movies", Sony Pix HD
-https://sonyliv.joker-verse.workers.dev/master.m3u8?id=1000009258&uid=8004188626&pass=61498d15
-#EXTINF: -1 tvg-id="210" tvg-logo="https://tatalogo.pages.dev/210.png" group-title="Movies", MN+ HD
-http://front-main.eagle-4k.me/live/rmt8r91bac/tsleey7v5g/277008.ts
-
-
-#EXTINF: -1 tvg-id="599" tvg-logo="https://tatalogo.pages.dev/599.png" group-title="Movies", MNX HD
-http://front-main.eagle-4k.me/live/rmt8r91bac/tsleey7v5g/277006.ts
+http://datahub11.com/live/Anthony2/Anthony123/9381.ts
 
 #EXTINF: -1 tvg-id="ts593" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12193-j9q33dpc-v2/imageContent-12193-j9q33dpc-m3.png" group-title="Movies", Star Movies Select HD
 http://iptvtree.net:8080/vtprotonium/CuUWPf5b7jywB68SxZ5/267542
