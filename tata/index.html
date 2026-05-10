@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U Playlist Generator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #333; text-align: center; }
+        textarea { width: 100%; height: 400px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; padding: 10px; font-family: monospace; font-size: 12px; white-space: pre; }
+        .controls { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        button { padding: 10px 20px; cursor: pointer; border: none; border-radius: 5px; font-weight: bold; }
+        #fetchBtn { background: #007bff; color: white; }
+        #downloadBtn { background: #28a745; color: white; display: none; }
+        #status { text-align: center; margin-top: 10px; color: #555; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>M3U Playlist Maker (30 Pages)</h2>
+    
+    <div class="controls">
+        <button id="fetchBtn">Fetch All Channels (1-30)</button>
+        <button id="downloadBtn">Download M3U File</button>
+    </div>
+
+    <div id="status">Taiyaar ho? Button dabao.</div>
+    <textarea id="resultBox" placeholder="M3U data yahan dikhega..." readonly></textarea>
+</div>
+
+<script>
+    // APNE WORKER KA URL YAHAN DALEIN
+    const WORKER_URL = "https://fancy-haze-4104.sonuujamuicamp.workers.dev/"; 
+
+    const fetchBtn = document.getElementById('fetchBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const resultBox = document.getElementById('resultBox');
+    const status = document.getElementById('status');
+
+    let fullM3U = "#EXTM3U\n";
+
+    fetchBtn.addEventListener('click', async () => {
+        fetchBtn.disabled = true;
+        fetchBtn.innerText = "Processing...";
+        resultBox.value = "";
+        fullM3U = "#EXTM3U\n";
+        downloadBtn.style.display = "none";
+
+        for (let i = 1; i <= 30; i++) {
+            status.innerText = `Fetching Page ${i} of 30...`;
+            
+            try {
+                const response = await fetch(`${WORKER_URL}?page=${i}`);
+                if (response.ok) {
+                    let text = await response.text();
+                    // #EXTM3U header ko baar baar repeat hone se rokne ke liye
+                    let cleanText = text.replace("#EXTM3U\n", "");
+                    fullM3U += cleanText;
+                    resultBox.value = fullM3U; // Real-time update
+                    resultBox.scrollTop = resultBox.scrollHeight; // Auto scroll down
+                }
+            } catch (error) {
+                console.error(`Error fetching page ${i}:`, error);
+            }
+        }
+
+        status.innerText = "Saare channels fetch ho gaye!";
+        fetchBtn.disabled = false;
+        fetchBtn.innerText = "Refetch All";
+        downloadBtn.style.display = "inline-block";
+    });
+
+    downloadBtn.addEventListener('click', () => {
+        const blob = new Blob([fullM3U], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "playlist.m3u";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    });
+</script>
+
+</body>
+</html>
