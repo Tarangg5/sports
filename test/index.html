@@ -33,33 +33,29 @@
 </div>
 
 <script>
-// Aapka provided Workers link
 const M3U_URL = "https://paste.sonuujamuicamp.workers.dev/"; 
+const PROXY_PREFIX = "https://websource.sonuujamuicamp.workers.dev/?url=";
 
 function getParam(name) {
     return new URLSearchParams(location.search).get(name);
 }
 
-// M3U Parser with EXTHTTP Support
 async function parseM3U() {
     const targetId = getParam("id");
     if (!targetId) {
-        showError("URL mein ?id=ID_NAME lagayein (e.g. ?id=Star_Sports_1_HD_Hindi)");
+        showError("URL mein ?id= lagana bhool gaye bhai!");
         return null;
     }
-
     try {
         const response = await fetch(M3U_URL);
         const text = await response.text();
         const lines = text.split('\n');
         let channel = {};
-
         for (let i = 0; i < lines.length; i++) {
             if (lines[i].includes(`tvg-id="${targetId}"`)) {
                 channel.name = lines[i].split(',')[1]?.trim();
                 const logoMatch = lines[i].match(/tvg-logo="([^"]+)"/);
                 channel.logo = logoMatch ? logoMatch[1] : "";
-
                 let j = i + 1;
                 while (j < lines.length && !lines[j].startsWith('#EXTINF')) {
                     const line = lines[j].trim();
@@ -77,74 +73,43 @@ async function parseM3U() {
                 return channel;
             }
         }
-        showError("Channel ID '" + targetId + "' M3U mein nahi mila.");
-    } catch (e) {
-        showError("M3U load nahi ho raha. Check CORS extension.");
-    }
+        showError("ID nahi mili!");
+    } catch (e) { showError("M3U Load Error!"); }
     return null;
 }
 
-// JSON License Fetching Logic
 async function fetchClearKeys(url) {
     try {
-        const res = await fetch(url);
+        const res = await fetch(PROXY_PREFIX + encodeURIComponent(url));
         const data = await res.json();
-        
-        // Agar response waisa hi hai jaisa aapne dikhaya
-        if (data && data.keys && data.keys.length > 0) {
-            const kid = data.keys[0].kid;
-            const k = data.keys[0].k;
-            console.log("Keys Loaded:", kid, k);
-            return { [kid]: k };
+        if (data?.keys?.length > 0) {
+            return { [data.keys[0].kid]: data.keys[0].k };
         }
-        throw new Error("Keys array missing in JSON");
-    } catch (e) {
-        console.error("DRM Fetch Error:", e);
-        return null;
-    }
+    } catch (e) { console.error(e); }
+    return null;
 }
 
-function showError(msg) {
-    document.getElementById("loading").style.display = "none";
-    const err = document.getElementById("error");
-    err.innerText = msg;
-    err.style.display = "block";
-}
-
-// Shaka Player Initialization
 async function startPlayer(channel) {
     shaka.polyfill.installAll();
     const video = document.getElementById("video");
-    const container = document.getElementById("videoContainer");
     const player = new shaka.Player(video);
-    const ui = new shaka.ui.Overlay(player, container, video);
+    const ui = new shaka.ui.Overlay(player, document.getElementById("videoContainer"), video);
 
     const keys = await fetchClearKeys(channel.keyUrl);
-    if (!keys) {
-        showError("License Key fetch fail ho gaya (JSON check karein)");
-        return;
-    }
+    if (!keys) { showError("License Proxy Failed!"); return; }
 
-    player.configure({
-        drm: { clearKeys: keys },
-        streaming: { lowLatencyMode: true }
-    });
+    player.configure({ drm: { clearKeys: keys }, streaming: { lowLatencyMode: true } });
 
     player.getNetworkingEngine().registerRequestFilter((type, request) => {
-        // Correct Headers for JioTV/Hotstar
         request.headers["User-Agent"] = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
         request.headers["Referer"] = "https://www.jiotv.com/";
-        if (channel.cookie) {
-            request.headers["Cookie"] = channel.cookie;
-        }
+        if (channel.cookie) { request.headers["Cookie"] = channel.cookie; }
     });
 
     try {
         await player.load(channel.url);
         document.getElementById("loading").style.display = "none";
-    } catch (e) {
-        showError("Playback Error: " + e.code + " (Cookie expire ho sakti hai)");
-    }
+    } catch (e) { showError("Error: " + e.code); }
 }
 
 async function init() {
@@ -155,8 +120,8 @@ async function init() {
         startPlayer(channel);
     }
 }
-
 init();
 </script>
+
 </body>
 </html>
