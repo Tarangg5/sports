@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic M3U Player</title>
+    <title>Dynamic M3U Proxy Player</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/controls.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.ui.js"></script>
     <style>
         body { margin: 0; background: #000; color: #fff; font-family: sans-serif; overflow: hidden; }
         .container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; }
-        .shaka-video-container { width: 100%; max-width: 1000px; aspect-ratio: 16/9; background: #111; }
+        .shaka-video-container { width: 100%; max-width: 1000px; aspect-ratio: 16/9; background: #111; position: relative; }
         .info { margin-top: 20px; text-align: center; }
         #channelLogo { width: 60px; border-radius: 8px; vertical-align: middle; margin-right: 15px; }
-        #loading { color: #00ffcc; font-size: 18px; }
+        #loading { color: #00ffcc; font-size: 18px; margin-bottom: 10px; }
         #error { color: #ff4d4d; display: none; font-weight: bold; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 5px; max-width: 80%; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div id="loading">Fetching M3U Data...</div>
+    <div id="loading">Initializing System...</div>
     <div id="error"></div>
 
     <div class="shaka-video-container" id="videoContainer">
@@ -28,11 +28,12 @@
 
     <div class="info">
         <img id="channelLogo" src="" alt="">
-        <span id="channelName" style="font-size: 24px;"></span>
+        <span id="channelName" style="font-size: 24px; font-weight: bold;"></span>
     </div>
 </div>
 
 <script>
+// 1. CONFIGURATION
 const M3U_URL = "https://paste.sonuujamuicamp.workers.dev/"; 
 const PROXY_PREFIX = "https://websource.sonuujamuicamp.workers.dev/?url=";
 
@@ -40,22 +41,30 @@ function getParam(name) {
     return new URLSearchParams(location.search).get(name);
 }
 
+// 2. M3U PARSER
 async function parseM3U() {
     const targetId = getParam("id");
     if (!targetId) {
-        showError("URL mein ?id= lagana bhool gaye bhai!");
+        showError("URL mein ?id= lagana bhool gaye! (e.g. ?id=Star_Sports_1_HD_Hindi)");
         return null;
     }
+
     try {
+        document.getElementById("loading").innerText = "Fetching Playlist Data...";
         const response = await fetch(M3U_URL);
         const text = await response.text();
         const lines = text.split('\n');
         let channel = {};
+
         for (let i = 0; i < lines.length; i++) {
             if (lines[i].includes(`tvg-id="${targetId}"`)) {
-                channel.name = lines[i].split(',')[1]?.trim();
+                // Extract Name
+                channel.name = lines[i].split(',')[1]?.trim() || "Live TV";
+                
+                // Extract Logo
                 const logoMatch = lines[i].match(/tvg-logo="([^"]+)"/);
                 channel.logo = logoMatch ? logoMatch[1] : "";
+
                 let j = i + 1;
                 while (j < lines.length && !lines[j].startsWith('#EXTINF')) {
                     const line = lines[j].trim();
@@ -63,8 +72,10 @@ async function parseM3U() {
                         channel.keyUrl = line.split('license_key=')[1].trim();
                     } else if (line.includes('#EXTHTTP:')) {
                         const jsonStr = line.replace('#EXTHTTP:', '').trim();
-                        const httpData = JSON.parse(jsonStr);
-                        channel.cookie = httpData.Cookie;
+                        try {
+                            const httpData = JSON.parse(jsonStr);
+                            channel.cookie = httpData.Cookie;
+                        } catch(e) { console.error("JSON Parse Error in M3U"); }
                     } else if (line.startsWith('http')) {
                         channel.url = line;
                     }
@@ -73,45 +84,82 @@ async function parseM3U() {
                 return channel;
             }
         }
-        showError("ID nahi mili!");
-    } catch (e) { showError("M3U Load Error!"); }
+        showError("ID '" + targetId + "' M3U mein nahi mila.");
+    } catch (e) {
+        showError("M3U Load Failure. Check your Worker link.");
+    }
     return null;
 }
 
+// 3. LICENSE FETCHING WITH PROXY
 async function fetchClearKeys(url) {
     try {
-        const res = await fetch(PROXY_PREFIX + encodeURIComponent(url));
+        document.getElementById("loading").innerText = "Fetching DRM Keys via Proxy...";
+        const finalUrl = PROXY_PREFIX + encodeURIComponent(url);
+        
+        const res = await fetch(finalUrl);
         const data = await res.json();
-        if (data?.keys?.length > 0) {
+        
+        if (data && data.keys && data.keys.length > 0) {
             return { [data.keys[0].kid]: data.keys[0].k };
         }
-    } catch (e) { console.error(e); }
-    return null;
+        throw new Error("Invalid License Format");
+    } catch (e) {
+        console.error("DRM Error:", e);
+        return null;
+    }
 }
 
+function showError(msg) {
+    document.getElementById("loading").style.display = "none";
+    const err = document.getElementById("error");
+    err.innerText = msg;
+    err.style.display = "block";
+}
+
+// 4. SHAKA PLAYER LOGIC
 async function startPlayer(channel) {
     shaka.polyfill.installAll();
     const video = document.getElementById("video");
+    const container = document.getElementById("videoContainer");
     const player = new shaka.Player(video);
-    const ui = new shaka.ui.Overlay(player, document.getElementById("videoContainer"), video);
+    
+    // UI Overlay for controls
+    const ui = new shaka.ui.Overlay(player, container, video);
 
     const keys = await fetchClearKeys(channel.keyUrl);
-    if (!keys) { showError("License Proxy Failed!"); return; }
+    if (!keys) {
+        showError("License Key fetch fail ho gaya (Proxy Issue?)");
+        return;
+    }
 
-    player.configure({ drm: { clearKeys: keys }, streaming: { lowLatencyMode: true } });
+    player.configure({
+        drm: { clearKeys: keys },
+        streaming: { 
+            lowLatencyMode: true,
+            bufferingGoal: 30
+        }
+    });
 
+    // Apply Headers
     player.getNetworkingEngine().registerRequestFilter((type, request) => {
         request.headers["User-Agent"] = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
         request.headers["Referer"] = "https://www.jiotv.com/";
-        if (channel.cookie) { request.headers["Cookie"] = channel.cookie; }
+        if (channel.cookie) {
+            request.headers["Cookie"] = channel.cookie;
+        }
     });
 
     try {
+        document.getElementById("loading").innerText = "Loading Stream...";
         await player.load(channel.url);
         document.getElementById("loading").style.display = "none";
-    } catch (e) { showError("Error: " + e.code); }
+    } catch (e) {
+        showError("Playback Error: " + e.code + " (Check Cookie)");
+    }
 }
 
+// 5. BOOTSTRAP
 async function init() {
     const channel = await parseM3U();
     if (channel) {
@@ -120,6 +168,7 @@ async function init() {
         startPlayer(channel);
     }
 }
+
 init();
 </script>
 
