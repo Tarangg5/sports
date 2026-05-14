@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPTV Search</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #1e1e2e;
+    --accent: #e63946;
+    --accent2: #ff6b6b;
+    --text: #f0f0f0;
+    --muted: #6b6b80;
+    --live: #00d26a;
+    --vod: #3b82f6;
+    --series: #a855f7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(230,57,70,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(230,57,70,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    animation: fadeDown 0.6s ease;
+  }
+
+  .header h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .header p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Search box */
+  .search-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+
+  .search-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .search-input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    border-color: var(--accent);
+  }
+
+  .search-input::placeholder { color: var(--muted); }
+
+  .search-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  .search-btn:hover { background: var(--accent2); transform: translateY(-1px); }
+  .search-btn:active { transform: translateY(0); }
+  .search-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* Type tabs */
+  .type-tabs {
+    display: flex;
+    gap: 8px;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .tab:hover { border-color: var(--muted); color: var(--text); }
+
+  .tab.active[data-type="live"] { background: rgba(0,210,106,0.12); border-color: var(--live); color: var(--live); }
+  .tab.active[data-type="vod"] { background: rgba(59,130,246,0.12); border-color: var(--vod); color: var(--vod); }
+  .tab.active[data-type="series"] { background: rgba(168,85,247,0.12); border-color: var(--series); color: var(--series); }
+
+  /* Status */
+  .status {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+    min-height: 20px;
+    animation: fadeUp 0.3s ease;
+  }
+
+  .status.error { color: var(--accent); }
+  .status.success { color: var(--live); }
+
+  /* Results */
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .channel-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: fadeUp 0.3s ease both;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .channel-card:hover {
+    border-color: var(--accent);
+    background: #16161f;
+    transform: translateX(4px);
+  }
+
+  .channel-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--border);
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+
+  .channel-logo-placeholder {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    background: var(--border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .channel-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .channel-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .channel-group {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .channel-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  .badge-live { background: rgba(0,210,106,0.15); color: var(--live); }
+  .badge-vod { background: rgba(59,130,246,0.15); color: var(--vod); }
+  .badge-series { background: rgba(168,85,247,0.15); color: var(--series); }
+
+  .channel-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    word-break: break-all;
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: var(--bg);
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: none;
+  }
+
+  .channel-card.expanded .channel-url { display: block; }
+
+  /* Copy btn */
+  .copy-btn {
+    background: var(--border);
+    border: none;
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .copy-btn:hover { background: var(--accent); color: #fff; }
+  .copy-btn.copied { background: var(--live); color: #fff; }
+
+  /* Loader */
+  .loader {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  .loader.active { display: block; }
+
+  .spinner {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    display: none;
+  }
+
+  .empty.active { display: block; }
+  .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+  .empty p { font-family: 'DM Mono', monospace; font-size: 0.85rem; }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Worker URL input */
+  .worker-config {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.05s both;
+  }
+
+  .worker-config label {
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .worker-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .worker-input:focus { border-color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .search-row { flex-direction: column; }
+    .type-tabs { flex-wrap: wrap; }
+    .tab { flex: 1 1 30%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>IPTV SEARCH</h1>
+    <p>Live · VOD · Series</p>
+  </div>
+
+  <!-- Worker URL Config -->
+  <div class="worker-config">
+    <label>☁ Cloudflare Worker URL</label>
+    <input class="worker-input" id="workerUrl" type="text"
+      placeholder="https://your-worker.workers.dev"
+      value="">
+  </div>
+
+  <!-- Search Box -->
+  <div class="search-box">
+    <div class="search-row">
+      <input class="search-input" id="searchInput" type="text"
+        placeholder="Channel name search करें..." autocomplete="off">
+      <button class="search-btn" id="searchBtn" onclick="doSearch()">SEARCH</button>
+    </div>
+    <div class="type-tabs">
+      <button class="tab active" data-type="live" onclick="setType('live', this)">🔴 LIVE</button>
+      <button class="tab" data-type="vod" onclick="setType('vod', this)">🎬 VOD</button>
+      <button class="tab" data-type="series" onclick="setType('series', this)">📺 SERIES</button>
+    </div>
+  </div>
+
+  <!-- Status -->
+  <div class="status" id="status"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    Loading streams...
+  </div>
+
+  <!-- Empty -->
+  <div class="empty" id="empty">
+    <div class="empty-icon">🔍</div>
+    <p>No results found</p>
+  </div>
+
+  <!-- Results -->
+  <div class="results" id="results"></div>
+
+</div>
+
+<script>
+  let currentType = 'live';
+
+  function setType(type, el) {
+    currentType = type;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  document.getElementById('searchInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doSearch();
+  });
+
+  async function doSearch() {
+    const workerUrl = document.getElementById('workerUrl').value.trim();
+    const query = document.getElementById('searchInput').value.trim();
+    const btn = document.getElementById('searchBtn');
+    const status = document.getElementById('status');
+    const loader = document.getElementById('loader');
+    const empty = document.getElementById('empty');
+    const results = document.getElementById('results');
+
+    if (!workerUrl) {
+      status.textContent = '⚠ Worker URL enter करें';
+      status.className = 'status error';
+      return;
+    }
+
+    if (query.length < 3) {
+      status.textContent = '⚠ Minimum 3 characters required';
+      status.className = 'status error';
+      return;
+    }
+
+    btn.disabled = true;
+    results.innerHTML = '';
+    empty.classList.remove('active');
+    loader.classList.add('active');
+    status.textContent = 'Fetching streams...';
+    status.className = 'status';
+
+    try {
+      const url = `${workerUrl}?search=${encodeURIComponent(query)}&type=${currentType}`;
+      const res = await fetch(url);
+      const text = await res.text();
+
+      loader.classList.remove('active');
+
+      if (!res.ok || text.startsWith('HTTP Error') || text.startsWith('Fetch Error')) {
+        status.textContent = '✗ ' + text.split('\n')[1] || text;
+        status.className = 'status error';
+        return;
+      }
+
+      const lines = text.split('\n').filter(l => l.trim());
+      const channels = parseM3U(lines);
+
+      if (channels.length === 0) {
+        empty.classList.add('active');
+        status.textContent = 'No results found';
+        status.className = 'status';
+        return;
+      }
+
+      status.textContent = `✓ ${channels.length} result${channels.length > 1 ? 's' : ''} found`;
+      status.className = 'status success';
+
+      channels.forEach((ch, i) => {
+        const card = createCard(ch, i);
+        results.appendChild(card);
+      });
+
+    } catch (e) {
+      loader.classList.remove('active');
+      status.textContent = '✗ Error: ' + e.message;
+      status.className = 'status error';
+    }
+
+    btn.disabled = false;
+  }
+
+  function parseM3U(lines) {
+    const channels = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].startsWith('#EXTINF')) {
+        const infoLine = lines[i];
+        const urlLine = lines[i + 1] || '';
+
+        const nameMatch = infoLine.match(/,(.+)$/);
+        const logoMatch = infoLine.match(/tvg-logo="([^"]*)"/);
+        const groupMatch = infoLine.match(/group-title="([^"]*)"/);
+
+        channels.push({
+          name: nameMatch ? nameMatch[1].trim() : 'Unknown',
+          logo: logoMatch ? logoMatch[1] : '',
+          group: groupMatch ? groupMatch[1] : '',
+          url: urlLine.trim(),
+        });
+        i++;
+      }
+    }
+    return channels;
+  }
+
+  function createCard(ch, index) {
+    const card = document.createElement('div');
+    card.className = 'channel-card';
+    card.style.animationDelay = `${index * 0.04}s`;
+
+    const badgeClass = currentType === 'live' ? 'badge-live' : currentType === 'vod' ? 'badge-vod' : 'badge-series';
+    const badgeText = currentType === 'live' ? 'LIVE' : currentType === 'vod' ? 'VOD' : 'SERIES';
+    const emoji = currentType === 'live' ? '📡' : currentType === 'vod' ? '🎬' : '📺';
+
+    const logoHtml = ch.logo
+      ? `<img class="channel-logo" src="${ch.logo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" alt="">`
+      + `<div class="channel-logo-placeholder" style="display:none">${emoji}</div>`
+      : `<div class="channel-logo-placeholder">${emoji}</div>`;
+
+    card.innerHTML = `
+      ${logoHtml}
+      <div class="channel-info">
+        <div class="channel-name">${escapeHtml(ch.name)}</div>
+        ${ch.group ? `<div class="channel-group">${escapeHtml(ch.group)}</div>` : ''}
+        <div class="channel-url">${escapeHtml(ch.url)}</div>
+      </div>
+      <span class="channel-badge ${badgeClass}">${badgeText}</span>
+      <button class="copy-btn" onclick="copyUrl(event, this, '${escapeAttr(ch.url)}')">COPY</button>
+    `;
+
+    card.addEventListener('click', (e) => {
+      if (e.target.classList.contains('copy-btn')) return;
+      card.classList.toggle('expanded');
+    });
+
+    return card;
+  }
+
+  function copyUrl(e, btn, url) {
+    e.stopPropagation();
+    navigator.clipboard.writeText(url).then(() => {
+      btn.textContent = 'COPIED!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'COPY';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function escapeAttr(str) {
+    return str.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  }
+</script>
+</body>
+  </html>
+  
