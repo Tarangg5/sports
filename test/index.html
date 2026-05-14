@@ -85,24 +85,20 @@ async function parseM3U() {
     }
     return null;
 }
-
 async function fetchClearKey(url) {
     try {
         const res = await fetch(url);
-        const keyText = await res.text(); // Format: KID:KEY
-        const parts = keyText.trim().split(':');
-        return { [parts[0]]: parts[1] };
+        const data = await res.json();
+        // Agar response mein 'keys' array hai, toh wahi format Shaka ko chahiye
+        if (data && data.keys) {
+            return data; 
+        }
+        return null;
     } catch (e) {
-        console.error("Key fetch failed");
+        console.error("Key fetch failed:", e);
+        showError("License JSON Fetch Failed");
         return null;
     }
-}
-
-function showError(msg) {
-    document.getElementById("loading").style.display = "none";
-    const err = document.getElementById("error");
-    err.innerText = msg;
-    err.style.display = "block";
 }
 
 async function startPlayer(channel) {
@@ -112,16 +108,28 @@ async function startPlayer(channel) {
     const container = document.querySelector(".shaka-video-container");
     new shaka.ui.Overlay(player, container, video);
 
-    // Dynamic ClearKey fetch from PHP link
-    const keys = await fetchClearKey(channel.keyUrl);
+    // PHP link se poora JSON data fetch kar rahe hain
+    const drmData = await fetchClearKey(channel.keyUrl);
 
     player.configure({
-        drm: { clearKeys: keys },
-        streaming: { lowLatencyMode: true }
+        drm: {
+            // Shaka Player ClearKey JSON ko 'servers' ya 'clearKeys' dono mein handle kar leta hai
+            clearKeys: {
+                // Hum JSON se manual extract kar rahe hain compatibility ke liye
+                [drmData.keys[0].kid]: drmData.keys[0].k
+            }
+        },
+        streaming: { 
+            lowLatencyMode: true,
+            jumpLargeGaps: true
+        }
     });
 
     player.getNetworkingEngine().registerRequestFilter((type, request) => {
+        // Headers as per your requirement
         request.headers["User-Agent"] = "Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)";
+        request.headers["Referer"] = "https://www.jiotv.com/";
+        
         if (channel.cookie) {
             request.headers["Cookie"] = channel.cookie;
         }
@@ -131,9 +139,11 @@ async function startPlayer(channel) {
         await player.load(channel.url);
         document.getElementById("loading").style.display = "none";
     } catch (e) {
-        showError("Playback Error: Check License or Cookie");
+        console.error("Error Code:", e.code, e);
+        showError("Playback Error: " + e.code);
     }
 }
+
 
 async function init() {
     const channel = await parseM3U();
