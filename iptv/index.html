@@ -290,6 +290,21 @@
   .copy-btn:hover { background: var(--accent); color: #fff; }
   .copy-btn.copied { background: var(--live); color: #fff; }
 
+  .ns-btn {
+    background: var(--border);
+    border: none;
+    color: #f59e0b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .ns-btn:hover { background: #f59e0b; color: #000; }
+
   /* Loader */
   .loader {
     display: none;
@@ -555,6 +570,7 @@
         <div class="channel-url">${escapeHtml(ch.url)}</div>
       </div>
       <span class="channel-badge ${badgeClass}">${badgeText}</span>
+      <button class="ns-btn" onclick="openNS(event, '${escapeAttr(ch.url)}')">▶ NS</button>
       <button class="copy-btn" onclick="copyUrl(event, this, '${escapeAttr(ch.url)}')">COPY</button>
     `;
 
@@ -564,6 +580,12 @@
     });
 
     return card;
+  }
+
+  function openNS(e, url) {
+    e.stopPropagation();
+    const intent = `intent:${url}#Intent;package=com.genuine.leone;end`;
+    window.location.href = intent;
   }
 
   function copyUrl(e, btn, url) {
@@ -587,5 +609,4 @@
   }
 </script>
 </body>
-  </html>
-  
+</html>
