@@ -15,12 +15,33 @@
 
 
 
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://i.postimg.cc/hvvtSw-CV/Astro-Cricket.png" group-title="⚡ LIVE TV", Cricbuzz Eng without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=2494.ts
 
 
 
 
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Bhoj without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=705162.ts
 
 
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", Cricbuzz hin without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=703300.ts
+
+
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar hin without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=705131.ts
+
+
+
+#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Haryanvi without Ads
+#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=705161
 
 
 
@@ -34,6 +55,8 @@ http://srnet.bmlive.net:1935/srmusic/myStream/playlist.m3u8
 
 
 
+#EXTINF: -1 tvg-id="32" tvg-logo="https://tatalogo.pages.dev/32.png" group-title="Movies", Sony Pix HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=9381.ts
 
 #EXTINF: -1 tvg-id="ts593" tvg-logo="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12193-j9q33dpc-v2/imageContent-12193-j9q33dpc-m3.png" group-title="Movies", Star Movies Select HD
 http://iptvtree.net:8080/vtprotonium/CuUWPf5b7jywB68SxZ5/267542
@@ -42,6 +65,121 @@ http://iptvtree.net:8080/vtprotonium/CuUWPf5b7jywB68SxZ5/267542
 #KODIPROP:inputstream.adaptive.license_key=40f019b86241d23ef075633fd7f1e927:058dec845bd340178a388edd104a015e
 #EXTINF: -1 tvg-id="174" tvg-logo="https://tatalogo.pages.dev/174.png" group-title="Movies", Romedy Now
 https://times-ott-live.akamaized.net/romedynow_wv_drm/index.mpd
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",Star Movies HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=9384.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR MOVIES SELECT HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=218.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.ibb.co/qkgW1nd/c0a0c8607691347e22942f2b86473199.png" group-title="Movies",Star Gold Select HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/98859
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Entertainment",SET HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/9885
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR GOLD HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/98858
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",UTSAV GOLD HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/28729
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR GOLD 2
+http://fastshare1.com:8080/live/Jen12345/Jen54321/157081
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",STAR GOLD ROMANCE
+http://fastshare1.com:8080/live/Jen12345/Jen54321/972
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",Discovery Channel HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/9393
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",National Geographic HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/7342
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",ANIMAL PLANET HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/9391
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",History TV18 HD
+http://fastshare1.com:8080/live/Jen12345/Jen54321/9392
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="INFOTAINMENT",Nat Geo Wild HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=7344.ts
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Movies",ZEE Cinema HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=98860
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Tulsi kumar song
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135445.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Abhijit Bhattacharjee song
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135447.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Alka yagnik song
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135448.ts
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Guru randhawa music
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135449.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Mohit Chauhan song
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135442.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",Lucky Ali song
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135439.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-MOHAMMAD RAFI SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135440.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KUNAL GANJAWALA SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135437.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KISHOR KUMAR SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135436.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ANURADHA PAWDWAL SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135433.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-HIMESH RESHAMMIYA SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135434.ts
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SHAAN SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135431.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SHREYA GHOSHAL SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135430.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-MUKESH SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135429.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-PANKAJ UDAS SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135428.ts
+
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KAVITA KRISHNAMURTI SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135426.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-NEHA KAKKAR SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135425.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-K.K SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135424.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-KUMAR SANU SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135423.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-ARJIT SINGH SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135422.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-SUNIDHI CHAUHAN SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135421.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-UDIT NARAYAN SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135420.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-LATA MANGESHKAR SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135417.ts
+
+#EXTINF:-1 tvg-id="" tvg-logo="" group-title="Music",HINDI-PALAK MUCHHAL SONGS HD
+https://amaira.pages.dev/extrmp/amaira/play?tk=cF55W2ZRExQCAE4Ed09tRndTfRlgVndCOREpH3YLNAkU&h=KRk1GWhODEJTQ0ZGKBkmF3RPLk4-X3tCfUQ&u=CwgvWGBSFxE&p=CwgvXGZSERU&e=ts&id=135451.ts
+
+
+
 
 
 
@@ -1092,4 +1230,5 @@ https://stream.zeno.fm/r51n9k1vsa0uv
 
 #EXTINF:-1 group-title="radio",BBC NEWS ENG
 https://as-hls-ww.live.cf.md.bbci.co.uk/pool_07364996/live/ww/bbc_world_service_news_internet/bbc_world_service_news_internet.isml/bbc_world_service_news_internet-audio%3d48000.norewind.m3u8
+
 
