@@ -10,8 +10,8 @@
 ##https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/WDVLive/index.mpd
 
 
-#EXTM3U
-#EXTINF:-1 tvg-name="DAZN Live" tvg-id="dazn_live" group-title="Sports",DAZN Live
+
+#EXTINF:-1 tvg-name="FOX HD Live" tvg-id="dazn_live" group-title="Sports",DAZN Live
 #EXT-X-KEY:METHOD=SAMPLE-AES,URI="data:text/plain;base64,",KEYFORMAT="identity",KEYFORMATVERSIONS="1"
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=01c9bbf8137e58378a5ead514998a7b4:fb01e61809e80e5e93a889cd31daab22
@@ -27,26 +27,6 @@ http://fastshare1.com:8080/live/Jen12345/Jen54321/2494.ts
 
 
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Bhoj without Ads
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-http://fastshare1.com:8080/live/Jen12345/Jen54321/705162.ts
-
-
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", Cricbuzz hin without Ads
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-http://fastshare1.com:8080/live/Jen12345/Jen54321/703300.ts
-
-
-
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar hin without Ads
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-http://fastshare1.com:8080/live/Jen12345/Jen54321/705131.ts
-
-
-
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi_HD" tvg-name="Star Sports 1 Hindi HD" tvg-logo="" group-title="⚡ LIVE TV", hotstar Haryanvi without Ads
-#EXTVLCOPT:http-user-agent=Hotstar;in.startv.hotstar/25.02.24.8.11169 (Android/15)
-http://fastshare1.com:8080/live/Jen12345/Jen54321/705161.ts
 
 
 
