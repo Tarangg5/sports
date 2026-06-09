@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        function redirectToApp() {
+            // Target HLS Stream Link
+            var targetUrl = "https://sonydaimenew.akamaized.net/hls/live/2018457/cricodi0906/HIN/master.m3u8?hdnea=exp=1781021091~acl=/*~id=29481519749165915243725015196151~hmac=86a3e6889f1b612f8273e82e8825cbab3feac93324c3773d5d93378115548152";
+            
+            // Android Intent Syntax to launch the specific package
+            // It passes the stream URL as the data parameter
+            var intentUrl = "intent://" + targetUrl.replace(/^https?:\/\//, "") + 
+                            "#Intent;scheme=https;package=com.genuine.leone;end;";
+
+            // Attempt to open the app via Intent
+            window.location.href = intentUrl;
+
+            // Fallback: If the app isn't installed or doesn't intercept, 
+            // open the stream link in the browser after a short delay
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 2500);
+        }
+
+        // Run the redirect automatically when the page loads
+        window.onload = redirectToApp;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+        }
+        .loader {
+            margin: 20px auto;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Opening in Application...</h2>
+    <p>If you are not redirected automatically, <a id="manual-link" href="#">click here</a>.</p>
+    <div class="loader"></div>
+
+    <script>
+        // Update the manual link just in case auto-redirect is blocked by the browser
+        document.getElementById('manual-link').href = "intent://" + 
+            "sonydaimenew.akamaized.net/hls/live/2018457/cricodi0906/HIN/master.m3u8?hdnea=exp=1781021091~acl=/*~id=29481519749165915243725015196151~hmac=86a3e6889f1b612f8273e82e8825cbab3feac93324c3773d5d93378115548152" + 
+            "#Intent;scheme=https;package=com.genuine.leone;end;";
+    </script>
+
+</body>
+</html>
