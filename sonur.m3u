@@ -11,11 +11,11 @@
 
 
 
-#EXTINF:-1 tvg-name="FOX HD Live" tvg-id="dazn_live" group-title="Sports",DAZN Live
+#EXTINF:-1 tvg-name="FOX HD Live" tvg-id="dazn_live" group-title="Sports",SONY LIVE
 #EXT-X-KEY:METHOD=SAMPLE-AES,URI="data:text/plain;base64,",KEYFORMAT="identity",KEYFORMATVERSIONS="1"
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=01c9bbf8137e58378a5ead514998a7b4:fb01e61809e80e5e93a889cd31daab22
-https://dck1-fs-live.dtcdn.dazn.com/out/v1/814bffb9b389f652/d65feac5647949e6b45b2674d4715398/index.mpd
+https://sayanchannelcdn03.pages.dev/sony.m3u8
 
 
 
