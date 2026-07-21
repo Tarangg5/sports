@@ -2,382 +2,439 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>W/L बोर्ड - एनिमेटेड</title>
+<title>Bogie Facts</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap');
+
   :root{
-    --iron:#14161a;
-    --board-yellow:#f4c430;
-    --safety-black:#17181a;
-    --paper:#ece6d8;
-    --white:#fdfaf1;
-  }
-  *{ margin:0; padding:0; box-sizing:border-box; }
-  html,body{
-    width:100%; height:100%;
-    overflow:hidden;
-    background:#0d0e10;
-    font-family:'Noto Sans Devanagari','Segoe UI',sans-serif;
-  }
-  .stage{
-    position:relative;
-    width:390px; height:844px;
-    margin:0 auto;
-    background: linear-gradient(180deg,#5f7480 0%, #8fa3ac 30%, #bcc4a8 48%, #8f8a6d 50%, #4d4a38 100%);
-    overflow:hidden;
+    --rail-blue:   #0b3d5c;
+    --rail-navy:   #082b41;
+    --coach-cream: #efe6d4;
+    --safety-yellow:#f0b429;
+    --signal-red:  #c1442e;
+    --steel:       #7d8b93;
+    --plate:       #d8cfba;
   }
 
-  /* ---------- SKY / ATMOSPHERE ---------- */
-  .sun{
-    position:absolute; top:-40px; right:20px;
-    width:220px; height:220px; border-radius:50%;
-    background: radial-gradient(circle, rgba(255,240,190,0.65), transparent 70%);
-    animation: sunPulse 6s ease-in-out infinite;
-  }
-  @keyframes sunPulse{
-    0%,100%{ opacity:0.7; } 50%{ opacity:1; }
-  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
 
-  .birds{
-    position:absolute; top:80px; left:-40px;
-    font-size:14px; color:rgba(20,20,20,0.4);
-    animation: fly 14s linear infinite;
-    letter-spacing: 30px;
-  }
-  @keyframes fly{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(500px); }
-  }
-
-  /* ---------- GROUND & TRACK ---------- */
-  .ground{
-    position:absolute; left:0; right:0; bottom:0; height:46%;
-    background: linear-gradient(180deg,#5c5844,#332f22);
-  }
-  .ballast{
-    position:absolute; left:0; right:0; bottom:0; height:26%;
+  body{
+    width:1080px;
     background:
-      radial-gradient(2px 2px at 8% 55%, #201f1c, transparent),
-      radial-gradient(2px 2px at 18% 35%, #2c2b25, transparent),
-      radial-gradient(3px 2px at 30% 68%, #1a1916, transparent),
-      radial-gradient(2px 2px at 42% 28%, #302f28, transparent),
-      radial-gradient(2px 2px at 55% 52%, #201f1c, transparent),
-      radial-gradient(3px 2px at 68% 30%, #26251f, transparent),
-      radial-gradient(2px 2px at 80% 60%, #1a1916, transparent),
-      radial-gradient(2px 2px at 92% 40%, #26251f, transparent),
-      linear-gradient(180deg,#4a4636,#302d21);
-  }
-
-  .track-wrap{
-    position:absolute; left:0; right:0; bottom:6%; height:20%;
-  }
-  .sleeper{
-    position:absolute; bottom:0;
-    width:34px; height:60%;
-    background: linear-gradient(180deg,#3a2e20,#20180e);
-    border-radius:1px;
-    animation: moveLeft 1.1s linear infinite;
-  }
-  .rail{
-    position:absolute; left:-10%; right:-10%;
-    height:6px;
-    background: linear-gradient(180deg,#d8d4c4,#7d7965 45%,#403d2f);
-    box-shadow:0 2px 3px rgba(0,0,0,0.5);
-  }
-  .rail.r1{ bottom:14px; }
-  .rail.r2{ bottom:52px; }
-
-  @keyframes moveLeft{
-    from{ transform:translateX(0); }
-    to{ transform:translateX(-68px); }
-  }
-
-  /* ---------- SIGNAL POLE + BOARD (fixed near-center, train approaches it) ---------- */
-  .pole-group{
-    position:absolute;
-    bottom:15%;
-    left:50%;
-    transform: translateX(-50%);
-    display:flex; flex-direction:column; align-items:center;
-    opacity:0;
-    animation: boardIn 1s ease-out 2.4s forwards;
-  }
-  @keyframes boardIn{
-    from{ opacity:0; transform:translateX(-50%) translateY(20px) scale(0.85); }
-    to{ opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
-  }
-
-  .board{
-    background: var(--board-yellow);
-    border:5px solid var(--safety-black);
-    border-radius:3px;
-    width:150px;
-    padding:12px 8px 14px;
-    text-align:center;
-    box-shadow:0 10px 22px rgba(0,0,0,0.55);
+      repeating-linear-gradient(180deg, transparent 0 38px, rgba(255,255,255,0.02) 38px 40px),
+      linear-gradient(180deg,var(--rail-navy) 0%, var(--rail-blue) 55%, #0e4a6e 100%);
+    font-family:'Rajdhani','Noto Sans Devanagari',sans-serif;
+    color:var(--coach-cream);
     position:relative;
-    z-index:3;
-    animation: boardGlow 1.6s ease-in-out 3.4s 2;
-  }
-  @keyframes boardGlow{
-    0%,100%{ box-shadow:0 10px 22px rgba(0,0,0,0.55); }
-    50%{ box-shadow:0 10px 30px rgba(244,196,48,0.55); }
-  }
-  .board .hi{ font-weight:700; font-size:19px; color:var(--safety-black); }
-  .board .divider{ width:60%; height:2px; background:var(--safety-black); margin:7px auto; opacity:0.75; }
-  .board .en{ font-family:'Segoe UI',sans-serif; font-weight:700; font-size:21px; color:var(--safety-black); letter-spacing:1px; }
-
-  .pole{
-    width:9px; height:96px;
-    background: linear-gradient(90deg,#14100a,#3a2f1e 45%,#1a1509);
-    margin-top:-2px;
-  }
-  .pole-base{
-    width:24px; height:7px; background:#1c170e; border-radius:2px;
+    overflow:hidden;
   }
 
-  /* ---------- TRAIN (drives in from right, passes board, exits left) ---------- */
-  .train{
-    position:absolute;
-    bottom:12.5%;
-    right:-260px;
+  /* rivet strip top */
+  .rivet-strip{
+    height:14px;
+    background:var(--rail-navy);
     display:flex;
-    align-items:flex-end;
-    z-index:4;
-    animation: driveIn 8s cubic-bezier(.4,0,.2,1) forwards;
+    align-items:center;
+    justify-content:space-evenly;
+    border-bottom:3px solid var(--safety-yellow);
   }
-  @keyframes driveIn{
-    0%{   right:-260px; }
-    38%{  right:calc(50% + 40px); }   /* arrives near board */
-    60%{  right:calc(50% + 40px); }   /* pauses, honks */
-    100%{ right:120%; }               /* exits past board to the left */
+  .rivet-strip span{
+    width:7px;height:7px;border-radius:50%;
+    background:#3a5c72;
+    box-shadow:inset 0 1px 1px rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.05);
   }
 
-  .loco{
-    width:150px; height:74px;
-    background: linear-gradient(180deg,#2c4d6b,#1a3247);
-    border-radius:10px 22px 6px 6px;
+  header{
+    padding:44px 64px 30px;
     position:relative;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-  }
-  .loco::before{ /* windshield */
-    content:"";
-    position:absolute; top:10px; right:14px;
-    width:38px; height:22px;
-    background: linear-gradient(135deg,#bfe3f0,#7fa9bb);
-    border-radius:4px;
-    border: 2px solid #10202c;
-  }
-  .loco::after{ /* front stripe */
-    content:"";
-    position:absolute; bottom:14px; left:0; right:0;
-    height:8px;
-    background: var(--board-yellow);
-  }
-  .headlamp{
-    position:absolute; bottom:24px; right:2px;
-    width:10px; height:10px; border-radius:50%;
-    background: radial-gradient(circle,#fff6cf,#e8c96a);
-    box-shadow:0 0 10px 4px rgba(255,240,180,0.6);
-  }
-  .wheel{
-    position:absolute; bottom:-8px;
-    width:22px; height:22px; border-radius:50%;
-    background: radial-gradient(circle at 35% 35%,#555,#111 75%);
-    border:2px solid #0a0a0a;
-    animation: spin 0.5s linear infinite;
-  }
-  @keyframes spin{ to{ transform:rotate(360deg); } }
-  .w1{ left:16px; } .w2{ left:56px; } .w3{ left:100px; }
-
-  .coach{
-    width:120px; height:58px;
-    background: linear-gradient(180deg,#3a5f7f,#274960);
-    border-radius:6px;
-    margin-left:4px; margin-bottom:2px;
-    position:relative;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.45);
-  }
-  .coach::after{
-    content:"";
-    position:absolute; bottom:10px; left:0; right:0;
-    height:6px; background: var(--board-yellow);
-  }
-  .coach .win{
-    position:absolute; top:9px; left:10px; right:10px;
-    display:flex; justify-content:space-between;
-  }
-  .coach .win span{
-    width:18px; height:14px; background:#a9d4e3; border-radius:2px; opacity:0.85;
-  }
-  .coach .wheel{ bottom:-8px; }
-  .c-w1{ left:14px; } .c-w2{ left:88px; }
-
-  /* horn sound waves — appear when train is near board */
-  .honk{
-    position:absolute;
-    bottom:26%;
-    left:50%;
-    transform: translateX(-50%);
-    display:flex; gap:6px;
-    opacity:0;
-    animation: honkShow 1.4s ease-in-out 3.4s 2;
-    z-index:5;
-  }
-  @keyframes honkShow{
-    0%{ opacity:0; transform:translateX(-50%) scale(0.8); }
-    30%{ opacity:1; transform:translateX(-50%) scale(1.05); }
-    70%{ opacity:1; }
-    100%{ opacity:0; transform:translateX(-50%) scale(1.15); }
-  }
-  .honk span{
-    font-size:26px;
-    color:var(--board-yellow);
-    text-shadow:0 0 10px rgba(244,196,48,0.7);
-  }
-
-  /* ---------- TEXT OVERLAYS ---------- */
-  .caption{
-    position:absolute;
-    left:0; right:0;
-    text-align:center;
-    padding:0 26px;
-    opacity:0;
-    z-index:6;
-  }
-  .cap1{ top:60px; animation: capFade 3s ease-in-out 0.2s forwards; }
-  .cap2{ top:56px; animation: capFade 2.6s ease-in-out 4.2s forwards; }
-  .cap3{ bottom:70px; animation: capFade 3.2s ease-in-out 6.4s forwards; }
-
-  @keyframes capFade{
-    0%{ opacity:0; transform:translateY(-10px); }
-    15%{ opacity:1; transform:translateY(0); }
-    85%{ opacity:1; }
-    100%{ opacity:0; transform:translateY(-6px); }
   }
 
   .eyebrow{
-    font-size:11px; letter-spacing:3px; text-transform:uppercase;
-    color:var(--board-yellow); margin-bottom:8px; font-weight:600;
+    font-family:'Teko',sans-serif;
+    font-size:22px;
+    letter-spacing:8px;
+    color:var(--safety-yellow);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:14px;
   }
-  .cap-title{
-    font-size:22px; font-weight:700; color:var(--white);
-    line-height:1.4;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-  }
-  .cap-title b{ color:var(--board-yellow); }
-
-  .meaning-box{
+  .eyebrow::before{
+    content:"";
+    width:36px;height:2px;
+    background:var(--safety-yellow);
     display:inline-block;
-    background: rgba(20,18,12,0.82);
-    border:1px solid rgba(244,196,48,0.4);
+  }
+
+  h1{
+    font-family:'Teko',sans-serif;
+    font-weight:700;
+    font-size:96px;
+    line-height:0.92;
+    letter-spacing:1px;
+    color:#fff;
+    margin-top:10px;
+    text-shadow:0 3px 0 rgba(0,0,0,.25);
+  }
+  h1 .hin{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:52px;
+    display:block;
+    font-weight:700;
+    color:var(--safety-yellow);
+    margin-top:6px;
+    letter-spacing:0;
+  }
+
+  .sub{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:22px;
+    font-weight:500;
+    color:#d9e6ee;
+    max-width:760px;
+    margin-top:18px;
+    line-height:1.6;
+  }
+
+  /* THE COACH PLATE — signature element */
+  .plate-wrap{
+    margin:38px 64px 8px;
+    background:linear-gradient(180deg,#1a4a68,#123650);
+    border:3px solid #2f6584;
     border-radius:10px;
-    padding:14px 20px;
-    backdrop-filter: blur(2px);
+    padding:34px 44px;
+    position:relative;
+    box-shadow:0 20px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
   }
-  .meaning-box .m1{ font-size:13px; color:var(--board-yellow); letter-spacing:1px; margin-bottom:4px; font-weight:600; }
-  .meaning-box .m2{ font-size:15px; color:var(--paper); line-height:1.55; }
+  .plate-wrap::before, .plate-wrap::after{
+    content:"";
+    position:absolute; top:14px; width:12px; height:12px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #e8dcc0, #a89a75 70%);
+    box-shadow:0 2px 3px rgba(0,0,0,.5);
+  }
+  .plate-wrap::before{ left:16px; }
+  .plate-wrap::after{ right:16px; }
 
-  .final-tags{
-    position:absolute;
-    bottom:26px; left:0; right:0;
+  .plate-label{
+    font-family:'Teko',sans-serif;
+    font-size:18px;
+    letter-spacing:4px;
+    color:#8fb4cc;
+    font-weight:600;
+    margin-bottom:14px;
+  }
+
+  .number-row{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-bottom:6px;
+  }
+  .digit{
+    font-family:'Teko',sans-serif;
+    font-weight:700;
+    font-size:120px;
+    line-height:1;
+    width:88px;
     text-align:center;
-    opacity:0;
-    animation: capFade 3s ease-in-out 6.6s forwards;
-    z-index:6;
+    background:var(--coach-cream);
+    color:var(--rail-navy);
+    border-radius:6px;
+    padding:8px 0 2px;
+    box-shadow:inset 0 -6px 0 rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.3);
   }
-  .final-tags span{
-    font-size:11px; color:#c9c3ac; letter-spacing:1px;
-    border:1px solid rgba(244,196,48,0.35);
-    padding:4px 10px; border-radius:14px;
-    margin:0 3px;
-    display:inline-block;
+  .digit.year{ background:var(--safety-yellow); }
+  .digit.type{ background:var(--signal-red); color:#fff2e8; box-shadow:inset 0 -6px 0 rgba(0,0,0,.18), 0 4px 8px rgba(0,0,0,.3); }
+
+  .bracket-row{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-top:10px;
+  }
+  .bracket{
+    width:88px;
+    text-align:center;
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#9fc3d9;
+  }
+  .bracket.type-b{ color:#f2a996; }
+  .bracket-2{ width:182px; }
+
+  .arrow-line{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-top:2px;
+    font-size:13px;
+    color:#6c96af;
   }
 
-  .vignette{
-    position:absolute; inset:0;
-    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.45) 100%);
-    pointer-events:none;
-    z-index:7;
+  /* two callouts under plate */
+  .callouts{
+    display:flex;
+    gap:24px;
+    margin-top:26px;
+  }
+  .callout{
+    flex:1;
+    background:rgba(0,0,0,.18);
+    border-left:4px solid var(--safety-yellow);
+    border-radius:6px;
+    padding:16px 20px;
+  }
+  .callout.type-c{ border-left-color:var(--signal-red); }
+  .callout h3{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:19px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:4px;
+  }
+  .callout p{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:15px;
+    color:#c7dae6;
+    line-height:1.5;
+  }
+
+  /* class range table styled like a destination board */
+  .board-section{
+    margin:40px 64px 0;
+  }
+  .board-title{
+    font-family:'Teko',sans-serif;
+    font-size:26px;
+    letter-spacing:4px;
+    color:var(--safety-yellow);
+    font-weight:600;
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .board-title::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background:linear-gradient(90deg, var(--safety-yellow), transparent);
+  }
+
+  .board{
+    background:#050d13;
+    border:2px solid #1e3a4a;
+    border-radius:8px;
+    padding:22px 26px;
+    box-shadow:inset 0 0 30px rgba(0,0,0,.6);
+  }
+  .row{
+    display:grid;
+    grid-template-columns:170px 1fr 210px;
+    align-items:center;
+    padding:12px 6px;
+    border-bottom:1px dashed #223f4f;
+    font-family:'Rajdhani',sans-serif;
+  }
+  .row:last-child{ border-bottom:none; }
+  .row .range{
+    font-family:'Teko',sans-serif;
+    font-size:30px;
+    font-weight:700;
+    color:var(--safety-yellow);
+    letter-spacing:1px;
+  }
+  .row .cls-en{
+    font-size:18px;
+    font-weight:600;
+    color:#eef4f8;
+  }
+  .row .cls-hi{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:15px;
+    color:#8fb4cc;
+    margin-top:2px;
+  }
+  .row .swatch{
+    justify-self:end;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .swatch .chip{
+    width:64px;height:14px;border-radius:3px;
+  }
+
+  /* example decode strip */
+  .example{
+    margin:36px 64px 0;
+    background:linear-gradient(90deg, rgba(240,180,41,.14), rgba(193,68,46,.14));
+    border:2px solid var(--safety-yellow);
+    border-radius:10px;
+    padding:24px 30px;
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
+  .example .icon{
+    font-family:'Teko',sans-serif;
+    font-size:52px;
+    font-weight:700;
+    color:var(--safety-yellow);
+    flex-shrink:0;
+  }
+  .example .text{
+    font-family:'Noto Sans Devanagari',sans-serif;
+    font-size:19px;
+    line-height:1.7;
+    color:#f4ecd8;
+  }
+  .example .text b{ color:var(--safety-yellow); }
+  .example .text .r{ color:#ff9d84; }
+
+  footer{
+    margin-top:40px;
+    padding:22px 64px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:2px solid #1e3a4a;
+  }
+  .tags{
+    font-family:'Rajdhani',sans-serif;
+    font-size:14px;
+    color:#6c96af;
+    letter-spacing:0.5px;
+  }
+  .brand{
+    font-family:'Teko',sans-serif;
+    font-size:20px;
+    letter-spacing:3px;
+    color:var(--safety-yellow);
+    font-weight:600;
+  }
+
+  /* bottom hazard strip echoing platform edge */
+  .hazard{
+    height:16px;
+    background:repeating-linear-gradient(135deg, var(--safety-yellow) 0 18px, var(--rail-navy) 18px 36px);
   }
 </style>
 </head>
 <body>
 
-<div class="stage">
-  <div class="sun"></div>
-  <div class="birds">‾ ‾ ‾</div>
-
-  <!-- captions -->
-  <div class="caption cap1">
-    <div class="eyebrow">भारतीय रेलवे · सुरक्षा संकेत</div>
-    <div class="cap-title">क्या आप जानते हैं?<br>पटरी किनारे वो <b>पीला बोर्ड</b> 🚂</div>
+  <div class="rivet-strip">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
-  <div class="caption cap2">
-    <div class="eyebrow">ध्यान दीजिए</div>
-    <div class="cap-title">यह लिखा होता है — <b>W/L</b> या <b>सी/फा</b></div>
-  </div>
+  <header>
+    <div class="eyebrow">DID YOU KNOW · क्या आप जानते हैं</div>
+    <h1>BOGIE FACTS<span class="hin">डिब्बे के नंबर का राज़</span></h1>
+    <p class="sub">ट्रेन के डिब्बे पर लिखा 5 अंकों का नंबर सिर्फ एक रोल नंबर नहीं — इसमें उसके बनने का साल और उसकी श्रेणी (Class) दोनों छिपे होते हैं।</p>
+  </header>
 
-  <div class="caption cap3">
-    <div class="meaning-box">
-      <div class="m1">W/L — Whistle for Level Crossing</div>
-      <div class="m2">आगे मानवरहित फाटक है, ड्राइवर हॉर्न बजाना शुरू कर देता है ताकि लोग सतर्क हो जाएं।</div>
+  <div class="plate-wrap">
+    <div class="plate-label">SAMPLE COACH PLATE — उदाहरण नंबर</div>
+    <div class="number-row">
+      <div class="digit year">1</div>
+      <div class="digit year">8</div>
+      <div class="digit type">3</div>
+      <div class="digit type">2</div>
+      <div class="digit type">4</div>
+    </div>
+    <div class="bracket-row">
+      <div class="bracket bracket-2">निर्माण वर्ष (YEAR)</div>
+      <div class="bracket type-b" style="width:270px">श्रेणी कोड (CLASS RANGE)</div>
+    </div>
+
+    <div class="callouts">
+      <div class="callout">
+        <h3>18 → वर्ष 2018</h3>
+        <p>शुरुआती 2 अंक बताते हैं कि कोच किस साल फैक्ट्री में बना।</p>
+      </div>
+      <div class="callout type-c">
+        <h3>324 → जनरल डिब्बा</h3>
+        <p>आखिरी 3 अंक 201–400 की रेंज में हैं, यानी सामान्य / अनारक्षित श्रेणी।</p>
+      </div>
     </div>
   </div>
 
-  <div class="final-tags">
-    <span>#IndianRailways</span><span>#RailwaySafety</span><span>#KnowYourSignals</span>
-  </div>
-
-  <!-- ground -->
-  <div class="ground"></div>
-  <div class="ballast"></div>
-  <div class="track-wrap">
-    <div class="sleeper" style="left:0%; animation-delay:0s;"></div>
-    <div class="sleeper" style="left:12%; animation-delay:-0.15s;"></div>
-    <div class="sleeper" style="left:24%; animation-delay:-0.3s;"></div>
-    <div class="sleeper" style="left:36%; animation-delay:-0.45s;"></div>
-    <div class="sleeper" style="left:48%; animation-delay:-0.6s;"></div>
-    <div class="sleeper" style="left:60%; animation-delay:-0.75s;"></div>
-    <div class="sleeper" style="left:72%; animation-delay:-0.9s;"></div>
-    <div class="sleeper" style="left:84%; animation-delay:-1.05s;"></div>
-    <div class="sleeper" style="left:96%; animation-delay:-1.2s;"></div>
-    <div class="rail r1"></div>
-    <div class="rail r2"></div>
-  </div>
-
-  <!-- board -->
-  <div class="pole-group">
+  <div class="board-section">
+    <div class="board-title">CLASS RANGE CHART · श्रेणी तालिका</div>
     <div class="board">
-      <div class="hi">सी/फा</div>
-      <div class="divider"></div>
-      <div class="en">W&nbsp;/&nbsp;L</div>
+
+      <div class="row">
+        <div class="range">001–025</div>
+        <div>
+          <div class="cls-en">1st AC</div>
+          <div class="cls-hi">पहला एसी</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#f0b429"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="range">026–050</div>
+        <div>
+          <div class="cls-en">2nd AC</div>
+          <div class="cls-hi">दूसरा एसी</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#e0a02c"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="range">051–100</div>
+        <div>
+          <div class="cls-en">3rd AC</div>
+          <div class="cls-hi">तीसरा एसी</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#cf9330"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="range">101–150</div>
+        <div>
+          <div class="cls-en">AC Chair Car</div>
+          <div class="cls-hi">एसी चेयर कार</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#7d8b93"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="range">151–200</div>
+        <div>
+          <div class="cls-en">Sleeper Class</div>
+          <div class="cls-hi">स्लीपर श्रेणी</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#4a7d94"></div></div>
+      </div>
+
+      <div class="row">
+        <div class="range">201–400</div>
+        <div>
+          <div class="cls-en">General / Unreserved</div>
+          <div class="cls-hi">सामान्य डिब्बा</div>
+        </div>
+        <div class="swatch"><div class="chip" style="background:#c1442e"></div></div>
+      </div>
+
     </div>
-    <div class="pole"></div>
-    <div class="pole-base"></div>
   </div>
 
-  <div class="honk">
-    <span>♪</span><span>)))</span>
-  </div>
-
-  <!-- train -->
-  <div class="train">
-    <div class="coach">
-      <div class="win"><span></span><span></span><span></span></div>
-      <div class="wheel c-w1"></div>
-      <div class="wheel c-w2"></div>
-    </div>
-    <div class="loco">
-      <div class="headlamp"></div>
-      <div class="wheel w1"></div>
-      <div class="wheel w2"></div>
-      <div class="wheel w3"></div>
+  <div class="example">
+    <div class="icon">💡</div>
+    <div class="text">
+      अगली बार प्लेटफॉर्म पर ट्रेन का इंतजार करते समय, डिब्बे पर लिखे नंबर पर एक नज़र डालें —
+      <b>पहले 2 अंक</b> साल बताते हैं और <span class="r">आखिरी 3 अंक</span> श्रेणी। यही छोटी सी जानकारी आपको हर डिब्बे की पूरी कहानी बता देगी।
     </div>
   </div>
 
-  <div class="vignette"></div>
-</div>
+  <footer>
+    <div class="tags">#IndianRailways · #RailwayCoachNumber · #TrainFacts · #KnowledgeSharing</div>
+    <div class="brand">RAILWAY SECRETS</div>
+  </footer>
+
+  <div class="hazard"></div>
 
 </body>
 </html>
