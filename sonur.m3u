@@ -3,18 +3,18 @@
 # ===== ORIGINAL ASLI 4K =====
 #EXTINF:-1 tvg-id="" group-title="⚡ LIVE TV" group-logo="https://i.postimg.cc/52qG6sKt/STREAMXi.png" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",IND VS ZIM ENG
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=7148e4d133694c9e9720a1bac7159093:18d187fd131b82a360917f56da3e98d4
+#KODIPROP:inputstream.adaptive.license_key=d271bd6480344bf5938574325cbbfcd7:88b68ebb9588d70ecef11f28c5099205
 #EXTVLCOPT:http-user-agent=
 #EXTHTTP:{"cookie":"","Origin":"https://www.jiotv.com/","Referer":"https://www.jiotv.com/"}
-https://bpl24middleeast.akamaized.net/hls/live/2109311/j15klM//master.m3u8
+https://in-mc-flive.fancode.com/mumbai/143353_english_dash_71145_1drmta-di_h264/index.mpd
 
 
 #EXTINF:-1 tvg-id="" group-title="⚡ LIVE TV" group-logo="https://i.postimg.cc/52qG6sKt/STREAMXi.png" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",IND VS ZIM HINDI
 #KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=87e80af08df44d1184a37a449b814978:85633aaa416821e65278dcc980066447
+#KODIPROP:inputstream.adaptive.license_key=c108e7b44a1d4e65bd9edf19b46e5ec1:8dca625e57fa0b4c71e991016373eee4
 #EXTVLCOPT:http-user-agent=
 #EXTHTTP:{"cookie":"","Origin":"https://www.jiotv.com/","Referer":"https://www.jiotv.com/"}
-https://in-mc-flive.fancode.com/mumbai/143352_hindi_dash_45689_1drmta-di_h264/index.mpd
+https://in-mc-flive.fancode.com/mumbai/143353_english_dash_71145_1drmta-di_h264/index.mpd|User-Agent=ReactNativeVideo/8.4.0
 
 #EXTINF:-1 tvg-id="" group-title="⚡ LIVE TV" group-logo="https://i.postimg.cc/52qG6sKt/STREAMXi.png" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",COMMONWEALTH 2026
 #KODIPROP:inputstream.adaptive.license_type=clearkey
