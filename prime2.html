@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NS Player Redirect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: #0b0b0b; color: #00ffcc; font-family: sans-serif; text-align: center; padding-top: 30%; }
+        .btn { border: 2px solid #00ffcc; padding: 15px 30px; color: #00ffcc; text-decoration: none; font-weight: bold; border-radius: 50px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <h3>Sonu Ranjan Redirecting to NS Player...</h3>
+    <br><br>
+    
+    <!-- Aapki bheji hui link bina kisi badlav (Zero Edit) ke exact inject kar di hai -->
+    <a id="ns-intent" class="btn" href="intent://sliv.tgaadi.workers.dev/ten3hd.m3u8#Intent;scheme=https;package=com.genuine.leone;S.title=DAZN_Live;end">
+        LAUNCH NS PLAYER
+    </a>
+
+    <script>
+        // Auto-launch after 1 second
+        setTimeout(function() {
+            window.location.href = document.getElementById('ns-intent').href;
+        }, 1000);
+    </script>
+
+</body>
+</html>
