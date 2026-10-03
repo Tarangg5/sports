@@ -4,17 +4,8 @@
 
 
 
-#EXTINF:-1 tvg-id="Star_Sports_1_Hindi" tvg-name="Star Sports 1 Hindi HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Sports_HD1.png" group-title="⚡ LIVE TV",Star Sports 1 Hindi HD
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=bd1ea6a1c1fb5dcdb709434e0826bbc0:f57f22cba32739ce7beb1fab3f3d060b
-#EXTHTTP:{"Cookie":"__hdnea__=st=1790514952~exp=1790536552~acl=/bpk-tv/StarSportsHD2Hin_BTS/WDVLive/*~hmac=d7be198ef8c562d1b88ed4716926b228eea13a8493eca4e7f52dca07594cef6b"}
-https://jiotvpllive.cdn.jio.com//bpk-tv/StarSportsHD2Hin_BTS/WDVLive/index.mpd
 
-#EXTINF:-1 tvg-id="Star_Sports_1_English" tvg-name="Star Sports 1 English HD" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/Star_Sports_HD1.png" group-title="⚡ LIVE TV",Star Sports 1 English HD
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=9457eb90129456fa8ea95e10ba4ac51e:e620a970cea474c491ac78ae71a4d764
-#EXTHTTP:{"Cookie":"__hdnea__=st=1790515035~exp=1790536635~acl=/bpk-tv/Star_Sports_HD2_BTS/WDVLive/*~hmac=f84e2dd435b325a33cdfbff76af7abb780111ad9d0cf299df64d426f5aca0ad9"}
-https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/WDVLive/index.mpd
+
 
 #EXTINF:-1 tvg-id="" group-title="⚡ LIVE TV" group-logo="https://i.postimg.cc/52qG6sKt/STREAMXi.png" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",COMMONWEALTH 2026
 #KODIPROP:inputstream.adaptive.license_type=clearkey
@@ -23,12 +14,7 @@ https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/WDVLive/index.mpd
 #EXTHTTP:{"cookie":"","Origin":"https://www.jiotv.com/","Referer":"https://www.jiotv.com/"}
 https://sliv.tgaadi.workers.dev/ten3hd.m3u8
 
-#EXTINF:-1 tvg-id="" group-title="⚡ LIVE TV" group-logo="https://i.postimg.cc/52qG6sKt/STREAMXi.png" tvg-logo="https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",IND VS AFG
-#KODIPROP:inputstream.adaptive.license_type=clearkey
-#KODIPROP:inputstream.adaptive.license_key=3afa887864e6545aa006db21aeb39054:6b8cce271f3cd923d0df32d45b44f6df
-#EXTVLCOPT:http-user-agent=
-#EXTHTTP:{"cookie":"","Origin":"https://www.jiotv.com/","Referer":"https://www.jiotv.com/"}
-https://shotner.u0k.workers.dev/INDvsAFG-T20i.m3u8
+
 
 
 
